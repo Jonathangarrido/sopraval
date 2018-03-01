@@ -6,12 +6,13 @@
 appCtrl.$inject = ['Consultas'];
 function appCtrl(Consultas) {
   var vm = this;
+
   init();
 
   ////////////////////////////////////////////
 
   function init() {
-    
+
   }
 
 }

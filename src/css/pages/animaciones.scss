@@ -1,0 +1,45 @@
+
+.animation-back{
+  &.ng-enter {
+    opacity: 0
+  }
+  &.ng-enter-active {
+    opacity: 1
+  }
+  &.ng-leave {
+    opacity: 1
+  }
+  &.ng-leave-active {
+    opacity: 0
+  }
+}
+.animation-slide{
+  &In{
+    &.ng-enter {
+      transform: translateX(100vw)
+    }
+    &.ng-enter-active {
+      transform: translateX(0)
+    }
+    &.ng-leave {
+      transform: translateX(0)
+    }
+    &.ng-leave-active {
+      transform: translateX(-100vw)
+    }
+  }
+  &Out{
+    &.ng-enter {
+      transform: translateX(-100vw)
+    }
+    &.ng-enter-active {
+      transform: translateX(0)
+    }
+    &.ng-leave {
+      transform: translateX(0)
+    }
+    &.ng-leave-active {
+      transform: translateX(100vw)
+    }
+  }
+}

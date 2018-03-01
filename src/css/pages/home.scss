@@ -1,0 +1,107 @@
+//*************************************
+// home
+//*************************************
+.home{
+  background-image: url('../img/fondos/f-home.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 1s ease;
+  @extend .wrapper;
+  &-header{
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    img{
+      width: 12rem;
+    }
+    >div{
+      display: flex;
+    }
+    a{
+      background-color: white;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      height: 2rem;
+      line-height: 1;
+      width: 2rem;
+      @extend .wrapper;
+      &:not(:last-child){
+        margin-right: 1rem;
+      }
+    }
+    i{
+      color: rgb(119, 119, 119);
+    }
+  }
+  &-nav{
+    a{
+      font-family: $altfont;
+      font-size: 3.5rem;
+      text-shadow: -3px 2px #222;
+      position: relative;
+      &:not(:last-child){
+        margin-right: 7rem;
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: .75rem;
+        left: 0;
+        height: 3px;
+        width: 100%;
+      }
+      &:hover{
+        &:after{
+          background: white;
+        }
+      }
+    }
+  }
+  &-section{
+    background-color: $color-base;
+    bottom: -6.5rem;
+    font-family: $altfont-secundary;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    transition: bottom ease-out $animationtime;
+    width: 100vw;
+    &.active{
+      bottom: 0;
+    }
+    div{
+      cursor: pointer;
+      font-size: .8rem;
+      height: 3rem;
+      position: relative;
+      width: 100%;
+      @extend .wrapper;
+      &:after{
+        bottom: .1rem;
+        content: '\f107';
+        font-family: 'icomoon';
+        left: 50%;
+        position: absolute;
+      }
+    }
+    ul{
+      padding: 1.5rem;
+      margin: 0;
+      @extend .wrapper;
+    }
+    li{
+      &:not(:last-child){
+        margin-right: 2rem;
+      }
+    }
+    footer{
+      background-color: $color-base-dark;
+      font-size: .8rem;
+      padding: .5rem;
+      width: 100%;
+    }
+  }
+}

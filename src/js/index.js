@@ -14,12 +14,12 @@
       .when('/productos', {
         template: '<productos></productos>'
       })
-      // .when('/productos/:id', {
-      //   template: '<categoria></categoria>'
-      // })
-      // .when('/producto/:id', {
-      //   template: '<producto></producto>'
-      // })
+      .when('/productos/:categoria', {
+        template: '<categoria></categoria>'
+      })
+      .when('/productos/:categoria/:id', {
+        template: '<producto></producto>'
+      })
       // .when('/recetas', {
       //   template: '<recetas></recetas>'
       // })
@@ -41,12 +41,14 @@
       'ngRoute',
       'ngAnimate',
       'jsonService',
+      'setDatos',
       'app',
       'menu',
+      'lista',
       'home',
       'productos',
-      // 'categoria',
-      // 'producto',
+      'categoria',
+      'producto',
       // 'recetas',
       // 'receta',
       // 'common',

@@ -1,0 +1,9 @@
+<main class="producto">
+  <section class="producto-titulo">
+    {{$ctrl.categoria}}
+  </section>
+  <section class="producto-info">
+    {{$ctrl.producto.titulo}}
+  </section>
+  <lista datos="{{$ctrl.productos}}" tipo="producto" url={{$ctrl.urlAll}}></lista>
+</main>
