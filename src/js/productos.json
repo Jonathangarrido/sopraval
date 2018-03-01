@@ -1,0 +1,450 @@
+[
+  {
+    "id": "chorizo-pavo-350g",
+    "imagen": "chorizo-pavo-350g",
+    "titulo": "Chorizo de pavo 350g",
+    "categoria": "parrilleros",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "costillitas-clasicas-800g",
+    "imagen": "costillitas-clasicas-800g",
+    "titulo": "Costillitas de pavo clásicas 800g",
+    "categoria": "parrilleros",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "costillitas-surenas-800g",
+    "imagen": "costillitas-surenas-800g",
+    "titulo": "Costillitas de pavo sureñas 800g",
+    "categoria": "parrilleros",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "longaniza-pavo-400g",
+    "imagen": "longaniza-pavo-400g",
+    "titulo": "Longaniza de pavo 400g",
+    "categoria": "parrilleros",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "tuto-corto-merken",
+    "imagen": "tuto-corto-merken",
+    "titulo": "Tuto corto parrillero al merken",
+    "categoria": "parrilleros",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "tuto-parrillero-barbecue",
+    "imagen": "tuto-parrillero-barbecue",
+    "titulo": "Tuto parrillero sabor barbecue",
+    "categoria": "parrilleros",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "tuto-parrillero-clasico",
+    "imagen": "tuto-parrillero-clasico",
+    "titulo": "Tuto parrillero clásico",
+    "categoria": "parrilleros",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "jamon-acaramelado-pieza",
+    "imagen": "jamon-acaramelado-pieza",
+    "titulo": "Jamón de pavo acaramelado",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "jamon-ahumado-pieza",
+    "imagen": "jamon-ahumado-pieza",
+    "titulo": "Jamón de pavo ahumado pieza",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "jamon-pavo-250g",
+    "imagen": "jamon-pavo-250g",
+    "titulo": "Jamón de pavo 250g",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "jamon-pechuga-pavo-cocida",
+    "imagen": "jamon-pechuga-pavo-cocida",
+    "titulo": "Jamón de pechuga de pavo cocida",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "jamon-pierna-250g",
+    "imagen": "jamon-pierna-250g",
+    "titulo": "Jamón pierna 250g",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "jamon-pierna-ahumado-150g",
+    "imagen": "jamon-pierna-ahumado-150g",
+    "titulo": "Jamón pierna de pavo ahumado 150g",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "jamon-pierna-ahumado",
+    "imagen": "jamon-pierna-ahumado",
+    "titulo": "Jamón pierna ahumado",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "jamon-sanswich-pieza",
+    "imagen": "jamon-sanswich-pieza",
+    "titulo": "Jamón sanswich pieza",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-acaramelada-pieza",
+    "imagen": "pechuga-acaramelada-pieza",
+    "titulo": "Pechuga de pavo acaramelada pieza",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-acaramelada-150g",
+    "imagen": "pechuga-acaramelada-150g",
+    "titulo": "Pechuga de pavo acaramelada 150g",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-ahumada-150g",
+    "imagen": "pechuga-ahumada-150g",
+    "titulo": "Pechuga de pavo ahumada 150g",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-ahumada-250g",
+    "imagen": "pechuga-ahumada-250g",
+    "titulo": "Pechuga de pavo ahumada 250g",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-ahumada-300g",
+    "imagen": "pechuga-ahumada-300g",
+    "titulo": "Pechuga de pavo ahumada 300g",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-ahumada-pieza",
+    "imagen": "pechuga-ahumada-pieza",
+    "titulo": "Pechuga de pavo ahumada pieza",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-asada-150g",
+    "imagen": "pechuga-asada-150g",
+    "titulo": "Pechuga de pavo asada 150g",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-asada-250g",
+    "imagen": "pechuga-asada-250g",
+    "titulo": "Pechuga de pavo asada 250g",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-asada-pieza",
+    "imagen": "pechuga-asada-pieza",
+    "titulo": "Pechuga de pavo asada",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-cocida-150g",
+    "imagen": "pechuga-cocida-150g",
+    "titulo": "Pechuga de pavo cocida 150g",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-cocida-250g",
+    "imagen": "pechuga-cocida-250g",
+    "titulo": "Pechuga de pavo cocida 250g",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-cocida-pieza",
+    "imagen": "pechuga-cocida-pieza",
+    "titulo": "Pechuga de pavo cocida",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-pavo-cocida",
+    "imagen": "pechuga-pavo-cocida",
+    "titulo": "Pechuga de pavo cocida",
+    "categoria": "jamones-pechugas",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  }
+]
