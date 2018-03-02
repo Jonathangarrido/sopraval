@@ -45,7 +45,7 @@
       switch (active){
         case 'fade': state = []; state.fade = true; break; 
         case 'slideIn': state = []; state.slideIn = true; break; 
-        default: state = []; state.fade = true;
+        default: state = [];
       }
       service.animate = state;
     }

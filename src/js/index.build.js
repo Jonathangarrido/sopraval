@@ -62,19 +62,23 @@
 // **********************************************************
 'use strict';
 
-appCtrl.$inject = ['setDatos'];
-function appCtrl(setDatos) {
+appCtrl.$inject = ['setDatos' ,'$scope'];
+function appCtrl(setDatos, $scope) {
   var vm = this;
   vm.animation = [];
 
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
-    // pepe()
+    watchAnimate();
   }
 
-  vm.$onChanges = function () {
-    // vm.pepe = setDatos.animate;
+  function watchAnimate(){
+    $scope.$watch(function(){
+      return setDatos.animate;
+    }, function(newVal, oldVal){
+      vm.animation = newVal;
+    })
   }
 
 }
@@ -140,15 +144,23 @@ angular.module('lista', [])
 // **********************************************************
 'use strict';
 
-menuCtrl.$inject = [];
-function menuCtrl() {
+menuCtrl.$inject = ['setDatos', '$location', '$scope', '$timeout'];
+function menuCtrl(setDatos, $location, $scope ,$timeout) {
   var vm = this;
-  init();
 
   ////////////////////////////////////////////
 
-  function init() {
+  vm.$onInit = function () {
     
+  }
+
+  vm.back = function () {
+    setDatos.setAnimate('fade');
+    $timeout(redireccionar,100)
+  }
+
+  function redireccionar(){
+    $location.path("/");
   }
 
 }
@@ -191,8 +203,8 @@ angular.module('categoria', [])
 // **********************************************************
 'use strict';
 
-homeCtrl.$inject = ['setDatos', '$rootScope'];
-function homeCtrl(setDatos, $rootScope) {
+homeCtrl.$inject = ['setDatos', '$scope', '$timeout'];
+function homeCtrl(setDatos, $scope, $timeout) {
   var vm = this;
 
   ////////////////////////////////////////////
@@ -201,8 +213,11 @@ function homeCtrl(setDatos, $rootScope) {
     animate();
   }
 
-  function animate(){
-    
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate('slideIn')
+      $scope.$apply();
+    }, 800);
   }
 
 }
@@ -217,8 +232,8 @@ angular.module('home', [])
 // **********************************************************
 'use strict';
 
-productoCtrl.$inject = ['Consultas', '$location', 'setDatos'];
-function productoCtrl(Consultas, $location, setDatos) {
+productoCtrl.$inject = ['Consultas', '$location', 'setDatos', '$scope', '$timeout'];
+function productoCtrl(Consultas, $location, setDatos, $scope, $timeout) {
   var vm = this;
   vm.urlAll = $location.path().split('/');
   vm.urlCategoria = vm.urlAll[2];
@@ -228,7 +243,14 @@ function productoCtrl(Consultas, $location, setDatos) {
 
   vm.$onInit = function () {
     getData();
-    titulo();
+    animate();
+  }
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate()
+      $scope.$apply();
+    }, 800);
   }
 
   function getData() {
@@ -241,9 +263,6 @@ function productoCtrl(Consultas, $location, setDatos) {
     })
   }
 
-  function titulo() {
-    vm.categoria = setDatos.setCategoria();
-  }
 }
 
 angular.module('producto', [])
@@ -257,14 +276,21 @@ angular.module('producto', [])
 // **********************************************************
 'use strict';
 
-productosCtrl.$inject = ['setDatos'];
-function productosCtrl(setDatos) {
+productosCtrl.$inject = ['setDatos', '$scope', '$timeout'];
+function productosCtrl(setDatos, $scope, $timeout) {
   var vm = this;
 
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
-    
+    animate();
+  }
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate()
+      $scope.$apply();
+    }, 800);
   }
 
 }
@@ -358,7 +384,7 @@ angular.module('productos', [])
       switch (active){
         case 'fade': state = []; state.fade = true; break; 
         case 'slideIn': state = []; state.slideIn = true; break; 
-        default: state = []; state.fade = true;
+        default: state = [];
       }
       service.animate = state;
     }

@@ -3,19 +3,23 @@
 // **********************************************************
 'use strict';
 
-appCtrl.$inject = ['setDatos'];
-function appCtrl(setDatos) {
+appCtrl.$inject = ['setDatos' ,'$scope'];
+function appCtrl(setDatos, $scope) {
   var vm = this;
   vm.animation = [];
 
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
-    // pepe()
+    watchAnimate();
   }
 
-  vm.$onChanges = function () {
-    // vm.pepe = setDatos.animate;
+  function watchAnimate(){
+    $scope.$watch(function(){
+      return setDatos.animate;
+    }, function(newVal, oldVal){
+      vm.animation = newVal;
+    })
   }
 
 }

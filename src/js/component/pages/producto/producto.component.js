@@ -3,8 +3,8 @@
 // **********************************************************
 'use strict';
 
-productoCtrl.$inject = ['Consultas', '$location', 'setDatos'];
-function productoCtrl(Consultas, $location, setDatos) {
+productoCtrl.$inject = ['Consultas', '$location', 'setDatos', '$scope', '$timeout'];
+function productoCtrl(Consultas, $location, setDatos, $scope, $timeout) {
   var vm = this;
   vm.urlAll = $location.path().split('/');
   vm.urlCategoria = vm.urlAll[2];
@@ -14,7 +14,14 @@ function productoCtrl(Consultas, $location, setDatos) {
 
   vm.$onInit = function () {
     getData();
-    titulo();
+    animate();
+  }
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate()
+      $scope.$apply();
+    }, 800);
   }
 
   function getData() {
@@ -27,9 +34,6 @@ function productoCtrl(Consultas, $location, setDatos) {
     })
   }
 
-  function titulo() {
-    vm.categoria = setDatos.setCategoria();
-  }
 }
 
 angular.module('producto', [])

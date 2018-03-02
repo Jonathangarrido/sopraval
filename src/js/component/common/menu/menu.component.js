@@ -3,15 +3,23 @@
 // **********************************************************
 'use strict';
 
-menuCtrl.$inject = [];
-function menuCtrl() {
+menuCtrl.$inject = ['setDatos', '$location', '$scope', '$timeout'];
+function menuCtrl(setDatos, $location, $scope ,$timeout) {
   var vm = this;
-  init();
 
   ////////////////////////////////////////////
 
-  function init() {
+  vm.$onInit = function () {
     
+  }
+
+  vm.back = function () {
+    setDatos.setAnimate('fade');
+    $timeout(redireccionar,100)
+  }
+
+  function redireccionar(){
+    $location.path("/");
   }
 
 }

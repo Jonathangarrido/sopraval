@@ -537,33 +537,49 @@ a {
   content: ""; }
 
 .animation-fade.ng-enter {
-  opacity: 0; }
+  opacity: 0;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
 
 .animation-fade.ng-enter-active {
-  opacity: 1; }
+  opacity: 1;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
 
 .animation-fade.ng-leave {
-  opacity: 1; }
+  opacity: 1;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
 
 .animation-fade.ng-leave-active {
-  opacity: 0; }
+  opacity: 0;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
 
 .animation-slideIn.ng-enter {
+  opacity: 1;
   -webkit-transform: translateX(100vw);
       -ms-transform: translateX(100vw);
           transform: translateX(100vw); }
 
 .animation-slideIn.ng-enter-active {
+  opacity: 1;
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0); }
 
 .animation-slideIn.ng-leave {
+  opacity: 1;
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0); }
 
 .animation-slideIn.ng-leave-active {
+  opacity: 1;
   -webkit-transform: translateX(-100vw);
       -ms-transform: translateX(-100vw);
           transform: translateX(-100vw); }

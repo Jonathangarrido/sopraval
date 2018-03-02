@@ -3,14 +3,21 @@
 // **********************************************************
 'use strict';
 
-productosCtrl.$inject = ['setDatos'];
-function productosCtrl(setDatos) {
+productosCtrl.$inject = ['setDatos', '$scope', '$timeout'];
+function productosCtrl(setDatos, $scope, $timeout) {
   var vm = this;
 
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
-    
+    animate();
+  }
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate()
+      $scope.$apply();
+    }, 800);
   }
 
 }

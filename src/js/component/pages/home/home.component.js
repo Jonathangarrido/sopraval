@@ -3,8 +3,8 @@
 // **********************************************************
 'use strict';
 
-homeCtrl.$inject = ['setDatos', '$rootScope'];
-function homeCtrl(setDatos, $rootScope) {
+homeCtrl.$inject = ['setDatos', '$scope', '$timeout'];
+function homeCtrl(setDatos, $scope, $timeout) {
   var vm = this;
 
   ////////////////////////////////////////////
@@ -13,8 +13,11 @@ function homeCtrl(setDatos, $rootScope) {
     animate();
   }
 
-  function animate(){
-    
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate('slideIn')
+      $scope.$apply();
+    }, 800);
   }
 
 }
