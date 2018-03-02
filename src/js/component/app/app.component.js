@@ -3,16 +3,19 @@
 // **********************************************************
 'use strict';
 
-appCtrl.$inject = ['Consultas'];
-function appCtrl(Consultas) {
+appCtrl.$inject = ['setDatos'];
+function appCtrl(setDatos) {
   var vm = this;
-
-  init();
+  vm.animation = [];
 
   ////////////////////////////////////////////
 
-  function init() {
+  vm.$onInit = function () {
+    // pepe()
+  }
 
+  vm.$onChanges = function () {
+    // vm.pepe = setDatos.animate;
   }
 
 }

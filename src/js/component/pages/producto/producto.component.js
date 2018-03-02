@@ -12,7 +12,7 @@ function productoCtrl(Consultas, $location, setDatos) {
 
   ////////////////////////////////////////////
 
-  this.$onInit = function () {
+  vm.$onInit = function () {
     getData();
     titulo();
   }
@@ -20,14 +20,6 @@ function productoCtrl(Consultas, $location, setDatos) {
   function getData() {
     Consultas.getProductos().then(function (response) {
       var data = response.data;
-
-      // obtengo todos los productos con la categoria
-      var datos = data.filter(function (producto) {
-        return producto.categoria === vm.urlCategoria;
-      });
-      vm.productos = datos;
-
-      // obtengo el producto
       var dato = data.filter(function (producto) {
         return producto.id === vm.urlProducto;
       });

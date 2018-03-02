@@ -12,7 +12,8 @@
     var service = {
       setCategoria: setCategoria,
       setUrl: setUrl,
-      setArray: setArray
+      animate: [],
+      setAnimate: setAnimate
     };
 
     return service;
@@ -39,8 +40,14 @@
       return str = data.join('/')
     }
 
-    function setArray(data) {
-      return JSON.parse(data)
+    function setAnimate(active) {
+      var state;
+      switch (active){
+        case 'fade': state = []; state.fade = true; break; 
+        case 'slideIn': state = []; state.slideIn = true; break; 
+        default: state = []; state.fade = true;
+      }
+      service.animate = state;
     }
 
   }

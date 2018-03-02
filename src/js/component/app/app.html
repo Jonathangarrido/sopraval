@@ -1,2 +1,7 @@
 <menu></menu>
-<main ng-view></main>
+
+<main ng-view class="view" ng-class="{
+  'animation-fade': $ctrl.animation.fade,
+  'animation-slideOut': $ctrl.animation.slideOut,
+  'animation-slideIn': $ctrl.animation.slideIn
+}"></main>

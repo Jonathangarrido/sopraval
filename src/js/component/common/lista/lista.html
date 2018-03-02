@@ -1,8 +1,8 @@
 <main class="lista">
   <a ng-href="#{{$ctrl.volver}}">x</a>
   <p>{{$ctrl.newTipo}}</p>
-  <a ng-repeat="dato in $ctrl.newDatos" href="#/productos/{{dato.categoria}}/{{dato.id}}" >
+  <a ng-repeat="item in $ctrl.items" href="#/productos/{{item.categoria}}/{{item.id}}" >
     <img src="" alt="">
-    <h2>{{dato.titulo}}</h2>
+    <h2>{{item.titulo}}</h2>
   </a>
 </main>

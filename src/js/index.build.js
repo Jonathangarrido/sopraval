@@ -62,16 +62,19 @@
 // **********************************************************
 'use strict';
 
-appCtrl.$inject = ['Consultas'];
-function appCtrl(Consultas) {
+appCtrl.$inject = ['setDatos'];
+function appCtrl(setDatos) {
   var vm = this;
-
-  init();
+  vm.animation = [];
 
   ////////////////////////////////////////////
 
-  function init() {
+  vm.$onInit = function () {
+    // pepe()
+  }
 
+  vm.$onChanges = function () {
+    // vm.pepe = setDatos.animate;
   }
 
 }
@@ -86,22 +89,38 @@ angular.module('app', [])
 // **********************************************************
 'use strict';
 
-listaCtrl.$inject = ['$window', '$location', 'setDatos'];
-function listaCtrl($window, $location, setDatos) {
+listaCtrl.$inject = ['$window', '$location', 'setDatos', 'Consultas'];
+function listaCtrl($window, $location, setDatos, Consultas) {
   var vm = this;
   vm.newDatos;
   vm.newTipo;
+  vm.items;
+  vm.urlAll = $location.path().split('/');
 
   ////////////////////////////////////////////
 
-  this.$onInit = function () {
-
+  vm.$onInit = function () {
+    getData();
   }
 
-  this.$onChanges = function () {
-    vm.newDatos = setDatos.setArray($window.angular.copy(this.datos));
+  vm.$onChanges = function () {
     vm.newTipo = $window.angular.copy(this.tipo);
     vm.volver = setDatos.setUrl($window.angular.copy(this.url))
+  }
+
+  function getData() {
+    if(vm.urlAll[1] === 'productos'){
+      Consultas.getProductos().then(function (response) {
+        var data = response.data;
+        var datos = data.filter(function (producto) {
+          return producto.categoria === vm.urlAll[2];
+        });
+        vm.items = datos;
+      })
+    }else if (vm.urlAll[1] === 'recetas'){
+
+    }
+
   }
 
 }
@@ -109,7 +128,6 @@ function listaCtrl($window, $location, setDatos) {
 angular.module('lista', [])
   .component('lista', {
     bindings: {
-      datos: '@',
       tipo: '@',
       url: '@',
     },
@@ -155,18 +173,7 @@ function categoriaCtrl($location, Consultas, setDatos) {
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
-    getData();
     titulo();
-  }
-
-  function getData() {
-    Consultas.getProductos().then(function (response) {
-      var data = response.data;
-      var datos = data.filter(function (producto) {
-        return producto.categoria === vm.url;
-      });
-      vm.productos = datos;
-    })
   }
 
   function titulo() {
@@ -184,14 +191,17 @@ angular.module('categoria', [])
 // **********************************************************
 'use strict';
 
-homeCtrl.$inject = [];
-function homeCtrl() {
+homeCtrl.$inject = ['setDatos', '$rootScope'];
+function homeCtrl(setDatos, $rootScope) {
   var vm = this;
-  init();
 
   ////////////////////////////////////////////
 
-  function init() {
+  vm.$onInit = function () {
+    animate();
+  }
+
+  function animate(){
     
   }
 
@@ -216,7 +226,7 @@ function productoCtrl(Consultas, $location, setDatos) {
 
   ////////////////////////////////////////////
 
-  this.$onInit = function () {
+  vm.$onInit = function () {
     getData();
     titulo();
   }
@@ -224,14 +234,6 @@ function productoCtrl(Consultas, $location, setDatos) {
   function getData() {
     Consultas.getProductos().then(function (response) {
       var data = response.data;
-
-      // obtengo todos los productos con la categoria
-      var datos = data.filter(function (producto) {
-        return producto.categoria === vm.urlCategoria;
-      });
-      vm.productos = datos;
-
-      // obtengo el producto
       var dato = data.filter(function (producto) {
         return producto.id === vm.urlProducto;
       });
@@ -255,14 +257,13 @@ angular.module('producto', [])
 // **********************************************************
 'use strict';
 
-productosCtrl.$inject = [];
-function productosCtrl() {
+productosCtrl.$inject = ['setDatos'];
+function productosCtrl(setDatos) {
   var vm = this;
-  init();
 
   ////////////////////////////////////////////
 
-  function init() {
+  vm.$onInit = function () {
     
   }
 
@@ -324,7 +325,8 @@ angular.module('productos', [])
     var service = {
       setCategoria: setCategoria,
       setUrl: setUrl,
-      setArray: setArray
+      animate: [],
+      setAnimate: setAnimate
     };
 
     return service;
@@ -351,8 +353,14 @@ angular.module('productos', [])
       return str = data.join('/')
     }
 
-    function setArray(data) {
-      return JSON.parse(data)
+    function setAnimate(active) {
+      var state;
+      switch (active){
+        case 'fade': state = []; state.fade = true; break; 
+        case 'slideIn': state = []; state.slideIn = true; break; 
+        default: state = []; state.fade = true;
+      }
+      service.animate = state;
     }
 
   }

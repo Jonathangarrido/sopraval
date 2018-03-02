@@ -18,9 +18,11 @@
 @import 'components/tabs';
 @import 'components/sliders';
 
-// @import 'pages/animaciones';
-// @import 'pages/common';
-// @import 'pages/home';
-// @import 'pages/productos';
-// @import 'pages/categoria';
-// @import 'pages/producto';
+
+@import 'pages/common/animaciones';
+@import 'pages/common/app';
+@import 'pages/common/menu';
+@import 'pages/home';
+@import 'pages/productos';
+@import 'pages/categoria';
+@import 'pages/producto';

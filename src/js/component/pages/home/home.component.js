@@ -3,14 +3,17 @@
 // **********************************************************
 'use strict';
 
-homeCtrl.$inject = [];
-function homeCtrl() {
+homeCtrl.$inject = ['setDatos', '$rootScope'];
+function homeCtrl(setDatos, $rootScope) {
   var vm = this;
-  init();
 
   ////////////////////////////////////////////
 
-  function init() {
+  vm.$onInit = function () {
+    animate();
+  }
+
+  function animate(){
     
   }
 

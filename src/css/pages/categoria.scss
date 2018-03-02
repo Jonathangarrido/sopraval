@@ -1,25 +1,4 @@
 .categoria{
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  &-fondo{
-    text-transform: capitalize;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    margin-right: 0;
-    @extend .wrapper;
-    &.in{
-      transition: all 1.5s ease-in-out;
-      margin-right: 15rem
-    }
-    h1{
-      font-family: $altfont;
-      font-size: 5.5rem;
-      text-shadow: -3px 2px #222;
-      max-width: 22rem;
-      text-align: center;
-      line-height: 1.2;
-    }
-  }
+  @extend %pages;
+  background: purple;
 }

@@ -13,18 +13,7 @@ function categoriaCtrl($location, Consultas, setDatos) {
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
-    getData();
     titulo();
-  }
-
-  function getData() {
-    Consultas.getProductos().then(function (response) {
-      var data = response.data;
-      var datos = data.filter(function (producto) {
-        return producto.categoria === vm.url;
-      });
-      vm.productos = datos;
-    })
   }
 
   function titulo() {

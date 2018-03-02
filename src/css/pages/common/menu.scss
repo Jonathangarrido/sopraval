@@ -1,0 +1,14 @@
+menu{
+  margin: 0;
+}
+.menu{
+  background-color: pink;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: $index-4;
+
+  &-modal{
+    display: none;
+  }
+}

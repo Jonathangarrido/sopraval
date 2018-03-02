@@ -535,3 +535,93 @@ a {
 
 .icon-twitter:before {
   content: ""; }
+
+.animation-fade.ng-enter {
+  opacity: 0; }
+
+.animation-fade.ng-enter-active {
+  opacity: 1; }
+
+.animation-fade.ng-leave {
+  opacity: 1; }
+
+.animation-fade.ng-leave-active {
+  opacity: 0; }
+
+.animation-slideIn.ng-enter {
+  -webkit-transform: translateX(100vw);
+      -ms-transform: translateX(100vw);
+          transform: translateX(100vw); }
+
+.animation-slideIn.ng-enter-active {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
+
+.animation-slideIn.ng-leave {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
+
+.animation-slideIn.ng-leave-active {
+  -webkit-transform: translateX(-100vw);
+      -ms-transform: translateX(-100vw);
+          transform: translateX(-100vw); }
+
+.animation-slideOut.ng-enter {
+  -webkit-transform: translateX(-100vw);
+      -ms-transform: translateX(-100vw);
+          transform: translateX(-100vw); }
+
+.animation-slideOut.ng-enter-active {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
+
+.animation-slideOut.ng-leave {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
+
+.animation-slideOut.ng-leave-active {
+  -webkit-transform: translateX(100vw);
+      -ms-transform: translateX(100vw);
+          transform: translateX(100vw); }
+
+.view {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  -webkit-transition: all .8s ease-in-out;
+  -o-transition: all .8s ease-in-out;
+  transition: all .8s ease-in-out;
+  padding: 5rem 0 0; }
+
+.home, .productos, .categoria, .producto {
+  min-height: 100vh;
+  width: 100vw; }
+
+menu {
+  margin: 0; }
+
+.menu {
+  background-color: pink;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 99999999; }
+  .menu-modal {
+    display: none; }
+
+.home {
+  background-color: red; }
+
+.productos {
+  background-color: green; }
+
+.categoria {
+  background: purple; }
+
+.producto {
+  background: navy; }

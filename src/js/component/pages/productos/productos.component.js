@@ -3,14 +3,13 @@
 // **********************************************************
 'use strict';
 
-productosCtrl.$inject = [];
-function productosCtrl() {
+productosCtrl.$inject = ['setDatos'];
+function productosCtrl(setDatos) {
   var vm = this;
-  init();
 
   ////////////////////////////////////////////
 
-  function init() {
+  vm.$onInit = function () {
     
   }
 
