@@ -710,7 +710,6 @@ menu {
   border-left: solid 1px #00A9E4;
   height: 100vh;
   position: absolute;
-  right: -15rem;
   right: 0;
   top: 0;
   width: 15rem; }
@@ -739,7 +738,9 @@ menu {
     position: absolute;
     top: 1rem;
     width: 2.5rem;
-    line-height: 0; }
+    line-height: 0;
+    visibility: hidden;
+    opacity: 0; }
     .lista > a:after {
       content: '\f00d';
       font-family: 'icomoon'; }
@@ -948,10 +949,6 @@ menu {
     .categoria-menu a:hover {
       color: #00A9E4; }
 
-.categoria .lista {
-  -webkit-animation: lista-entrada .8s forwards;
-          animation: lista-entrada .8s forwards; }
-
 @-webkit-keyframes lista-entrada {
   0% {
     right: -15rem; }
@@ -999,6 +996,9 @@ menu {
     opacity: 1; }
   100% {
     opacity: 0; } }
+
+.recetas > .categoria-fondo {
+  background-image: url("../img/fondos/f-recetas.jpg"); }
 
 .producto-fondo {
   text-transform: capitalize;
@@ -1102,3 +1102,19 @@ menu {
 .producto .separacion {
   background: white;
   margin-bottom: -.39rem; }
+
+.receta .producto-titulo {
+  padding: 0; }
+
+.receta .producto-titulo-fondo {
+  width: 100%;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 20rem; }
+
+.receta .producto-info {
+  height: 50%;
+  padding: 1rem 3rem;
+  text-align: left; }

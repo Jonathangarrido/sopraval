@@ -90,3 +90,22 @@
     margin-bottom: -.39rem;
   }
 }
+
+.receta{
+  & .producto-titulo{
+    padding: 0;
+  }
+  & .producto-titulo-fondo{
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 20rem;
+  }
+
+  & .producto-info{
+    height: 50%;
+    padding: 1rem 3rem;
+    text-align: left;
+  }
+}

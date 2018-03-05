@@ -4,8 +4,8 @@
 // **********************************************************
 'use strict';
 
-categoriaCtrl.$inject = ['$location', 'Consultas', 'setDatos'];
-function categoriaCtrl($location, Consultas, setDatos) {
+categoriaCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope'];
+function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope) {
   var vm = this;
   vm.urlAll = $location.path().split('/');
   vm.url = vm.urlAll[2];
@@ -21,6 +21,22 @@ function categoriaCtrl($location, Consultas, setDatos) {
   vm.$onInit = function () {
     titulo();
     fondo();
+    animate();
+    getDatos();
+  }
+  function getDatos(){
+    Consultas.getProductos().then(function (response) {
+      var data = response.data;
+      var datos = data.filter(function (producto) {
+        return producto.categoria === vm.urlAll[2];
+      });
+      // setDatos.setList(datos,'productos');
+
+      $timeout(function () {
+        setDatos.setList(datos,'productos');
+        $scope.$apply();
+      }, 100);
+    })
   }
 
   function fondo(){
@@ -29,6 +45,13 @@ function categoriaCtrl($location, Consultas, setDatos) {
 
   function titulo() {
     vm.categoria = setDatos.setCategoria();
+  }
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate('fade')
+      $scope.$apply();
+    }, 800);
   }
 }
 

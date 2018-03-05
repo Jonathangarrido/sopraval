@@ -20,12 +20,12 @@
       .when('/productos/:categoria/:id', {
         template: '<producto></producto>'
       })
-      // .when('/recetas', {
-      //   template: '<recetas></recetas>'
-      // })
-      // .when('/receta/:id', {
-      //   template: '<receta></receta>'
-      // })
+      .when('/recetas', {
+        template: '<recetas></recetas>'
+      })
+      .when('/recetas/:id', {
+        template: '<receta></receta>'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -49,8 +49,8 @@
       'productos',
       'categoria',
       'producto',
-      // 'recetas',
-      // 'receta',
+      'recetas',
+      'receta',
       // 'common',
       // 'separacion'
     ])
@@ -88,119 +88,14 @@ angular.module('app', [])
     templateUrl: './js/component/app/app.html',
     controller: appCtrl
   });
-// **********************************************************
-// archivo component/common/lista
-// **********************************************************
-'use strict';
-
-listaCtrl.$inject = ['$window', '$location', 'setDatos', 'Consultas'];
-function listaCtrl($window, $location, setDatos, Consultas) {
-  var vm = this;
-  vm.newDatos;
-  vm.newTipo;
-  vm.items;
-  vm.urlAll = $location.path().split('/');
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    getData();
-  }
-
-  vm.$onChanges = function () {
-    vm.newTipo = $window.angular.copy(this.tipo);
-    vm.volver = setDatos.setUrl($window.angular.copy(this.url))
-    console.log(vm.volver)
-  }
-
-  function getData() {
-    if(vm.urlAll[1] === 'productos'){
-      Consultas.getProductos().then(function (response) {
-        var data = response.data;
-        var datos = data.filter(function (producto) {
-          return producto.categoria === vm.urlAll[2];
-        });
-        vm.items = datos;    
-      })
-    }else if (vm.urlAll[1] === 'recetas'){
-
-    }
-    
-
-  }
-
-  
-
-}
-
-angular.module('lista', [])
-  .component('lista', {
-    bindings: {
-      tipo: '@',
-      url: '@',
-    },
-    templateUrl: './js/component/common/lista/lista.html',
-    controller: listaCtrl,
-
-  });
-// **********************************************************
-// archivo component/common/menu
-// **********************************************************
-'use strict';
-
-menuCtrl.$inject = ['setDatos', '$location', '$scope', '$timeout'];
-function menuCtrl(setDatos, $location, $scope ,$timeout) {
-  var vm = this;
-  vm.toggleFullscreen;
-  vm.toggleFullscreenActive;
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    vm.clickMenuFullscreen()
-  }
-
-  vm.back = function () {
-    
-    setDatos.setAnimate('fade');
-    $timeout(redireccionar,100)
-    $timeout(function(){
-      vm.toggleFullscreen = false;
-      vm.toggleFullscreenActive = false;
-    },500)
-  }
-
-  function redireccionar(){
-    $location.path("/");
-  }
-
-  vm.menuFullscreen = function () {
-    vm.toggleFullscreen = !vm.toggleFullscreen;
-    vm.toggleFullscreenActive = vm.toggleFullscreen;
-  }
-
-  vm.clickMenuFullscreen = function () {
-    $('.menu-modal a').click(function(){
-      vm.toggleFullscreen = false;
-      vm.toggleFullscreenActive = false;
-    })
-  }
-
-}
-
-angular.module('menu', [])
-  .component('menu', {
-    templateUrl: './js/component/common/menu/menu.html',
-    controller: menuCtrl
-  });
 
 // **********************************************************
 // archivo component/pages/categoria
 // **********************************************************
 'use strict';
 
-categoriaCtrl.$inject = ['$location', 'Consultas', 'setDatos'];
-function categoriaCtrl($location, Consultas, setDatos) {
+categoriaCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope'];
+function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope) {
   var vm = this;
   vm.urlAll = $location.path().split('/');
   vm.url = vm.urlAll[2];
@@ -216,6 +111,22 @@ function categoriaCtrl($location, Consultas, setDatos) {
   vm.$onInit = function () {
     titulo();
     fondo();
+    animate();
+    getDatos();
+  }
+  function getDatos(){
+    Consultas.getProductos().then(function (response) {
+      var data = response.data;
+      var datos = data.filter(function (producto) {
+        return producto.categoria === vm.urlAll[2];
+      });
+      // setDatos.setList(datos,'productos');
+
+      $timeout(function () {
+        setDatos.setList(datos,'productos');
+        $scope.$apply();
+      }, 100);
+    })
   }
 
   function fondo(){
@@ -224,6 +135,13 @@ function categoriaCtrl($location, Consultas, setDatos) {
 
   function titulo() {
     vm.categoria = setDatos.setCategoria();
+  }
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate('fade')
+      $scope.$apply();
+    }, 800);
   }
 }
 
@@ -368,7 +286,205 @@ angular.module('productos', [])
     controller: productosCtrl
   });
 
+// **********************************************************
+// archivo component/pages/receta
+// **********************************************************
+'use strict';
 
+recetaCtrl.$inject = ['$location', 'Consultas', 'setDatos'];
+function recetaCtrl($location, Consultas, setDatos) {
+  var vm = this;
+  vm.urlAll = $location.path().split('/');
+  vm.url = vm.urlAll[2];
+  
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    getData();
+    animate();
+  }
+
+  function getData() {
+    Consultas.getRecetas().then(function (response) {
+      var data = response.data;
+      var dato = data.filter(function (producto) {
+        return producto.id === vm.url;
+      });
+      vm.producto = dato[0];
+
+      var str2 = vm.producto.preparacion;
+      var filtroIngredientes = str2.split('--');
+      vm.producto.preparacion = filtroIngredientes;
+    })
+  }
+
+}
+
+angular.module('receta', [])
+  .component('receta', {
+    templateUrl: './js/component/pages/receta/receta.html',
+    controller: recetaCtrl
+  });
+
+// **********************************************************
+// archivo component/pages/recetas
+// **********************************************************
+'use strict';
+
+recetasCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope'];
+function recetasCtrl($location, Consultas, setDatos, $timeout, $scope) {
+  var vm = this;
+  vm.urlAll = $location.path().split('/');
+  vm.url = vm.urlAll[2];
+  
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    getDatos();
+  }
+  function getDatos(){
+    Consultas.getRecetas().then(function (response) {
+      var data = response.data;
+      $timeout(function () {
+        setDatos.setList(data,'recetas');
+        $scope.$apply();
+      }, 100);
+    })
+  }
+}
+
+angular.module('recetas', [])
+  .component('recetas', {
+    templateUrl: './js/component/pages/recetas/recetas.html',
+    controller: recetasCtrl
+  });
+// **********************************************************
+// archivo component/common/lista
+// **********************************************************
+'use strict';
+
+listaCtrl.$inject = ['$window', '$location', 'setDatos', 'Consultas', '$scope', '$timeout'];
+function listaCtrl($window, $location, setDatos, Consultas, $scope, $timeout) {
+  var vm = this;
+  vm.newDatos;
+  vm.newTipo;
+  vm.items;
+  vm.urlAll = $location.path().split('/');
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    watchDatos()
+  }
+
+  vm.$onChanges = function () {
+    watchDatos()
+    // vm.newTipo = $window.angular.copy(this.tipo);
+    // vm.volver = setDatos.setUrl($window.angular.copy(this.url))
+  }
+
+  function watchDatos(){
+    $scope.$watch(function(){
+      return setDatos.listDatos;
+    }, function(newVal, oldVal){
+      vm.items = newVal;
+    })
+
+    $scope.$watch(function(){
+      return setDatos.listTipo;
+    }, function(newVal, oldVal){
+      vm.newTipo = newVal;
+    })
+  }
+
+  function getData() {
+    // if (vm.urlAll[1] === 'productos') {
+    //   Consultas.getProductos().then(function (response) {
+    //     var data = response.data;
+    //     var datos = data.filter(function (producto) {
+    //       return producto.categoria === vm.urlAll[2];
+    //     });
+    //     vm.items = datos;
+    //   })
+    // } else if (vm.urlAll[1] === 'recetas') {
+    //   Consultas.getRecetas().then(function (response) {
+    //     var data = response.data;
+    //     vm.items = data;
+    //   })
+    // }
+  }
+
+  vm.back = function () {
+    $timeout(function () {
+      setDatos.setAnimate('fade')
+      $scope.$apply();
+      $location.path(vm.volver);
+    }, 100);
+  }
+
+
+}
+
+angular.module('lista', [])
+  .component('lista', {
+    bindings: {
+      tipo: '@',
+      url: '@',
+    },
+    templateUrl: './js/component/common/lista/lista.html',
+    controller: listaCtrl,
+
+  });
+// **********************************************************
+// archivo component/common/menu
+// **********************************************************
+'use strict';
+
+menuCtrl.$inject = ['setDatos', '$location', '$scope', '$timeout'];
+function menuCtrl(setDatos, $location, $scope ,$timeout) {
+  var vm = this;
+  vm.toggleFullscreen;
+  vm.toggleFullscreenActive;
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    vm.clickMenuFullscreen()
+  }
+
+  vm.back = function () {
+    
+    setDatos.setAnimate('fade');
+    $timeout(redireccionar,100)
+    $timeout(function(){
+      vm.toggleFullscreen = false;
+      vm.toggleFullscreenActive = false;
+    },500)
+  }
+
+  function redireccionar(){
+    $location.path("/");
+  }
+
+  vm.menuFullscreen = function () {
+    vm.toggleFullscreen = !vm.toggleFullscreen;
+    vm.toggleFullscreenActive = vm.toggleFullscreen;
+  }
+
+  vm.clickMenuFullscreen = function () {
+    $('.menu-modal a').click(function(){
+      vm.toggleFullscreen = false;
+      vm.toggleFullscreenActive = false;
+    })
+  }
+
+}
+
+angular.module('menu', [])
+  .component('menu', {
+    templateUrl: './js/component/common/menu/menu.html',
+    controller: menuCtrl
+  });
 
 // **********************************************************
 // archivo service/json.service
@@ -419,12 +535,20 @@ angular.module('productos', [])
       setCategoria: setCategoria,
       setUrl: setUrl,
       animate: [],
-      setAnimate: setAnimate
+      setAnimate: setAnimate,
+      listDatos: [],
+      listTipo: '',
+      setList: setList,
     };
 
     return service;
 
     /////////////////////////////////////////
+
+    function setList(setDatos, tipo){
+      service.listTipo = tipo;
+      service.listDatos = setDatos;
+    }
 
     function setCategoria() {
       var location = $location.path().split('/');

@@ -20,12 +20,12 @@
       .when('/productos/:categoria/:id', {
         template: '<producto></producto>'
       })
-      // .when('/recetas', {
-      //   template: '<recetas></recetas>'
-      // })
-      // .when('/receta/:id', {
-      //   template: '<receta></receta>'
-      // })
+      .when('/recetas', {
+        template: '<recetas></recetas>'
+      })
+      .when('/recetas/:id', {
+        template: '<receta></receta>'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -49,8 +49,8 @@
       'productos',
       'categoria',
       'producto',
-      // 'recetas',
-      // 'receta',
+      'recetas',
+      'receta',
       // 'common',
       // 'separacion'
     ])

@@ -13,12 +13,20 @@
       setCategoria: setCategoria,
       setUrl: setUrl,
       animate: [],
-      setAnimate: setAnimate
+      setAnimate: setAnimate,
+      listDatos: [],
+      listTipo: '',
+      setList: setList,
     };
 
     return service;
 
     /////////////////////////////////////////
+
+    function setList(setDatos, tipo){
+      service.listTipo = tipo;
+      service.listDatos = setDatos;
+    }
 
     function setCategoria() {
       var location = $location.path().split('/');

@@ -446,5 +446,517 @@
       "hidratos": 0.0,
       "sodio": 713
     }
+  },
+  {
+    "id": "bistec-pechuga-700g",
+    "imagen": "bistec-pechuga-700g",
+    "titulo": "Bistec de pechuga de pollo 700g",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "bistec-pechuga",
+    "imagen": "bistec-pechuga",
+    "titulo": "Bistec de pechuga de pollo",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "daditos-jamon",
+    "imagen": "daditos-jamon",
+    "titulo": "Daditos jamón",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "filete-finas-hierbas",
+    "imagen": "filete-finas-hierbas",
+    "titulo": "Filete de pechuga de pavo finas hierbas",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "filete-pechuga-clasico",
+    "imagen": "filete-pechuga-clasico",
+    "titulo": "Filete de pechuga de pavo clásico",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "filete-pechuga-estragon",
+    "imagen": "filete-pechuga-estragon",
+    "titulo": "Filete de pechuga de pavo mantequilla estragón",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "hamburguesa-pavo-400g",
+    "imagen": "hamburguesa-pavo-400g",
+    "titulo": "Hamburguesa de pavo 400g",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "hamburguesa-pavo-unid",
+    "imagen": "hamburguesa-pavo-unid",
+    "titulo": "Hamburguesa de pavo",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "lomo-pavo-easycook",
+    "imagen": "lomo-pavo-easycook",
+    "titulo": "Lomo de pavo easycook",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "medallon-pechuga",
+    "imagen": "medallon-pechuga",
+    "titulo": "Medallón de pechuga de pavo",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "molida-casera",
+    "imagen": "molida-casera",
+    "titulo": "Molida casera",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "molida-mexicana",
+    "imagen": "molida-mexicana",
+    "titulo": "Molida mexicana",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "molida-pechuga-pavo",
+    "imagen": "molida-pechuga-pavo",
+    "titulo": "Molida pechuga pavo",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "molida-trutro-pavo",
+    "imagen": "molida-trutro-pavo",
+    "titulo": "Molida trutro pavo",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "molida-omega",
+    "imagen": "molidea-omega",
+    "titulo": "Molida omega",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-deshuesada-clasica-easycook",
+    "imagen": "pechuga-deshuesada-clasica-easycook",
+    "titulo": "Pechuga deshuesada clásica",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-deshuesada-dijon",
+    "imagen": "pechuga-deshuesada-dijon",
+    "titulo": "Pechuga deshuesada a la dijon",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-pavo-picada",
+    "imagen": "pechuga-pavo-picada",
+    "titulo": "Pechuga de pavo picada",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pernil-asado",
+    "imagen": "pernil-asado",
+    "titulo": "Pernil asado",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "salchichas-pavo-5unid",
+    "imagen": "salchichas-pavo-5unid",
+    "titulo": "Salchichas de pavo 5unid",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "salchichas-pavo-20unid",
+    "imagen": "salchichas-pavo-20unid",
+    "titulo": "Salchichas de pavo 20unid",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "truto-deshuesado-ahumado",
+    "imagen": "truto-deshuesado-ahumado",
+    "titulo": "Truto deshuesado ahumado",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "tuto-pavo-picada",
+    "imagen": "tuto-pavo-picada",
+    "titulo": "Tuto pavo picada",
+    "categoria": "practicos",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "bife-pavita",
+    "imagen": "bife-pavita",
+    "titulo": "Bife de pavita",
+    "categoria": "tradicional",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "osobuco-pavo",
+    "imagen": "osobuco-pavo",
+    "titulo": "Osobuco de pavo",
+    "categoria": "tradicional",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pavo-ahumado-malla",
+    "imagen": "pavo-ahumado-malla",
+    "titulo": "Pavo ahumado malla",
+    "categoria": "tradicional",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pavo-crudo-navidad",
+    "imagen": "pavo-crudo-navidad",
+    "titulo": "Pavo crudo navidad",
+    "categoria": "tradicional",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-deshuesada",
+    "imagen": "pechuga-deshuesada",
+    "titulo": "Pechuga de pavo deshuesada",
+    "categoria": "tradicional",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "pechuga-entera",
+    "imagen": "pechuga-entrera",
+    "titulo": "Pechuga de pavo entrera",
+    "categoria": "tradicional",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "tutitos-pava",
+    "imagen": "tutitos-pava",
+    "titulo": "Tutitos  de pava",
+    "categoria": "tradicional",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "tuto-corto-pavo",
+    "imagen": "tuto-corto-pavo",
+    "titulo": "Tuto corto de pavo",
+    "categoria": "tradicional",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
+  },
+  {
+    "id": "tuto-deshuesado-pavo",
+    "imagen": "tuto-deshuesado-pavo",
+    "titulo": "Tuto deshuesado de pavo",
+    "categoria": "tradicional",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur",
+    "datos": {
+      "porcion": "1 trozo (40 g)",
+      "porcionEnvase": 10,
+      "energia": 90,
+      "proteinas": 20.1,
+      "grasas": 1.1,
+      "hidratos": 0.0,
+      "sodio": 713
+    }
   }
 ]

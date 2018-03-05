@@ -53,9 +53,7 @@
     }
   }
 
-  & .lista{
-    animation: lista-entrada .8s forwards; 
-  }
+  
 }
 @keyframes lista-entrada {
   0%   {right: -15rem }
@@ -72,4 +70,11 @@
 @keyframes nav-salida {
   0%   { opacity: 1; }
   100% { opacity: 0; }
+}
+
+
+.recetas{
+  &>.categoria-fondo{
+    background-image: url('../img/fondos/f-recetas.jpg');
+  }
 }

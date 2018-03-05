@@ -9,7 +9,7 @@
   {
     "id": "albondigas-con-salsa-de-tomates-y-pure",
     "titulo": "Albóndigas con salsa de tomates y puré",
-    "imagen": "albondigas-con-salsa-de-tomates-y-pure",
+    "imagen": "albondigas-pure",
     "ingredientes": "Albóndigas Sopraval · 400 gr. de salsa de tomates · 1 kg. de papas · 1 cda. de mantequilla · 1 taza de leche caliente · Sal al gusto",
     "preparacion": "Pela las papas y hiérvelas en abundante agua. Luego escúrrelas y colócalas en una fuente para comenzar a aplastarlas con la mantequilla hasta obtener la consistencia de un puré.-- Añade la leche caliente y mezcla hasta que los ingredientes se integren completamente y el puré quede cremoso. Luego, vierte el puré en un plato con las albóndigas de Sopraval ya preparadas bañadas en salsa de tomates y estará listo para servir."
   },
@@ -37,7 +37,7 @@
   {         
     "id": "ensalada-de-pechuga-ahumada-con-espinaca-y-granada",
     "titulo": "Ensalada de pechuga ahumada con espinaca y granada",
-    "imagen": "ensalada-de-pechuga-ahumada-con-espinaca-y-granada",
+    "imagen": "entrada-pechuga-ahumada",
     "ingredientes": "· Pechuga ahumada Sopraval · 500 gr. de espinacas · 1 granada · Sal · Aceite de oliva",
     "preparacion": "Cocina la pechuga ahumada a la plancha con sal al gusto y una vez que esté bien cocida por ambos lados, resérvala a un lado. Procede a sacarle los granitos a la granada y échala en un bol con las espinacas previamente lavadas y secadas.-- Corta la pechuga en tiras y añade al bol donde están las espinacas y granada. Añade un aliño casero o simplemente aliña con sal, aceite de oliva y si es de tu gusto, con un poco de limón. ¡Y listo!."
   },
@@ -58,14 +58,14 @@
   {         
     "id": "pechuga-deshuesada-rellena-con-ciruelas",
     "titulo": "Pechuga deshuesada rellena con ciruelas",
-    "imagen": "pechuga-deshuesada-rellena-con-ciruelas",
+    "imagen": "pechuga-desguesada-ciruelas",
     "ingredientes": "· Pechuga deshuesada Sopraval · 50 grs. de ciruelas · 50 grs. de manteca · Pimienta negra molida · Sal",
     "preparacion": "Corta la pechuga a la mitad con un poco de sal y pimienta a gusto. Con palo de amasar, aplasta la pechuga para estirarla y dejarla de un centímetro de espesor, luego agrega las ciruelas en un bol.-- Añade un par de cucharadas de ciruelas en el centro del pavo y enróllalo firmemente. Introduce los extremos hacia adentro para que no salga nada y repite el procedimiento con cada filete de pavo.-- Unta con bastante manteca una fuente para horno y ubica las pechugas rellenas allí. Coloca algunos trocitos de manteca por encima y agrega sal y pimienta a gusto. Seguidamente introduce al horno con una temperatura de 180°C y déjalo cocinar por unos 25 minutos, para luego servir."
   },
   {         
     "id": "rollito-de-pechuga-asada",
     "titulo": "Rollito de pechuga asada",
-    "imagen": "pechuga-deshuesada-rellena-con-ciruelas",
+    "imagen": "pechuga-desguesada-ciruelas",
     "ingredientes": "· Pechuga asada Sopraval · 2 pimientos · Rúcula · Aceite de oliva",
     "preparacion": "Pica los pimientos en tiras no muy largas y sofríe un poco con aceite de oliva. Lava la rúcula y sepárala en pedazos relativamente pequeños. Una vez que los ingredientes estén listos, toma la pechuga asada y enróllala con los pimientos y la rúcula. Continúa así sucesivamente con todas las láminas. "
   },
