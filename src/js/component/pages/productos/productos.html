@@ -1,8 +1,16 @@
-<main class="productos">
-  <nav>
-    <a ng-href="#/productos/tradicional">Tradicional</a>
-    <a ng-href="#/productos/jamones-pechugas">Jamones y Pechugas</a>
-    <a ng-href="#/productos/parrilleros">Parrilleros</a>
-    <a ng-href="#/productos/practicos">Prácticos</a>
+<main class="productos" ng-class="{
+  'background-jamones-pechugas': $ctrl.background.jamonesPechugas,
+  'background-tradicional': $ctrl.background.tradicional,
+  'background-parrilleros': $ctrl.background.parrilleros,
+  'background-practicos': $ctrl.background.practicos,
+}">
+  <nav ng-mouseleave="$ctrl.backgroundOver()">
+    <ul>
+      <li ng-repeat="categoria in $ctrl.categorias">
+        <a 
+          ng-mouseover="$ctrl.backgroundOver(categoria.tipo)" 
+          ng-href="#/productos/{{categoria.tipo}}"
+          >{{categoria.nombre}}</a></li>
+    </ul>
   </nav>
 </main>

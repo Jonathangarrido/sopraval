@@ -2,6 +2,87 @@
 // home
 //*************************************
 .home{
+  background-image: url('../img/fondos/f-home.jpg');
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
   @extend %pages;
-  background-color: red;
+  @extend .wrapper;
+
+
+  &-nav{
+    z-index: 2;
+    a{
+      font-family: $altfont;
+      font-size: 3.5rem;
+      text-shadow: -3px 2px #222;
+      position: relative;
+      &:not(:last-child){
+        margin-right: 7rem;
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: .75rem;
+        left: 0;
+        height: 3px;
+        width: 100%;
+      }
+      &:hover{
+        &:after{
+          background: white;
+        }
+      }
+    }
+
+    &-secondary{
+      position: absolute;
+      background-color: $color-base;
+      bottom: -6.5rem;
+      font-family: $altfont-secundary;
+      left: 0;
+      position: absolute;
+      text-align: center;
+      transition: bottom ease-out $animationtime;
+      width: 100vw;
+      &.active{
+        bottom: 0;
+      }
+      p{
+        cursor: pointer;
+        font-size: .8rem;
+        height: 3rem;
+        position: relative;
+        width: 100%;
+        @extend .wrapper;
+        &:after{
+          bottom: .1rem;
+          content: '\f107';
+          font-family: 'icomoon';
+          left: 50%;
+          position: absolute;
+        }
+      }
+      ul{
+        padding: 1.5rem;
+        margin: 0;
+        @extend .wrapper;
+      }
+      li{
+        &:not(:last-child){
+          margin-right: 2rem;
+        }
+      }
+      footer{
+        background-color: $color-base-dark;
+        font-size: .8rem;
+        padding: .5rem;
+        width: 100%;
+      }
+    }
+    
+  }
+
+
 }

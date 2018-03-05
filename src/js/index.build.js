@@ -110,6 +110,7 @@ function listaCtrl($window, $location, setDatos, Consultas) {
   vm.$onChanges = function () {
     vm.newTipo = $window.angular.copy(this.tipo);
     vm.volver = setDatos.setUrl($window.angular.copy(this.url))
+    console.log(vm.volver)
   }
 
   function getData() {
@@ -119,13 +120,16 @@ function listaCtrl($window, $location, setDatos, Consultas) {
         var datos = data.filter(function (producto) {
           return producto.categoria === vm.urlAll[2];
         });
-        vm.items = datos;
+        vm.items = datos;    
       })
     }else if (vm.urlAll[1] === 'recetas'){
 
     }
+    
 
   }
+
+  
 
 }
 
@@ -147,20 +151,39 @@ angular.module('lista', [])
 menuCtrl.$inject = ['setDatos', '$location', '$scope', '$timeout'];
 function menuCtrl(setDatos, $location, $scope ,$timeout) {
   var vm = this;
+  vm.toggleFullscreen;
+  vm.toggleFullscreenActive;
 
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
-    
+    vm.clickMenuFullscreen()
   }
 
   vm.back = function () {
+    
     setDatos.setAnimate('fade');
     $timeout(redireccionar,100)
+    $timeout(function(){
+      vm.toggleFullscreen = false;
+      vm.toggleFullscreenActive = false;
+    },500)
   }
 
   function redireccionar(){
     $location.path("/");
+  }
+
+  vm.menuFullscreen = function () {
+    vm.toggleFullscreen = !vm.toggleFullscreen;
+    vm.toggleFullscreenActive = vm.toggleFullscreen;
+  }
+
+  vm.clickMenuFullscreen = function () {
+    $('.menu-modal a').click(function(){
+      vm.toggleFullscreen = false;
+      vm.toggleFullscreenActive = false;
+    })
   }
 
 }
@@ -181,11 +204,22 @@ function categoriaCtrl($location, Consultas, setDatos) {
   var vm = this;
   vm.urlAll = $location.path().split('/');
   vm.url = vm.urlAll[2];
+  vm.categorias = [
+    {tipo:'tradicional',nombre:'Tradicional'},
+    {tipo:'jamones-pechugas',nombre:'Jamones y Pechugas'},
+    {tipo:'parrilleros',nombre:'Parrilleros'},
+    {tipo:'practicos',nombre:'Prácticos'}
+  ];
 
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
     titulo();
+    fondo();
+  }
+
+  function fondo(){
+    $('.categoria-fondo').css('background-image','url(../img/fondos/f-'+vm.url+'.jpg)')
   }
 
   function titulo() {
@@ -206,12 +240,17 @@ angular.module('categoria', [])
 homeCtrl.$inject = ['setDatos', '$scope', '$timeout'];
 function homeCtrl(setDatos, $scope, $timeout) {
   var vm = this;
+  vm.active;
 
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
     animate();
   }
+
+  vm.collapse = function () {
+    vm.active = !vm.active;
+  };
 
   function animate() {
     $timeout(function () {
@@ -244,6 +283,8 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout) {
   vm.$onInit = function () {
     getData();
     animate();
+    fondo();
+    
   }
 
   function animate() {
@@ -260,7 +301,16 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout) {
         return producto.id === vm.urlProducto;
       });
       vm.producto = dato[0];
+      imagen();
     })
+  }
+
+  function fondo(){
+    $('.producto-fondo').css('background-image','url(../img/fondos/f-'+vm.urlCategoria+'.jpg)')
+  }
+
+  function imagen(){
+    $('.producto-titulo-fondo').css('background-image','url(../img/productos/'+vm.producto.categoria+'/'+vm.producto.imagen+'.jpg)')
   }
 
 }
@@ -279,11 +329,28 @@ angular.module('producto', [])
 productosCtrl.$inject = ['setDatos', '$scope', '$timeout'];
 function productosCtrl(setDatos, $scope, $timeout) {
   var vm = this;
+  vm.categorias = [
+    {tipo:'tradicional',nombre:'Tradicional'},
+    {tipo:'jamones-pechugas',nombre:'Jamones y Pechugas'},
+    {tipo:'parrilleros',nombre:'Parrilleros'},
+    {tipo:'practicos',nombre:'Prácticos'}
+  ];
+  vm.background = []
 
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
     animate();
+  }
+
+  vm.backgroundOver = function(categoria){
+    vm.background = []
+    switch (categoria) {
+      case 'jamones-pechugas': vm.background.jamonesPechugas = true; break;
+      case 'tradicional': vm.background.tradicional = true; break;
+      case 'parrilleros': vm.background.parrilleros = true; break;
+      case 'practicos': vm.background.practicos = true; break;
+    }
   }
 
   function animate() {

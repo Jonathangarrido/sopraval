@@ -1,4 +1,75 @@
 .categoria{
   @extend %pages;
-  background: purple;
+  &-fondo{
+    text-transform: capitalize;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    margin-right: 0;
+    @extend .wrapper;
+    animation: fondo-entrada .8s forwards; 
+    &.in{
+      transition: all 1.5s ease-in-out;
+      margin-right: 15rem
+    }
+    h1{
+      opacity: 0;
+      animation: titulo-entrada .8s forwards; 
+      font-family: $altfont;
+      font-size: 5.5rem;
+      text-shadow: -3px 2px #222;
+      max-width: 22rem;
+      text-align: center;
+      line-height: 1.2;
+    }
+  }
+  &-menu{
+    position: absolute;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 12.5rem 2rem 0;
+    width: 16rem;
+    opacity: 1;
+    animation: nav-salida .8s .6s forwards; 
+    ul{
+      font-family: $altfont;
+      margin: 3rem 0 0;
+      text-align: center;
+    }
+    li{
+      &:not(:last-child){
+        margin-bottom: 1.5rem;
+      }
+    }
+    a{
+      font-size: 1.8rem;
+      text-shadow: -3px 2px #222;
+      &:hover{
+        color: $color-base;
+      }
+    }
+  }
+
+  & .lista{
+    animation: lista-entrada .8s forwards; 
+  }
+}
+@keyframes lista-entrada {
+  0%   {right: -15rem }
+  100% {right: 0}
+}
+@keyframes fondo-entrada {
+  0%   { margin-right: 0 }
+  100% { margin-right: 15rem }
+}
+@keyframes titulo-entrada {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes nav-salida {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
 }

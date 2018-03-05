@@ -1,9 +1,47 @@
 <main class="producto">
-  <section class="producto-titulo">
-    {{$ctrl.categoria}}
-  </section>
-  <section class="producto-info">
-    {{$ctrl.producto.titulo}}
-  </section>
+  <div class="producto-fondo">
+    <div class="producto-conte">
+      <div>
+        <section class="producto-titulo">
+          <div class="producto-titulo-fondo"></div>
+          <h1>{{$ctrl.producto.titulo}}</h1>
+          <p>tips</p>
+        </section>
+        <div class="separacion">
+          <svg  x="0px" y="0px" viewBox="0 381.1 200 18.9" >
+            <path fill="#8CD3F1" d="M0,389.1c0,0,8.1,4.9,37,6.2c40.3,1.3,60.7-12.8,116.3-13.3c14.5-0.3,32.7,5.6,46.7,11.1l0,6.9H0L0,389.1z"/>
+            <path fill="#00A9E4" d="M0,393.8c0,0,7.4,3.5,36.3,4.8c40.3,1.3,61.6-11.4,117.2-11.9C181,386.2,200,400,200,400H0L0,393.8z"/>
+          </svg>
+        </div>
+        <section class="producto-info">
+          <span>Información nutricional</span>
+          <p>Porción: {{$ctrl.producto.datos.porcion}}</p>
+          <p>Porciones por envase: {{$ctrl.producto.datos.porcionEnvase}}.</p>
+          <table>
+            <tr>
+              <td>Energía (kcal)</td>
+              <td>{{$ctrl.producto.datos.energia}} %</td>
+            </tr>
+            <tr>
+              <td>Proteinas (g)</td>
+              <td>{{$ctrl.producto.datos.proteinas}} %</td>
+            </tr>
+            <tr>
+              <td>Grasa Total (g)</td>
+              <td>{{$ctrl.producto.datos.grasas}} %</td>
+            </tr>
+            <tr>
+              <td>H. de C. Disponibles (g)</td>
+              <td>{{$ctrl.producto.datos.hidratos}} %</td>
+            </tr>
+            <tr>
+              <td>Sodio</td>
+              <td>{{$ctrl.producto.datos.sodio}} %</td>
+            </tr>
+          </table>
+        </section>
+      </div>
+    </div>
+  </div>
   <lista tipo="productos" url={{$ctrl.urlAll}}></lista>
 </main>

@@ -4,11 +4,11 @@
   top: 0;
   width: 100vw;
   transition: all .8s ease-in-out;
-  
-  padding: 5rem 0 0;
 }
 
 %pages{
   min-height: 100vh;
+  overflow: hidden;
+  position: relative;
   width: 100vw;
 }

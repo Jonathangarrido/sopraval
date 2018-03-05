@@ -15,6 +15,8 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout) {
   vm.$onInit = function () {
     getData();
     animate();
+    fondo();
+    
   }
 
   function animate() {
@@ -31,7 +33,16 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout) {
         return producto.id === vm.urlProducto;
       });
       vm.producto = dato[0];
+      imagen();
     })
+  }
+
+  function fondo(){
+    $('.producto-fondo').css('background-image','url(../img/fondos/f-'+vm.urlCategoria+'.jpg)')
+  }
+
+  function imagen(){
+    $('.producto-titulo-fondo').css('background-image','url(../img/productos/'+vm.producto.categoria+'/'+vm.producto.imagen+'.jpg)')
   }
 
 }

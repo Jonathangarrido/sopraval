@@ -1,4 +1,92 @@
 .producto{
   @extend %pages;
-  background: navy
+  &-fondo{
+    text-transform: capitalize;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    margin-right: 15rem; 
+  }
+  &-conte{
+    background-color: rgba(black, .6);
+    @extend .wrapper;
+    justify-content: flex-end;
+    align-items: stretch;
+    height: 100vh;
+    margin-right: 15rem;
+    padding-right: 15rem;
+    width: 100vw;
+    &>div{
+      width: calc(100% - 16rem);
+      height: 100vh;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+    }
+  }
+  section{
+    height: 100%;
+    width: 100%;
+  }
+  &-titulo{
+    background: white;
+    text-align: center;
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div{
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 250px;
+      width: 300px;
+    }
+    h1{
+      font-family: $altfont-secundary;
+      font-size: 1.8rem;
+      color: #666;
+      margin: 1rem 0 0;
+    }
+    p{
+      color: $color-base;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+  }
+  &-info{
+    background: $color-base;
+    text-align: center;
+    span{
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    p{
+      font-size: .9rem;
+      margin-bottom: 0;
+    }
+    table{
+      border-spacing: 0;
+      display: inline-block;
+      margin-top: 1rem;
+      text-align: left;
+    }
+    tr{
+      &:not(:last-child){
+        td{
+          border-bottom: solid 1px white;
+        }
+      }
+    }
+    td{
+      font-size: .9rem;
+      padding: 0 2rem;
+    }
+  }
+
+  .separacion{
+    background: white;
+    margin-bottom: -.39rem;
+  }
 }

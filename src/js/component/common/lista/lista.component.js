@@ -20,6 +20,7 @@ function listaCtrl($window, $location, setDatos, Consultas) {
   vm.$onChanges = function () {
     vm.newTipo = $window.angular.copy(this.tipo);
     vm.volver = setDatos.setUrl($window.angular.copy(this.url))
+    console.log(vm.volver)
   }
 
   function getData() {
@@ -29,13 +30,16 @@ function listaCtrl($window, $location, setDatos, Consultas) {
         var datos = data.filter(function (producto) {
           return producto.categoria === vm.urlAll[2];
         });
-        vm.items = datos;
+        vm.items = datos;    
       })
     }else if (vm.urlAll[1] === 'recetas'){
 
     }
+    
 
   }
+
+  
 
 }
 

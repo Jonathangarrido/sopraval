@@ -6,12 +6,17 @@
 homeCtrl.$inject = ['setDatos', '$scope', '$timeout'];
 function homeCtrl(setDatos, $scope, $timeout) {
   var vm = this;
+  vm.active;
 
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
     animate();
   }
+
+  vm.collapse = function () {
+    vm.active = !vm.active;
+  };
 
   function animate() {
     $timeout(function () {

@@ -2,13 +2,92 @@ menu{
   margin: 0;
 }
 .menu{
-  background-color: pink;
-  left: 0;
+  left: 2rem;
   position: absolute;
-  top: 0;
-  z-index: $index-4;
+  top: 2rem;
+  img{
+    width: 12rem;
+  }
+  &-logo{
+    position: relative;
+    @extend .wrapper;
+    flex-direction: column;
+    z-index: $index-4;
+  }
+  span{
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-family: $altfont-secundary;
+    margin-top: 1rem;
+    z-index: $index-1;
+    &:before{
+      content: '\f0c9';
+      font-family: 'icomoon';
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+    &.activo{
+      &:before{
+        content: '\f00d',
+      }
+    }
+  }
 
   &-modal{
-    display: none;
+    position: absolute;
+    background-image: url('../img/fondos/f-home.jpg');
+    background-position: center;
+    background-size: cover;
+    left: -2rem;
+    height: 100vh;
+    opacity: 0;
+    top: -2rem;
+    transition: all ease-in-out .3s;
+    width: 100vw;
+    @extend .wrapper;
+    z-index: $index-3;
+    visibility: collapse;
+    &:after{
+      content: '';
+      background-color: rgba($color-base, .7);
+      height: 100vh;
+      left: 0;
+      position: absolute;
+      padding: 0 2rem;
+      top: 0;
+      width: 100vw;
+    }
+    a{
+      font-family: $altfont;
+      font-size: 3.5rem;
+      position: relative;
+      text-shadow: -3px 2px #222;
+      visibility: collapse;
+      z-index: 2;
+      &:not(:last-child){
+        margin-right: 7.3rem;
+      }
+      &:after{
+        bottom: 0.5rem;
+        content: '';
+        height: 3px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+      &:hover{
+        &:after{
+          background: white;
+        }
+      }
+    }
+    &.activo{
+      visibility: visible;
+      opacity: 1;
+      a{
+        visibility: visible;
+      }
+    }
   }
 }

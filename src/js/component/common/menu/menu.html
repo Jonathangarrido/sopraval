@@ -1,13 +1,13 @@
 <main class="menu">
   <section class="menu-logo">
     <a ng-click="$ctrl.back()">
-      <img src="" alt="logo">
+      <img ng-src="./img/logo-sopraval.png" alt="logo sopraval">
     </a>
-    <span>MENÚ</span>
+    <span ng-click="$ctrl.menuFullscreen()" ng-class="{'activo' : $ctrl.toggleFullscreen}">MENÚ</span>
   </section>
-  <section class="menu-modal">
-    <span>uno</span>
-    <span>dos</span>
-    <span>tres</span>
+  <section class="menu-modal" ng-class="{'activo' : $ctrl.toggleFullscreenActive}">
+    <a ng-href="#/productos">productos</a>
+    <a ng-href="#/recetas">recetas</a>
+    <a ng-href="#/contacto">contacto</a>
   </section>
 </main>
