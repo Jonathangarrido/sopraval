@@ -58,11 +58,11 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout, Analytic
   }
 
   function fondo() {
-    $('.producto-fondo').css('background-image', 'url(./src/img/fondos/f-' + vm.urlCategoria + '.jpg)');
+    $('.producto-fondo').css('background-image', 'url(./img/fondos/f-' + vm.urlCategoria + '.jpg)');
   }
 
   function imagen() {
-    $('.producto-titulo-fondo').css('background-image', 'url(./src/img/productos/' + vm.producto.categoria + '/' + vm.producto.imagen + '.jpg)');
+    $('.producto-titulo-fondo').css('background-image', 'url(./img/productos/' + vm.producto.categoria + '/' + vm.producto.imagen + '.jpg)');
   }
 
 }
