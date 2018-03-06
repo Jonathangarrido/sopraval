@@ -3,12 +3,17 @@
   border-left: solid 1px $color-base;
   height: 100vh;
   position: absolute;
-  right: 0;
+  right: -15rem;
   top: 0;
   width: 15rem;
+  
   &.in{
-    transition: all 1.5s ease-in-out;
-    right: 0;
+    animation: fondo-entrada .8s forwards; 
+    animation-timing-function: ease-in-out;
+    &>a{
+      visibility: visible;
+      opacity: 1;
+    }
   }
   &>div{
     padding: 0 1rem;
@@ -60,6 +65,15 @@
     }
   }
   li{
-    margin-top: 3rem;
+    margin: 2rem 0 0 0;
   }
+  &-recetas{
+    img{
+      max-width: 100%!important;
+    }
+  }
+}
+@keyframes lista-in {
+  0%   {right: -15rem }
+  100% {right: 0}
 }

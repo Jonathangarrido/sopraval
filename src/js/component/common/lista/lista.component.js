@@ -10,68 +10,50 @@ function listaCtrl($window, $location, setDatos, Consultas, $scope, $timeout) {
   vm.newTipo;
   vm.items;
   vm.urlAll = $location.path().split('/');
+  vm.tipoClass;
 
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
-    watchDatos()
-  }
+    watchDatos();
+  };
 
-  vm.$onChanges = function () {
-    watchDatos()
-    // vm.newTipo = $window.angular.copy(this.tipo);
-    // vm.volver = setDatos.setUrl($window.angular.copy(this.url))
-  }
-
-  function watchDatos(){
-    $scope.$watch(function(){
+  function watchDatos() {
+    $scope.$watch(function () {
       return setDatos.listDatos;
-    }, function(newVal, oldVal){
+    }, function (newVal, oldVal) {
       vm.items = newVal;
-    })
 
-    $scope.$watch(function(){
+      newVal.length ? vm.openList = true : vm.openList = false;
+    });
+
+    $scope.$watch(function () {
       return setDatos.listTipo;
-    }, function(newVal, oldVal){
+    }, function (newVal, oldVal) {
       vm.newTipo = newVal;
-    })
-  }
+      vm.newTipo === 'productos' ? vm.tipoClass = false : vm.tipoClass = true;
+    });
 
-  function getData() {
-    // if (vm.urlAll[1] === 'productos') {
-    //   Consultas.getProductos().then(function (response) {
-    //     var data = response.data;
-    //     var datos = data.filter(function (producto) {
-    //       return producto.categoria === vm.urlAll[2];
-    //     });
-    //     vm.items = datos;
-    //   })
-    // } else if (vm.urlAll[1] === 'recetas') {
-    //   Consultas.getRecetas().then(function (response) {
-    //     var data = response.data;
-    //     vm.items = data;
-    //   })
-    // }
+    $scope.$watch(function () {
+      return setDatos.url;
+    }, function (newVal, oldVal) {
+      vm.volver = newVal;
+    });
   }
 
   vm.back = function () {
+    var url = setDatos.setUrl(vm.volver);
     $timeout(function () {
-      setDatos.setAnimate('fade')
+      setDatos.setAnimate('fade');
       $scope.$apply();
-      $location.path(vm.volver);
+      $location.path(url);
     }, 100);
-  }
-
+  };
 
 }
 
 angular.module('lista', [])
   .component('lista', {
-    bindings: {
-      tipo: '@',
-      url: '@',
-    },
     templateUrl: './js/component/common/lista/lista.html',
     controller: listaCtrl,
-
   });

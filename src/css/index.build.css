@@ -274,7 +274,7 @@ pre, code {
 /* ------------------------------------
       ·HELPERS
   -------------------------------------*/
-.wrapper, .menu-logo, .menu-modal, .lista span, .lista > a, .home, .home-nav-secondary p, .home-nav-secondary ul, .categoria-fondo, .producto-conte {
+.wrapper, .loading, .menu-logo, .menu-modal, .lista span, .lista > a, .home, .home-nav-secondary p, .home-nav-secondary ul, .sociales a, .categoria-fondo, .producto-conte {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -536,6 +536,26 @@ a {
 .icon-twitter:before {
   content: ""; }
 
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: white;
+  z-index: 999999999999999;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all .8s 1s ease-in-out;
+  -o-transition: all .8s 1s ease-in-out;
+  transition: all .8s 1s ease-in-out; }
+  .loading-out {
+    visibility: collapse;
+    opacity: 0; }
+
 .animation-fade.ng-enter {
   opacity: 0;
   -webkit-transform: translateX(0);
@@ -710,14 +730,17 @@ menu {
   border-left: solid 1px #00A9E4;
   height: 100vh;
   position: absolute;
-  right: 0;
+  right: -15rem;
   top: 0;
   width: 15rem; }
   .lista.in {
-    -webkit-transition: all 1.5s ease-in-out;
-    -o-transition: all 1.5s ease-in-out;
-    transition: all 1.5s ease-in-out;
-    right: 0; }
+    -webkit-animation: fondo-entrada .8s forwards;
+            animation: fondo-entrada .8s forwards;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out; }
+    .lista.in > a {
+      visibility: visible;
+      opacity: 1; }
   .lista > div {
     padding: 0 1rem; }
   .lista span {
@@ -760,7 +783,21 @@ menu {
     .lista h2.activo {
       color: #00A9E4; }
   .lista li {
-    margin-top: 3rem; }
+    margin: 2rem 0 0 0; }
+  .lista-recetas img {
+    max-width: 100% !important; }
+
+@-webkit-keyframes lista-in {
+  0% {
+    right: -15rem; }
+  100% {
+    right: 0; } }
+
+@keyframes lista-in {
+  0% {
+    right: -15rem; }
+  100% {
+    right: 0; } }
 
 .home {
   background-image: url("../img/fondos/f-home.jpg");
@@ -823,6 +860,26 @@ menu {
         font-size: .8rem;
         padding: .5rem;
         width: 100%; }
+
+.sociales {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  .sociales a {
+    background-color: white;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    font-size: 1.2rem;
+    height: 2rem;
+    line-height: 1;
+    width: 2rem;
+    color: #777777; }
+    .sociales a:not(:last-child) {
+      margin-right: 1rem; }
 
 .productos {
   background-image: url("../img/fondos/f-productos.jpg");
@@ -895,10 +952,13 @@ menu {
   background-position: center;
   -webkit-background-size: cover;
           background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
   margin-right: 0;
   -webkit-animation: fondo-entrada .8s forwards;
-          animation: fondo-entrada .8s forwards; }
+          animation: fondo-entrada .8s forwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out; }
   .categoria-fondo.in {
     -webkit-transition: all 1.5s ease-in-out;
     -o-transition: all 1.5s ease-in-out;
@@ -908,6 +968,8 @@ menu {
     opacity: 0;
     -webkit-animation: titulo-entrada .8s forwards;
             animation: titulo-entrada .8s forwards;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
     font-family: "Shadows Into Light", cursive;
     font-size: 5.5rem;
     text-shadow: -3px 2px #222;
@@ -1104,7 +1166,22 @@ menu {
   margin-bottom: -.39rem; }
 
 .receta .producto-titulo {
-  padding: 0; }
+  padding: 0;
+  padding-bottom: 1.5rem;
+  min-height: 300px; }
+  .receta .producto-titulo div {
+    width: 100%;
+    padding: 0 3rem; }
+  .receta .producto-titulo h1 {
+    margin-bottom: 2rem; }
+  .receta .producto-titulo span {
+    color: #00A9E4;
+    font-weight: bold;
+    font-size: 1rem; }
+  .receta .producto-titulo p {
+    color: #666;
+    font-size: .9rem;
+    margin: 1rem 0 0 0; }
 
 .receta .producto-titulo-fondo {
   width: 100%;
@@ -1115,6 +1192,15 @@ menu {
   height: 20rem; }
 
 .receta .producto-info {
-  height: 50%;
   padding: 1rem 3rem;
   text-align: left; }
+  .receta .producto-info p {
+    margin-top: 1rem;
+    font-size: .9rem; }
+
+.receta .producto-fondo {
+  background-image: url("../img/fondos/f-recetas.jpg"); }
+
+.receta .separacion {
+  margin-top: -1rem;
+  margin-bottom: -.39rem; }

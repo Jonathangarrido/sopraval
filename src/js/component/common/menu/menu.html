@@ -3,7 +3,11 @@
     <a ng-click="$ctrl.back()">
       <img ng-src="./img/logo-sopraval.png" alt="logo sopraval">
     </a>
-    <span ng-click="$ctrl.menuFullscreen()" ng-class="{'activo' : $ctrl.toggleFullscreen}">MENÚ</span>
+    <span 
+    ng-click="$ctrl.menuFullscreen()" 
+    ng-class="{'activo' : $ctrl.toggleFullscreen}"
+    ng-if="$ctrl.visible"
+    >MENÚ</span>
   </section>
   <section class="menu-modal" ng-class="{'activo' : $ctrl.toggleFullscreenActive}">
     <a ng-href="#/productos">Productos</a>

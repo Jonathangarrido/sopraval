@@ -92,20 +92,51 @@
 }
 
 .receta{
-  & .producto-titulo{
-    padding: 0;
+  & .producto{
+    &-titulo{
+      padding: 0;
+      padding-bottom: 1.5rem;
+      min-height: 300px;
+      & div{
+        width: 100%;
+        padding: 0 3rem;
+      }
+      h1{
+        margin-bottom: 2rem;
+      }
+      span{
+        color: $color-base;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+      p{
+        color: #666;
+        font-size: .9rem;
+        margin: 1rem 0 0 0;
+      }
+    }
+    &-titulo-fondo{
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 20rem;
+    }
+    &-info{
+      padding: 1rem 3rem;
+      text-align: left;
+      p{
+        margin-top: 1rem;
+        font-size: .9rem;
+      }
+    }
+    &-fondo{
+      background-image: url('../img/fondos/f-recetas.jpg');
+    }
   }
-  & .producto-titulo-fondo{
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 20rem;
+  .separacion{
+    margin-top: -1rem;
+    margin-bottom: -.39rem;
   }
-
-  & .producto-info{
-    height: 50%;
-    padding: 1rem 3rem;
-    text-align: left;
-  }
+  
 }

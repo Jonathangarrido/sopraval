@@ -4,10 +4,12 @@
     text-transform: capitalize;
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     height: 100vh;
     margin-right: 0;
     @extend .wrapper;
     animation: fondo-entrada .8s forwards; 
+    animation-timing-function: ease-in-out;
     &.in{
       transition: all 1.5s ease-in-out;
       margin-right: 15rem
@@ -15,6 +17,7 @@
     h1{
       opacity: 0;
       animation: titulo-entrada .8s forwards; 
+      animation-timing-function: ease-in-out;
       font-family: $altfont;
       font-size: 5.5rem;
       text-shadow: -3px 2px #222;
@@ -33,7 +36,8 @@
     padding: 12.5rem 2rem 0;
     width: 16rem;
     opacity: 1;
-    animation: nav-salida .8s .6s forwards; 
+    animation: nav-salida .8s .6s forwards;
+     
     ul{
       font-family: $altfont;
       margin: 3rem 0 0;

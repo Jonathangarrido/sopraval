@@ -3,8 +3,8 @@
 // **********************************************************
 'use strict';
 
-productoCtrl.$inject = ['Consultas', '$location', 'setDatos', '$scope', '$timeout'];
-function productoCtrl(Consultas, $location, setDatos, $scope, $timeout) {
+productoCtrl.$inject = ['Consultas', '$location', 'setDatos', '$scope', '$timeout', 'Analytics'];
+function productoCtrl(Consultas, $location, setDatos, $scope, $timeout, Analytics) {
   var vm = this;
   vm.urlAll = $location.path().split('/');
   vm.urlCategoria = vm.urlAll[2];
@@ -16,12 +16,24 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout) {
     getData();
     animate();
     fondo();
-    
+    volver();
+    analytics();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'productos', vm.urlCategoria, vm.urlProducto);
+  }
+
+  function volver() {
+    $timeout(function () {
+      setDatos.setBack(vm.urlAll);
+      $scope.$apply();
+    }, 100);
   }
 
   function animate() {
     $timeout(function () {
-      setDatos.setAnimate()
+      setDatos.setAnimate();
       $scope.$apply();
     }, 800);
   }
@@ -34,15 +46,23 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout) {
       });
       vm.producto = dato[0];
       imagen();
-    })
+
+      var datos = data.filter(function (producto) {
+        return producto.categoria === vm.urlAll[2];
+      });
+      $timeout(function () {
+        setDatos.setList(datos, 'productos');
+        $scope.$apply();
+      }, 100);
+    });
   }
 
-  function fondo(){
-    $('.producto-fondo').css('background-image','url(../img/fondos/f-'+vm.urlCategoria+'.jpg)')
+  function fondo() {
+    $('.producto-fondo').css('background-image', 'url(../img/fondos/f-' + vm.urlCategoria + '.jpg)');
   }
 
-  function imagen(){
-    $('.producto-titulo-fondo').css('background-image','url(../img/productos/'+vm.producto.categoria+'/'+vm.producto.imagen+'.jpg)')
+  function imagen() {
+    $('.producto-titulo-fondo').css('background-image', 'url(../img/productos/' + vm.producto.categoria + '/' + vm.producto.imagen + '.jpg)');
   }
 
 }

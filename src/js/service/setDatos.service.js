@@ -17,13 +17,25 @@
       listDatos: [],
       listTipo: '',
       setList: setList,
+      setBack: setBack,
+      url: '',
+      visible: true,
+      setVisible: setVisible
     };
 
     return service;
 
     /////////////////////////////////////////
 
-    function setList(setDatos, tipo){
+    function setVisible(estado) {
+      service.visible = estado;
+    }
+
+    function setBack(url) {
+      service.url = url;
+    }
+
+    function setList(setDatos, tipo) {
       service.listTipo = tipo;
       service.listDatos = setDatos;
     }
@@ -42,17 +54,17 @@
     }
 
     function setUrl(url) {
-      var data = JSON.parse(url);
+      var data = url;
       data.splice(-1, 1);
       var str;
-      return str = data.join('/')
+      return str = data.join('/');
     }
 
     function setAnimate(active) {
       var state;
-      switch (active){
-        case 'fade': state = []; state.fade = true; break; 
-        case 'slideIn': state = []; state.slideIn = true; break; 
+      switch (active) {
+        case 'fade': state = []; state.fade = true; break;
+        case 'slideIn': state = []; state.slideIn = true; break;
         default: state = [];
       }
       service.animate = state;

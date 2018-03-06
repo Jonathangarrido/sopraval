@@ -1,9 +1,9 @@
-<main class="lista">
+<main class="lista" ng-class="{'in' : $ctrl.openList}">
   <a ng-click="$ctrl.back()"></a>
   <div>
     <span>{{$ctrl.newTipo}}</span>
   </div>
-  <ul>
+  <ul ng-class="{'lista-recetas' : $ctrl.tipoClass}">
     <li ng-repeat="item in $ctrl.items">
       <a ng-href="#/productos/{{item.categoria}}/{{item.id}}" ng-if="$ctrl.newTipo == 'productos'">
         <img ng-src="./img/productos/{{item.categoria}}/{{item.imagen}}.jpg" alt="producto">

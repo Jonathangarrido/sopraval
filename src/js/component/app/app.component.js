@@ -3,7 +3,7 @@
 // **********************************************************
 'use strict';
 
-appCtrl.$inject = ['setDatos' ,'$scope'];
+appCtrl.$inject = ['setDatos', '$scope'];
 function appCtrl(setDatos, $scope) {
   var vm = this;
   vm.animation = [];
@@ -12,14 +12,19 @@ function appCtrl(setDatos, $scope) {
 
   vm.$onInit = function () {
     watchAnimate();
-  }
 
-  function watchAnimate(){
-    $scope.$watch(function(){
+    angular.element(document).ready(function () {
+      $('.loading').addClass('loading-out');
+    });
+
+  };
+
+  function watchAnimate() {
+    $scope.$watch(function () {
       return setDatos.animate;
-    }, function(newVal, oldVal){
+    }, function (newVal, oldVal) {
       vm.animation = newVal;
-    })
+    });
   }
 
 }

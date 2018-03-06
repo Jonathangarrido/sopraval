@@ -5,8 +5,8 @@
 
 (function () {
 
-  config.$inject = ['$routeProvider','$locationProvider'];
-  function config($routeProvider, $locationProvider) {
+  config.$inject = ['$routeProvider', '$locationProvider', 'AnalyticsProvider'];
+  function config($routeProvider, $locationProvider, AnalyticsProvider) {
     $routeProvider
       .when('/', {
         template: '<home></home>'
@@ -30,10 +30,24 @@
         redirectTo: '/'
       });
     $locationProvider.hashPrefix('');
+
+    // initial configuration
+    AnalyticsProvider.setAccount('UA-115170405-1');
+
+    // track all routes/states (or not)
+    AnalyticsProvider.trackPages(true);
+
+    // Use analytics.js instead of ga.js
+    AnalyticsProvider.useAnalytics(true);
+
+    AnalyticsProvider.trackPrefix('Di Nizzio');
+
+    // change page event name
+    AnalyticsProvider.setPageEvent('$stateChangeSuccess');
   }
 
-  Run.$inject = [];
-  function Run() {
+  Run.$inject = ['Analytics'];
+  function Run(Analytics) {
   }
 
   angular
@@ -51,9 +65,9 @@
       'producto',
       'recetas',
       'receta',
-      // 'common',
-      // 'separacion'
+      'angular-google-analytics'
     ])
-    .config(config);
+    .config(config)
+    .run(Run);
 
 })();

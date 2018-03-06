@@ -5,8 +5,8 @@
 
 (function () {
 
-  config.$inject = ['$routeProvider','$locationProvider'];
-  function config($routeProvider, $locationProvider) {
+  config.$inject = ['$routeProvider', '$locationProvider', 'AnalyticsProvider'];
+  function config($routeProvider, $locationProvider, AnalyticsProvider) {
     $routeProvider
       .when('/', {
         template: '<home></home>'
@@ -30,10 +30,24 @@
         redirectTo: '/'
       });
     $locationProvider.hashPrefix('');
+
+    // initial configuration
+    AnalyticsProvider.setAccount('UA-115170405-1');
+
+    // track all routes/states (or not)
+    AnalyticsProvider.trackPages(true);
+
+    // Use analytics.js instead of ga.js
+    AnalyticsProvider.useAnalytics(true);
+
+    AnalyticsProvider.trackPrefix('Di Nizzio');
+
+    // change page event name
+    AnalyticsProvider.setPageEvent('$stateChangeSuccess');
   }
 
-  Run.$inject = [];
-  function Run() {
+  Run.$inject = ['Analytics'];
+  function Run(Analytics) {
   }
 
   angular
@@ -51,10 +65,10 @@
       'producto',
       'recetas',
       'receta',
-      // 'common',
-      // 'separacion'
+      'angular-google-analytics'
     ])
-    .config(config);
+    .config(config)
+    .run(Run);
 
 })();
 // **********************************************************
@@ -62,7 +76,7 @@
 // **********************************************************
 'use strict';
 
-appCtrl.$inject = ['setDatos' ,'$scope'];
+appCtrl.$inject = ['setDatos', '$scope'];
 function appCtrl(setDatos, $scope) {
   var vm = this;
   vm.animation = [];
@@ -71,14 +85,19 @@ function appCtrl(setDatos, $scope) {
 
   vm.$onInit = function () {
     watchAnimate();
-  }
 
-  function watchAnimate(){
-    $scope.$watch(function(){
+    angular.element(document).ready(function () {
+      $('.loading').addClass('loading-out');
+    });
+
+  };
+
+  function watchAnimate() {
+    $scope.$watch(function () {
       return setDatos.animate;
-    }, function(newVal, oldVal){
+    }, function (newVal, oldVal) {
       vm.animation = newVal;
-    })
+    });
   }
 
 }
@@ -88,22 +107,81 @@ angular.module('app', [])
     templateUrl: './js/component/app/app.html',
     controller: appCtrl
   });
+// **********************************************************
+// archivo component/common/lista
+// **********************************************************
+'use strict';
+
+listaCtrl.$inject = ['$window', '$location', 'setDatos', 'Consultas', '$scope', '$timeout'];
+function listaCtrl($window, $location, setDatos, Consultas, $scope, $timeout) {
+  var vm = this;
+  vm.newDatos;
+  vm.newTipo;
+  vm.items;
+  vm.urlAll = $location.path().split('/');
+  vm.tipoClass;
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    watchDatos();
+  };
+
+  function watchDatos() {
+    $scope.$watch(function () {
+      return setDatos.listDatos;
+    }, function (newVal, oldVal) {
+      vm.items = newVal;
+
+      newVal.length ? vm.openList = true : vm.openList = false;
+    });
+
+    $scope.$watch(function () {
+      return setDatos.listTipo;
+    }, function (newVal, oldVal) {
+      vm.newTipo = newVal;
+      vm.newTipo === 'productos' ? vm.tipoClass = false : vm.tipoClass = true;
+    });
+
+    $scope.$watch(function () {
+      return setDatos.url;
+    }, function (newVal, oldVal) {
+      vm.volver = newVal;
+    });
+  }
+
+  vm.back = function () {
+    var url = setDatos.setUrl(vm.volver);
+    $timeout(function () {
+      setDatos.setAnimate('fade');
+      $scope.$apply();
+      $location.path(url);
+    }, 100);
+  };
+
+}
+
+angular.module('lista', [])
+  .component('lista', {
+    templateUrl: './js/component/common/lista/lista.html',
+    controller: listaCtrl,
+  });
 
 // **********************************************************
 // archivo component/pages/categoria
 // **********************************************************
 'use strict';
 
-categoriaCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope'];
-function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope) {
+categoriaCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope', 'Analytics'];
+function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics) {
   var vm = this;
   vm.urlAll = $location.path().split('/');
   vm.url = vm.urlAll[2];
   vm.categorias = [
-    {tipo:'tradicional',nombre:'Tradicional'},
-    {tipo:'jamones-pechugas',nombre:'Jamones y Pechugas'},
-    {tipo:'parrilleros',nombre:'Parrilleros'},
-    {tipo:'practicos',nombre:'Prácticos'}
+    { tipo: 'tradicional', nombre: 'Tradicional' },
+    { tipo: 'jamones-pechugas', nombre: 'Jamones y Pechugas' },
+    { tipo: 'parrilleros', nombre: 'Parrilleros' },
+    { tipo: 'practicos', nombre: 'Prácticos' }
   ];
 
   ////////////////////////////////////////////
@@ -113,24 +191,37 @@ function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope) {
     fondo();
     animate();
     getDatos();
+    volver();
+    analytics();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'productos', vm.urlAll[2]);
   }
-  function getDatos(){
+
+  function volver() {
+    $timeout(function () {
+      setDatos.setBack(vm.urlAll);
+      $scope.$apply();
+    }, 100);
+  }
+
+  function getDatos() {
     Consultas.getProductos().then(function (response) {
       var data = response.data;
       var datos = data.filter(function (producto) {
         return producto.categoria === vm.urlAll[2];
       });
-      // setDatos.setList(datos,'productos');
 
       $timeout(function () {
-        setDatos.setList(datos,'productos');
+        setDatos.setList(datos, 'productos');
         $scope.$apply();
       }, 100);
-    })
+    });
   }
 
-  function fondo(){
-    $('.categoria-fondo').css('background-image','url(../img/fondos/f-'+vm.url+'.jpg)')
+  function fondo() {
+    $('.categoria-fondo').css('background-image', 'url(../img/fondos/f-' + vm.url + '.jpg)');
   }
 
   function titulo() {
@@ -138,8 +229,9 @@ function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope) {
   }
 
   function animate() {
+    $('.categoria-fondo').addClass('in');
     $timeout(function () {
-      setDatos.setAnimate('fade')
+      setDatos.setAnimate('fade');
       $scope.$apply();
     }, 800);
   }
@@ -151,12 +243,81 @@ angular.module('categoria', [])
     controller: categoriaCtrl
   });
 // **********************************************************
+// archivo component/common/menu
+// **********************************************************
+'use strict';
+
+menuCtrl.$inject = ['setDatos', '$location', '$scope', '$timeout'];
+function menuCtrl(setDatos, $location, $scope, $timeout) {
+  var vm = this;
+  vm.toggleFullscreen;
+  vm.toggleFullscreenActive;
+  vm.visible;
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    vm.clickMenuFullscreen();
+    watchDatos();
+    menuActive();
+  };
+
+  vm.back = function () {
+
+    setDatos.setAnimate('fade');
+    $timeout(redireccionar, 100);
+    $timeout(menuActive, 100);
+    $timeout(function () {
+      vm.toggleFullscreen = false;
+      vm.toggleFullscreenActive = false;
+    }, 500);
+  };
+
+  function redireccionar() {
+    $location.path('/');
+  }
+
+  vm.menuFullscreen = function () {
+    vm.toggleFullscreen = !vm.toggleFullscreen;
+    vm.toggleFullscreenActive = vm.toggleFullscreen;
+  };
+
+  vm.clickMenuFullscreen = function () {
+    $('.menu-modal a').click(function () {
+      vm.toggleFullscreen = false;
+      vm.toggleFullscreenActive = false;
+    });
+  };
+
+  function watchDatos() {
+    $scope.$watch(function () {
+      return setDatos.visible;
+    }, function (newVal, oldVal) {
+      vm.visible = newVal;
+    });
+  }
+
+  function menuActive() {
+    $timeout(function () {
+      setDatos.setVisible(false);
+      $scope.$apply();
+    }, 100);
+  }
+
+}
+
+angular.module('menu', [])
+  .component('menu', {
+    templateUrl: './js/component/common/menu/menu.html',
+    controller: menuCtrl
+  });
+// **********************************************************
 // archivo component/pages/home
 // **********************************************************
 'use strict';
 
-homeCtrl.$inject = ['setDatos', '$scope', '$timeout'];
-function homeCtrl(setDatos, $scope, $timeout) {
+homeCtrl.$inject = ['setDatos', '$scope', '$timeout', 'Analytics'];
+function homeCtrl(setDatos, $scope, $timeout, Analytics) {
   var vm = this;
   vm.active;
 
@@ -164,18 +325,31 @@ function homeCtrl(setDatos, $scope, $timeout) {
 
   vm.$onInit = function () {
     animate();
+    cleanList();
+    analytics();
+  };
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate('slideIn');
+      $scope.$apply();
+    }, 800);
+  }
+
+  function cleanList() {
+    $timeout(function () {
+      setDatos.setList([], '');
+      $scope.$apply();
+    }, 100);
+  }
+
+  function analytics() {
+    Analytics.trackEvent('page', 'home');
   }
 
   vm.collapse = function () {
     vm.active = !vm.active;
   };
-
-  function animate() {
-    $timeout(function () {
-      setDatos.setAnimate('slideIn')
-      $scope.$apply();
-    }, 800);
-  }
 
 }
 
@@ -189,8 +363,8 @@ angular.module('home', [])
 // **********************************************************
 'use strict';
 
-productoCtrl.$inject = ['Consultas', '$location', 'setDatos', '$scope', '$timeout'];
-function productoCtrl(Consultas, $location, setDatos, $scope, $timeout) {
+productoCtrl.$inject = ['Consultas', '$location', 'setDatos', '$scope', '$timeout', 'Analytics'];
+function productoCtrl(Consultas, $location, setDatos, $scope, $timeout, Analytics) {
   var vm = this;
   vm.urlAll = $location.path().split('/');
   vm.urlCategoria = vm.urlAll[2];
@@ -202,12 +376,24 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout) {
     getData();
     animate();
     fondo();
-    
+    volver();
+    analytics();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'productos', vm.urlCategoria, vm.urlProducto);
+  }
+
+  function volver() {
+    $timeout(function () {
+      setDatos.setBack(vm.urlAll);
+      $scope.$apply();
+    }, 100);
   }
 
   function animate() {
     $timeout(function () {
-      setDatos.setAnimate()
+      setDatos.setAnimate();
       $scope.$apply();
     }, 800);
   }
@@ -220,15 +406,23 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout) {
       });
       vm.producto = dato[0];
       imagen();
-    })
+
+      var datos = data.filter(function (producto) {
+        return producto.categoria === vm.urlAll[2];
+      });
+      $timeout(function () {
+        setDatos.setList(datos, 'productos');
+        $scope.$apply();
+      }, 100);
+    });
   }
 
-  function fondo(){
-    $('.producto-fondo').css('background-image','url(../img/fondos/f-'+vm.urlCategoria+'.jpg)')
+  function fondo() {
+    $('.producto-fondo').css('background-image', 'url(../img/fondos/f-' + vm.urlCategoria + '.jpg)');
   }
 
-  function imagen(){
-    $('.producto-titulo-fondo').css('background-image','url(../img/productos/'+vm.producto.categoria+'/'+vm.producto.imagen+'.jpg)')
+  function imagen() {
+    $('.producto-titulo-fondo').css('background-image', 'url(../img/productos/' + vm.producto.categoria + '/' + vm.producto.imagen + '.jpg)');
   }
 
 }
@@ -244,38 +438,59 @@ angular.module('producto', [])
 // **********************************************************
 'use strict';
 
-productosCtrl.$inject = ['setDatos', '$scope', '$timeout'];
-function productosCtrl(setDatos, $scope, $timeout) {
+productosCtrl.$inject = ['setDatos', '$scope', '$timeout', 'Analytics'];
+function productosCtrl(setDatos, $scope, $timeout, Analytics) {
   var vm = this;
   vm.categorias = [
-    {tipo:'tradicional',nombre:'Tradicional'},
-    {tipo:'jamones-pechugas',nombre:'Jamones y Pechugas'},
-    {tipo:'parrilleros',nombre:'Parrilleros'},
-    {tipo:'practicos',nombre:'Prácticos'}
+    { tipo: 'tradicional', nombre: 'Tradicional' },
+    { tipo: 'jamones-pechugas', nombre: 'Jamones y Pechugas' },
+    { tipo: 'parrilleros', nombre: 'Parrilleros' },
+    { tipo: 'practicos', nombre: 'Prácticos' }
   ];
-  vm.background = []
+  vm.background = [];
 
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
     animate();
-  }
+    cleanList();
+    menuActive();
+    analytics();
+  };
 
-  vm.backgroundOver = function(categoria){
-    vm.background = []
+  vm.backgroundOver = function (categoria) {
+    vm.background = [];
     switch (categoria) {
       case 'jamones-pechugas': vm.background.jamonesPechugas = true; break;
       case 'tradicional': vm.background.tradicional = true; break;
       case 'parrilleros': vm.background.parrilleros = true; break;
       case 'practicos': vm.background.practicos = true; break;
     }
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'productos');
   }
 
   function animate() {
     $timeout(function () {
-      setDatos.setAnimate()
+      setDatos.setAnimate();
       $scope.$apply();
     }, 800);
+  }
+
+  function cleanList() {
+    $timeout(function () {
+      setDatos.setList([], '');
+      $scope.$apply();
+    }, 100);
+  }
+
+  function menuActive() {
+    $timeout(function () {
+      setDatos.setVisible(true);
+      $scope.$apply();
+    }, 100);
   }
 
 }
@@ -291,17 +506,30 @@ angular.module('productos', [])
 // **********************************************************
 'use strict';
 
-recetaCtrl.$inject = ['$location', 'Consultas', 'setDatos'];
-function recetaCtrl($location, Consultas, setDatos) {
+recetaCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope', 'Analytics'];
+function recetaCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics) {
   var vm = this;
   vm.urlAll = $location.path().split('/');
   vm.url = vm.urlAll[2];
-  
+  vm.producto;
+
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
     getData();
-    animate();
+    volver();
+    analytics();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'recetas', vm.url);
+  }
+
+  function volver() {
+    $timeout(function () {
+      setDatos.setBack(vm.urlAll);
+      $scope.$apply();
+    }, 100);
   }
 
   function getData() {
@@ -315,7 +543,12 @@ function recetaCtrl($location, Consultas, setDatos) {
       var str2 = vm.producto.preparacion;
       var filtroIngredientes = str2.split('--');
       vm.producto.preparacion = filtroIngredientes;
-    })
+
+      $timeout(function () {
+        setDatos.setList(data, 'recetas');
+        $scope.$apply();
+      }, 100);
+    });
   }
 
 }
@@ -331,25 +564,55 @@ angular.module('receta', [])
 // **********************************************************
 'use strict';
 
-recetasCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope'];
-function recetasCtrl($location, Consultas, setDatos, $timeout, $scope) {
+recetasCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope', 'Analytics'];
+function recetasCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics) {
   var vm = this;
   vm.urlAll = $location.path().split('/');
   vm.url = vm.urlAll[2];
-  
+
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
     getDatos();
+    volver();
+    menuActive();
+    animate();
+    analytics();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'recetas');
   }
-  function getDatos(){
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate('fade');
+      $scope.$apply();
+    }, 800);
+  }
+
+  function volver() {
+    $timeout(function () {
+      setDatos.setBack(vm.urlAll);
+      $scope.$apply();
+    }, 100);
+  }
+
+  function getDatos() {
     Consultas.getRecetas().then(function (response) {
       var data = response.data;
       $timeout(function () {
-        setDatos.setList(data,'recetas');
+        setDatos.setList(data, 'recetas');
         $scope.$apply();
       }, 100);
-    })
+    });
+  }
+
+  function menuActive() {
+    $timeout(function () {
+      setDatos.setVisible(true);
+      $scope.$apply();
+    }, 100);
   }
 }
 
@@ -357,133 +620,6 @@ angular.module('recetas', [])
   .component('recetas', {
     templateUrl: './js/component/pages/recetas/recetas.html',
     controller: recetasCtrl
-  });
-// **********************************************************
-// archivo component/common/lista
-// **********************************************************
-'use strict';
-
-listaCtrl.$inject = ['$window', '$location', 'setDatos', 'Consultas', '$scope', '$timeout'];
-function listaCtrl($window, $location, setDatos, Consultas, $scope, $timeout) {
-  var vm = this;
-  vm.newDatos;
-  vm.newTipo;
-  vm.items;
-  vm.urlAll = $location.path().split('/');
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    watchDatos()
-  }
-
-  vm.$onChanges = function () {
-    watchDatos()
-    // vm.newTipo = $window.angular.copy(this.tipo);
-    // vm.volver = setDatos.setUrl($window.angular.copy(this.url))
-  }
-
-  function watchDatos(){
-    $scope.$watch(function(){
-      return setDatos.listDatos;
-    }, function(newVal, oldVal){
-      vm.items = newVal;
-    })
-
-    $scope.$watch(function(){
-      return setDatos.listTipo;
-    }, function(newVal, oldVal){
-      vm.newTipo = newVal;
-    })
-  }
-
-  function getData() {
-    // if (vm.urlAll[1] === 'productos') {
-    //   Consultas.getProductos().then(function (response) {
-    //     var data = response.data;
-    //     var datos = data.filter(function (producto) {
-    //       return producto.categoria === vm.urlAll[2];
-    //     });
-    //     vm.items = datos;
-    //   })
-    // } else if (vm.urlAll[1] === 'recetas') {
-    //   Consultas.getRecetas().then(function (response) {
-    //     var data = response.data;
-    //     vm.items = data;
-    //   })
-    // }
-  }
-
-  vm.back = function () {
-    $timeout(function () {
-      setDatos.setAnimate('fade')
-      $scope.$apply();
-      $location.path(vm.volver);
-    }, 100);
-  }
-
-
-}
-
-angular.module('lista', [])
-  .component('lista', {
-    bindings: {
-      tipo: '@',
-      url: '@',
-    },
-    templateUrl: './js/component/common/lista/lista.html',
-    controller: listaCtrl,
-
-  });
-// **********************************************************
-// archivo component/common/menu
-// **********************************************************
-'use strict';
-
-menuCtrl.$inject = ['setDatos', '$location', '$scope', '$timeout'];
-function menuCtrl(setDatos, $location, $scope ,$timeout) {
-  var vm = this;
-  vm.toggleFullscreen;
-  vm.toggleFullscreenActive;
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    vm.clickMenuFullscreen()
-  }
-
-  vm.back = function () {
-    
-    setDatos.setAnimate('fade');
-    $timeout(redireccionar,100)
-    $timeout(function(){
-      vm.toggleFullscreen = false;
-      vm.toggleFullscreenActive = false;
-    },500)
-  }
-
-  function redireccionar(){
-    $location.path("/");
-  }
-
-  vm.menuFullscreen = function () {
-    vm.toggleFullscreen = !vm.toggleFullscreen;
-    vm.toggleFullscreenActive = vm.toggleFullscreen;
-  }
-
-  vm.clickMenuFullscreen = function () {
-    $('.menu-modal a').click(function(){
-      vm.toggleFullscreen = false;
-      vm.toggleFullscreenActive = false;
-    })
-  }
-
-}
-
-angular.module('menu', [])
-  .component('menu', {
-    templateUrl: './js/component/common/menu/menu.html',
-    controller: menuCtrl
   });
 
 // **********************************************************
@@ -539,13 +675,25 @@ angular.module('menu', [])
       listDatos: [],
       listTipo: '',
       setList: setList,
+      setBack: setBack,
+      url: '',
+      visible: true,
+      setVisible: setVisible
     };
 
     return service;
 
     /////////////////////////////////////////
 
-    function setList(setDatos, tipo){
+    function setVisible(estado) {
+      service.visible = estado;
+    }
+
+    function setBack(url) {
+      service.url = url;
+    }
+
+    function setList(setDatos, tipo) {
       service.listTipo = tipo;
       service.listDatos = setDatos;
     }
@@ -564,17 +712,17 @@ angular.module('menu', [])
     }
 
     function setUrl(url) {
-      var data = JSON.parse(url);
+      var data = url;
       data.splice(-1, 1);
       var str;
-      return str = data.join('/')
+      return str = data.join('/');
     }
 
     function setAnimate(active) {
       var state;
-      switch (active){
-        case 'fade': state = []; state.fade = true; break; 
-        case 'slideIn': state = []; state.slideIn = true; break; 
+      switch (active) {
+        case 'fade': state = []; state.fade = true; break;
+        case 'slideIn': state = []; state.slideIn = true; break;
         default: state = [];
       }
       service.animate = state;

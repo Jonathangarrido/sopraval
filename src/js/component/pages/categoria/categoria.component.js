@@ -4,16 +4,16 @@
 // **********************************************************
 'use strict';
 
-categoriaCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope'];
-function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope) {
+categoriaCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope', 'Analytics'];
+function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics) {
   var vm = this;
   vm.urlAll = $location.path().split('/');
   vm.url = vm.urlAll[2];
   vm.categorias = [
-    {tipo:'tradicional',nombre:'Tradicional'},
-    {tipo:'jamones-pechugas',nombre:'Jamones y Pechugas'},
-    {tipo:'parrilleros',nombre:'Parrilleros'},
-    {tipo:'practicos',nombre:'Prácticos'}
+    { tipo: 'tradicional', nombre: 'Tradicional' },
+    { tipo: 'jamones-pechugas', nombre: 'Jamones y Pechugas' },
+    { tipo: 'parrilleros', nombre: 'Parrilleros' },
+    { tipo: 'practicos', nombre: 'Prácticos' }
   ];
 
   ////////////////////////////////////////////
@@ -23,24 +23,37 @@ function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope) {
     fondo();
     animate();
     getDatos();
+    volver();
+    analytics();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'productos', vm.urlAll[2]);
   }
-  function getDatos(){
+
+  function volver() {
+    $timeout(function () {
+      setDatos.setBack(vm.urlAll);
+      $scope.$apply();
+    }, 100);
+  }
+
+  function getDatos() {
     Consultas.getProductos().then(function (response) {
       var data = response.data;
       var datos = data.filter(function (producto) {
         return producto.categoria === vm.urlAll[2];
       });
-      // setDatos.setList(datos,'productos');
 
       $timeout(function () {
-        setDatos.setList(datos,'productos');
+        setDatos.setList(datos, 'productos');
         $scope.$apply();
       }, 100);
-    })
+    });
   }
 
-  function fondo(){
-    $('.categoria-fondo').css('background-image','url(../img/fondos/f-'+vm.url+'.jpg)')
+  function fondo() {
+    $('.categoria-fondo').css('background-image', 'url(../img/fondos/f-' + vm.url + '.jpg)');
   }
 
   function titulo() {
@@ -48,8 +61,9 @@ function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope) {
   }
 
   function animate() {
+    $('.categoria-fondo').addClass('in');
     $timeout(function () {
-      setDatos.setAnimate('fade')
+      setDatos.setAnimate('fade');
       $scope.$apply();
     }, 800);
   }

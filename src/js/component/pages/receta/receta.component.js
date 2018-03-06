@@ -4,17 +4,30 @@
 // **********************************************************
 'use strict';
 
-recetaCtrl.$inject = ['$location', 'Consultas', 'setDatos'];
-function recetaCtrl($location, Consultas, setDatos) {
+recetaCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope', 'Analytics'];
+function recetaCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics) {
   var vm = this;
   vm.urlAll = $location.path().split('/');
   vm.url = vm.urlAll[2];
-  
+  vm.producto;
+
   ////////////////////////////////////////////
 
   vm.$onInit = function () {
     getData();
-    animate();
+    volver();
+    analytics();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'recetas', vm.url);
+  }
+
+  function volver() {
+    $timeout(function () {
+      setDatos.setBack(vm.urlAll);
+      $scope.$apply();
+    }, 100);
   }
 
   function getData() {
@@ -28,7 +41,12 @@ function recetaCtrl($location, Consultas, setDatos) {
       var str2 = vm.producto.preparacion;
       var filtroIngredientes = str2.split('--');
       vm.producto.preparacion = filtroIngredientes;
-    })
+
+      $timeout(function () {
+        setDatos.setList(data, 'recetas');
+        $scope.$apply();
+      }, 100);
+    });
   }
 
 }
