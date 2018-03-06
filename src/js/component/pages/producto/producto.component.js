@@ -58,7 +58,7 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout, Analytic
   }
 
   function fondo() {
-    $('.producto-fondo').css('background-image', 'url(../img/fondos/f-' + vm.urlCategoria + '.jpg)');
+    $('.producto-fondo').css('background-image', 'url(./img/fondos/f-' + vm.urlCategoria + '.jpg)');
   }
 
   function imagen() {
