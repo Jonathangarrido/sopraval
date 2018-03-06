@@ -53,7 +53,7 @@ function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope, Analyti
   }
 
   function fondo() {
-    $('.categoria-fondo').css('background-image', 'url(../img/fondos/f-' + vm.url + '.jpg)');
+    $('.categoria-fondo').css('background-image', 'url(./img/fondos/f-' + vm.url + '.jpg)');
   }
 
   function titulo() {
