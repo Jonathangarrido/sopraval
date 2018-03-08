@@ -2,7 +2,7 @@
   {
     "id": "chorizo-pavo-350g",
     "imagen": "chorizo-pavo-350g",
-    "titulo": "Chorizo de pavo 350g",
+    "titulo": "Chorizo de Pavo 350 g.",
     "categoria": "parrilleros",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -18,7 +18,7 @@
   {
     "id": "costillitas-clasicas-800g",
     "imagen": "costillitas-clasicas-800g",
-    "titulo": "Costillitas de pavo clásicas 800g",
+    "titulo": "Costillitas de Pavo Clásicas 800 g.",
     "categoria": "parrilleros",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -34,7 +34,7 @@
   {
     "id": "costillitas-surenas-800g",
     "imagen": "costillitas-surenas-800g",
-    "titulo": "Costillitas de pavo sureñas 800g",
+    "titulo": "Costillitas de Pavo Sureñas 800 g.",
     "categoria": "parrilleros",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -50,7 +50,7 @@
   {
     "id": "longaniza-pavo-400g",
     "imagen": "longaniza-pavo-400g",
-    "titulo": "Longaniza de pavo 400g",
+    "titulo": "Longaniza de Pavo 400 g.",
     "categoria": "parrilleros",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -66,7 +66,7 @@
   {
     "id": "tuto-corto-merken",
     "imagen": "tuto-corto-merken",
-    "titulo": "Tuto corto parrillero al merken",
+    "titulo": "Tuto Corto Parrillero al Merkén",
     "categoria": "parrilleros",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -82,7 +82,7 @@
   {
     "id": "tuto-parrillero-barbecue",
     "imagen": "tuto-parrillero-barbecue",
-    "titulo": "Tuto parrillero sabor barbecue",
+    "titulo": "Tuto Parrillero sabor Barbecue",
     "categoria": "parrilleros",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -98,7 +98,7 @@
   {
     "id": "tuto-parrillero-clasico",
     "imagen": "tuto-parrillero-clasico",
-    "titulo": "Tuto parrillero clásico",
+    "titulo": "Tuto Parrillero Clásico",
     "categoria": "parrilleros",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -114,7 +114,7 @@
   {
     "id": "jamon-acaramelado-pieza",
     "imagen": "jamon-acaramelado-pieza",
-    "titulo": "Jamón de pavo acaramelado",
+    "titulo": "Jamón de Pavo Acaramelado",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -130,7 +130,7 @@
   {
     "id": "jamon-ahumado-pieza",
     "imagen": "jamon-ahumado-pieza",
-    "titulo": "Jamón de pavo ahumado pieza",
+    "titulo": "Jamón de Pavo Ahumado Pieza",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -146,7 +146,7 @@
   {
     "id": "jamon-pavo-250g",
     "imagen": "jamon-pavo-250g",
-    "titulo": "Jamón de pavo 250g",
+    "titulo": "Jamón de Pavo 250 g.",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -162,7 +162,7 @@
   {
     "id": "jamon-pechuga-pavo-cocida",
     "imagen": "jamon-pechuga-pavo-cocida",
-    "titulo": "Jamón de pechuga de pavo cocida",
+    "titulo": "Jamón de Pechuga de Pavo Cocida",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -178,7 +178,7 @@
   {
     "id": "jamon-pierna-250g",
     "imagen": "jamon-pierna-250g",
-    "titulo": "Jamón pierna 250g",
+    "titulo": "Jamón Pierna 250 g.",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -194,7 +194,7 @@
   {
     "id": "jamon-pierna-ahumado-150g",
     "imagen": "jamon-pierna-ahumado-150g",
-    "titulo": "Jamón pierna de pavo ahumado 150g",
+    "titulo": "Jamón Pierna de Pavo Ahumado 150 g.",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -210,7 +210,7 @@
   {
     "id": "jamon-pierna-ahumado",
     "imagen": "jamon-pierna-ahumado",
-    "titulo": "Jamón pierna ahumado",
+    "titulo": "Jamón Pierna Ahumado",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -224,9 +224,9 @@
     }
   },
   {
-    "id": "jamon-sanswich-pieza",
+    "id": "jamon-sandwich-pieza",
     "imagen": "jamon-sanswich-pieza",
-    "titulo": "Jamón sanswich pieza",
+    "titulo": "Jamón Sandwich Pieza",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -242,7 +242,7 @@
   {
     "id": "pechuga-acaramelada-pieza",
     "imagen": "pechuga-acaramelada-pieza",
-    "titulo": "Pechuga de pavo acaramelada pieza",
+    "titulo": "Pechuga de Pavo Acaramelada Pieza",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -258,7 +258,7 @@
   {
     "id": "pechuga-acaramelada-150g",
     "imagen": "pechuga-acaramelada-150g",
-    "titulo": "Pechuga de pavo acaramelada 150g",
+    "titulo": "Pechuga de Pavo Acaramelada 150 g.”,
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -274,7 +274,7 @@
   {
     "id": "pechuga-ahumada-150g",
     "imagen": "pechuga-ahumada-150g",
-    "titulo": "Pechuga de pavo ahumada 150g",
+    "titulo": "Pechuga de Pavo Ahumada 150 g.”,
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -290,7 +290,7 @@
   {
     "id": "pechuga-ahumada-250g",
     "imagen": "pechuga-ahumada-250g",
-    "titulo": "Pechuga de pavo ahumada 250g",
+    "titulo": "Pechuga de Pavo Ahumada 250 g.”,
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -306,7 +306,7 @@
   {
     "id": "pechuga-ahumada-300g",
     "imagen": "pechuga-ahumada-300g",
-    "titulo": "Pechuga de pavo ahumada 300g",
+    "titulo": "Pechuga de Pavo Ahumada 300 g.”,
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -322,7 +322,7 @@
   {
     "id": "pechuga-ahumada-pieza",
     "imagen": "pechuga-ahumada-pieza",
-    "titulo": "Pechuga de pavo ahumada pieza",
+    "titulo": "Pechuga de Pavo Ahumada Pieza",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -338,7 +338,7 @@
   {
     "id": "pechuga-asada-150g",
     "imagen": "pechuga-asada-150g",
-    "titulo": "Pechuga de pavo asada 150g",
+    "titulo": "Pechuga de Pavo Asada 150 g.”,
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -354,7 +354,7 @@
   {
     "id": "pechuga-asada-250g",
     "imagen": "pechuga-asada-250g",
-    "titulo": "Pechuga de pavo asada 250g",
+    "titulo": "Pechuga de Pavo Asada 250 g.”,
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -370,7 +370,7 @@
   {
     "id": "pechuga-asada-pieza",
     "imagen": "pechuga-asada-pieza",
-    "titulo": "Pechuga de pavo asada",
+    "titulo": "Pechuga de Pavo Asada",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -386,7 +386,7 @@
   {
     "id": "pechuga-cocida-150g",
     "imagen": "pechuga-cocida-150g",
-    "titulo": "Pechuga de pavo cocida 150g",
+    "titulo": "Pechuga de Pavo Cocida 150 g.”,
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -402,7 +402,7 @@
   {
     "id": "pechuga-cocida-250g",
     "imagen": "pechuga-cocida-250g",
-    "titulo": "Pechuga de pavo cocida 250g",
+    "titulo": "Pechuga de Pavo Cocida 250 g.”,
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -418,7 +418,7 @@
   {
     "id": "pechuga-cocida-pieza",
     "imagen": "pechuga-cocida-pieza",
-    "titulo": "Pechuga de pavo cocida",
+    "titulo": "Pechuga de Pavo Cocida Pieza",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -434,7 +434,7 @@
   {
     "id": "pechuga-pavo-cocida",
     "imagen": "pechuga-pavo-cocida",
-    "titulo": "Pechuga de pavo cocida",
+    "titulo": "Pechuga de Pavo Cocida",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -450,7 +450,7 @@
   {
     "id": "bistec-pechuga-700g",
     "imagen": "bistec-pechuga-700g",
-    "titulo": "Bistec de pechuga de pollo 700g",
+    "titulo": "Bistec de Pechuga de Pollo 700 g.”,
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -466,7 +466,7 @@
   {
     "id": "bistec-pechuga",
     "imagen": "bistec-pechuga",
-    "titulo": "Bistec de pechuga de pollo",
+    "titulo": "Bistec de Pechuga de Pollo",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -482,7 +482,7 @@
   {
     "id": "daditos-jamon",
     "imagen": "daditos-jamon",
-    "titulo": "Daditos jamón",
+    "titulo": "Daditos Jamón",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -498,7 +498,7 @@
   {
     "id": "filete-finas-hierbas",
     "imagen": "filete-finas-hierbas",
-    "titulo": "Filete de pechuga de pavo finas hierbas",
+    "titulo": "Filete de Pechuga de Pavo Finas Hierbas",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -514,7 +514,7 @@
   {
     "id": "filete-pechuga-clasico",
     "imagen": "filete-pechuga-clasico",
-    "titulo": "Filete de pechuga de pavo clásico",
+    "titulo": "Filete de Pechuga de Pavo Clásico",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -530,7 +530,7 @@
   {
     "id": "filete-pechuga-estragon",
     "imagen": "filete-pechuga-estragon",
-    "titulo": "Filete de pechuga de pavo mantequilla estragón",
+    "titulo": "Filete de Pechuga de Pavo Mantequilla Estragón",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -546,7 +546,7 @@
   {
     "id": "hamburguesa-pavo-400g",
     "imagen": "hamburguesa-pavo-400g",
-    "titulo": "Hamburguesa de pavo 400g",
+    "titulo": "Hamburguesa de Pavo 400 g.”,
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -562,7 +562,7 @@
   {
     "id": "hamburguesa-pavo-unid",
     "imagen": "hamburguesa-pavo-unid",
-    "titulo": "Hamburguesa de pavo",
+    "titulo": "Hamburguesa de Pavo",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -576,9 +576,9 @@
     }
   },
   {
-    "id": "lomo-pavo-easycook",
+    "id": "lomo-pavo-easy-cook",
     "imagen": "lomo-pavo-easycook",
-    "titulo": "Lomo de pavo easycook",
+    "titulo": "Lomo de Pavo Easy Cook",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -594,7 +594,7 @@
   {
     "id": "medallon-pechuga",
     "imagen": "medallon-pechuga",
-    "titulo": "Medallón de pechuga de pavo",
+    "titulo": "Medallón de Pechuga de Pavo",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -610,7 +610,7 @@
   {
     "id": "molida-casera",
     "imagen": "molida-casera",
-    "titulo": "Molida casera",
+    "titulo": "Molida Casera",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -626,7 +626,7 @@
   {
     "id": "molida-mexicana",
     "imagen": "molida-mexicana",
-    "titulo": "Molida mexicana",
+    "titulo": "Molida Mexicana",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -642,7 +642,7 @@
   {
     "id": "molida-pechuga-pavo",
     "imagen": "molida-pechuga-pavo",
-    "titulo": "Molida pechuga pavo",
+    "titulo": "Molida Pechuga Pavo",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -658,7 +658,7 @@
   {
     "id": "molida-trutro-pavo",
     "imagen": "molida-trutro-pavo",
-    "titulo": "Molida trutro pavo",
+    "titulo": "Molida Trutro Pavo",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -674,7 +674,7 @@
   {
     "id": "molida-omega",
     "imagen": "molidea-omega",
-    "titulo": "Molida omega",
+    "titulo": "Molida Omega",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -688,9 +688,9 @@
     }
   },
   {
-    "id": "pechuga-deshuesada-clasica-easycook",
+    "id": "pechuga-deshuesada-clasica-easy-cook",
     "imagen": "pechuga-deshuesada-clasica-easycook",
-    "titulo": "Pechuga deshuesada clásica",
+    "titulo": "Pechuga Deshuesada Clásica Easy Cook",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -706,7 +706,7 @@
   {
     "id": "pechuga-deshuesada-dijon",
     "imagen": "pechuga-deshuesada-dijon",
-    "titulo": "Pechuga deshuesada a la dijon",
+    "titulo": "Pechuga Deshuesada a la Dijon",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -722,7 +722,7 @@
   {
     "id": "pechuga-pavo-picada",
     "imagen": "pechuga-pavo-picada",
-    "titulo": "Pechuga de pavo picada",
+    "titulo": "Pechuga de Pavo Picada",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -738,7 +738,7 @@
   {
     "id": "pernil-asado",
     "imagen": "pernil-asado",
-    "titulo": "Pernil asado",
+    "titulo": "Pernil Asado",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -754,7 +754,7 @@
   {
     "id": "salchichas-pavo-5unid",
     "imagen": "salchichas-pavo-5unid",
-    "titulo": "Salchichas de pavo 5unid",
+    "titulo": "Salchichas de Pavo 5 unid.”,
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -770,7 +770,7 @@
   {
     "id": "salchichas-pavo-20unid",
     "imagen": "salchichas-pavo-20unid",
-    "titulo": "Salchichas de pavo 20unid",
+    "titulo": "Salchichas de Pavo 20 unid.”,
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -786,7 +786,7 @@
   {
     "id": "truto-deshuesado-ahumado",
     "imagen": "truto-deshuesado-ahumado",
-    "titulo": "Truto deshuesado ahumado",
+    "titulo": "Truto Deshuesado Ahumado",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -802,7 +802,7 @@
   {
     "id": "tuto-pavo-picada",
     "imagen": "tuto-pavo-picada",
-    "titulo": "Tuto pavo picada",
+    "titulo": "Tuto Pavo Picada",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -818,7 +818,7 @@
   {
     "id": "bife-pavita",
     "imagen": "bife-pavita",
-    "titulo": "Bife de pavita",
+    "titulo": "Bife de Pavita",
     "categoria": "tradicional",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -834,7 +834,7 @@
   {
     "id": "osobuco-pavo",
     "imagen": "osobuco-pavo",
-    "titulo": "Osobuco de pavo",
+    "titulo": "Osobuco de Pavo",
     "categoria": "tradicional",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -850,7 +850,7 @@
   {
     "id": "pavo-ahumado-malla",
     "imagen": "pavo-ahumado-malla",
-    "titulo": "Pavo ahumado malla",
+    "titulo": "Pavo Ahumado Malla",
     "categoria": "tradicional",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -866,7 +866,7 @@
   {
     "id": "pavo-crudo-navidad",
     "imagen": "pavo-crudo-navidad",
-    "titulo": "Pavo crudo navidad",
+    "titulo": "Pavo Crudo Navidad",
     "categoria": "tradicional",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -882,7 +882,7 @@
   {
     "id": "pechuga-deshuesada",
     "imagen": "pechuga-deshuesada",
-    "titulo": "Pechuga de pavo deshuesada",
+    "titulo": "Pechuga de Pavo Deshuesada",
     "categoria": "tradicional",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -898,7 +898,7 @@
   {
     "id": "pechuga-entera",
     "imagen": "pechuga-entrera",
-    "titulo": "Pechuga de pavo entrera",
+    "titulo": "Pechuga de Pavo Entera",
     "categoria": "tradicional",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -914,7 +914,7 @@
   {
     "id": "tutitos-pava",
     "imagen": "tutitos-pava",
-    "titulo": "Tutitos  de pava",
+    "titulo": "Tutitos  de Pava",
     "categoria": "tradicional",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -930,7 +930,7 @@
   {
     "id": "tuto-corto-pavo",
     "imagen": "tuto-corto-pavo",
-    "titulo": "Tuto corto de pavo",
+    "titulo": "Tuto corto de Pavo",
     "categoria": "tradicional",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -946,7 +946,7 @@
   {
     "id": "tuto-deshuesado-pavo",
     "imagen": "tuto-deshuesado-pavo",
-    "titulo": "Tuto deshuesado de pavo",
+    "titulo": "Tuto Deshuesado de Pavo",
     "categoria": "tradicional",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
