@@ -1,7 +1,6 @@
 .producto{
   @extend %pages;
   &-fondo{
-    text-transform: capitalize;
     background-position: center;
     background-size: cover;
     height: 100vh;
