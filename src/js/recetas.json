@@ -1,84 +1,84 @@
 [
   {
     "id": "albondigas-con-spaghetti",
-    "titulo": "Albóndigas con spaghetti",
+    "titulo": "Albóndigas con Spaghetti",
     "imagen": "entrada-pechuga-ahumada",
     "ingredientes": "Albóndigas Sopraval · 320 gr. de spaghetti · 400 gr. de salsa de tomates · 4 litros de agua (para cocer la pasta) · 1 hoja de laurel",
     "preparacion": "Hierve agua y añade 3 cucharadas pequeñas de sal, la hoja de laurel y el spaghetti. Deja hervir hasta que la pasta esté en su punto.-- Cuando queden al dente, sácalos del agua y añádelos a la cacerola donde está la salsa de tomates y las albóndigas. Mezcla bien y si consideras que la salsa está muy espesa, añade un poco de agua."
   },
   {
     "id": "albondigas-con-salsa-de-tomates-y-pure",
-    "titulo": "Albóndigas con salsa de tomates y puré",
+    "titulo": "Albóndigas con Salsa de Tomates y Puré",
     "imagen": "albondigas-pure",
     "ingredientes": "Albóndigas Sopraval · 400 gr. de salsa de tomates · 1 kg. de papas · 1 cda. de mantequilla · 1 taza de leche caliente · Sal al gusto",
     "preparacion": "Pela las papas y hiérvelas en abundante agua. Luego escúrrelas y colócalas en una fuente para comenzar a aplastarlas con la mantequilla hasta obtener la consistencia de un puré.-- Añade la leche caliente y mezcla hasta que los ingredientes se integren completamente y el puré quede cremoso. Luego, vierte el puré en un plato con las albóndigas de Sopraval ya preparadas bañadas en salsa de tomates y estará listo para servir."
   },
   {         
     "id": "brochetas-de-chorizo-de-pavo",
-    "titulo": "Brochetas de chorizo de pavo",
+    "titulo": "Brochetas de Chorizo de Pavo",
     "imagen": "pechuga-desguesada-ciruelas",
     "ingredientes": "Chorizo de pavo Sopraval · Pavo trozado Sopraval · 3 pimentones grandes · 3 cebollas grandes · Aceite de oliva · Sal al gusto · Pinchos para brocheta",
     "preparacion": "Pica la cebolla y el pimentón en trozos relativamente pequeños y cuadrados. Añádelos en un sartén con un poco de aceite de oliva y sofríe hasta que se doren. Luego, prepara el chorizo y el pavo a la parrilla.-- Una vez que estén listos los chorizos, el pavo trozado y la cebolla con el pimentón, toma los pinchos y comienza a poner todos los ingredientes en el orden que desees. Si te recomendamos alternar el pimentón o cebolla entre el chorizo y el pavo."
   },
   {         
     "id": "cazuela-de-tutitos-de-pava",
-    "titulo": "Cazuela de tutitos de pava",
+    "titulo": "Cazuela de Tutitos de Pava",
     "imagen": "entrada-pechuga-ahumada",
     "ingredientes": "4 alas de pavo sin piel · Aceite de oliva · 3 dientes de ajo picados · ¼ de zapallo · 1 cebolla mediana · 1 taza de zanahorias en rodajas · 1 pimiento rojo cortado en cubitos · 7 tazas de caldo de pavo sin sal · Hojas de laurel · 2 choclos · 4 papas peladas · Orégano · Sal al gusto · Pimienta",
     "preparacion": "Calienta una olla a temperatura media con aceite, luego sofríe la cebolla, el ajo y las alas de pavo juntos. Una vez que se doren, agrega las zanahorias, el pimiento rojo, las hojas de laurel y deja cocinar durante 3 minutos.-- Agrega las papas, el zapallo y llena de agua integrando el caldo de pavo. Luego añade el choclo junto con el orégano, la sal y la pimienta. Deja hervir hasta que el agua llegue a su punto de ebullición y verifica que los tutos están blandos. Cocer unos 5 ó 10 minutos más. Sirve caliente."
   },
   {         
     "id": "costillas-surenas-a-la-parrilla",
-    "titulo": "Costillas sureñas a la parrilla",
+    "titulo": "Costillas Sureñas a la Parrilla",
     "imagen": "albondigas-pure",
     "ingredientes": "Costillas sureñas Sopraval · Sal entrefina · Limón",
     "preparacion": "Coloca por el lado de los huesos las costillas sureñas con fuego fuerte, agrega bastante sal y báñalas en jugo de limón. Seguidamente coloca los limones exprimido sobre las costillas.-- Deja cocinar unos 30 minutos, hasta que esté bien dorado por el lado del hueso. Dalo vuelta y deja cocinar por el otro lado, repitiendo el procedimiento una vez más, agregando sal y jugo de limón. Coloca los limones exprimidos sobre las costillas y cuando esté bien dorado, saca las costillas y córtalas una a una a lo largo del hueso. ¡Ya está listo para servir!"
   },
   {         
     "id": "ensalada-de-pechuga-ahumada-con-espinaca-y-granada",
-    "titulo": "Ensalada de pechuga ahumada con espinaca y granada",
+    "titulo": "Ensalada de Pechuga Ahumada con Espinaca y Granada",
     "imagen": "entrada-pechuga-ahumada",
     "ingredientes": "Pechuga ahumada Sopraval · 500 gr. de espinacas · 1 granada · Sal · Aceite de oliva",
     "preparacion": "Cocina la pechuga ahumada a la plancha con sal al gusto y una vez que esté bien cocida por ambos lados, resérvala a un lado. Procede a sacarle los granitos a la granada y échala en un bol con las espinacas previamente lavadas y secadas.-- Corta la pechuga en tiras y añade al bol donde están las espinacas y granada. Añade un aliño casero o simplemente aliña con sal, aceite de oliva y si es de tu gusto, con un poco de limón. ¡Y listo!."
   },
   {         
     "id": "hamburguesa-con-tomate-queso-rucula-y-cebolla",
-    "titulo": "Hamburguesa con tomate, queso, rúcula y cebolla",
+    "titulo": "Hamburguesa con Tomate, Queso, Rúcula y Cebolla",
     "imagen": "pechuga-desguesada-ciruelas",
     "ingredientes": "Hamburguesas de pavo Sopraval · 2 cebollas · Pan de hamburguesa · Queso light · 2 tomates · Rúcula · Aceite de oliva · Sal · Orégano",
     "preparacion": "Pica las cebollas y pon a sofreír en un sartén con de aceite de oliva hasta que se doren un poco. Seguidamente coloca en un bol la rúcula y el tomate previamente picado en rodajas, y aliña con sal, aceite y orégano.-- Prepara las hamburguesas a fuego lento hasta que queden bien cocinadas. Una vez listas, prepara tus hamburguesas con pan, queso, cebolla y la rúcula con tomate."
   },
   {         
     "id": "huevos-con-jamon-ahumado",
-    "titulo": "Huevos con jamón ahumado",
+    "titulo": "Huevos con Jamón Ahumado",
     "imagen": "entrada-pechuga-ahumada",
     "ingredientes": "· Jamón ahumado Sopraval · 6 huevos · Sal · Aceite de oliva · Pimienta",
     "preparacion": "Bate los huevos con una pizca de sal y pimienta, pica el jamón en cuadritos y agrégalo al queso batido revolviendo bien. Coloca un poco de aceite de oliva al sartén.-- Agrega la mezcla al sartén con fuego medio y deja cocinar mientras vas revolviendo. Una vez que esté listo y bien cocinado, apaga el sartén y si lo deseas, puedes agregar un poco de sal y estará listo para servir."
   },
   {         
     "id": "pechuga-deshuesada-rellena-con-ciruelas",
-    "titulo": "Pechuga deshuesada rellena con ciruelas",
+    "titulo": "Pechuga Deshuesada Rellena con Ciruelas",
     "imagen": "pechuga-desguesada-ciruelas",
     "ingredientes": "Pechuga deshuesada Sopraval · 50 grs. de ciruelas · 50 grs. de manteca · Pimienta negra molida · Sal",
     "preparacion": "Corta la pechuga a la mitad con un poco de sal y pimienta a gusto. Con palo de amasar, aplasta la pechuga para estirarla y dejarla de un centímetro de espesor, luego agrega las ciruelas en un bol.-- Añade un par de cucharadas de ciruelas en el centro del pavo y enróllalo firmemente. Introduce los extremos hacia adentro para que no salga nada y repite el procedimiento con cada filete de pavo.-- Unta con bastante manteca una fuente para horno y ubica las pechugas rellenas allí. Coloca algunos trocitos de manteca por encima y agrega sal y pimienta a gusto. Seguidamente introduce al horno con una temperatura de 180°C y déjalo cocinar por unos 25 minutos, para luego servir."
   },
   {         
     "id": "rollito-de-pechuga-asada",
-    "titulo": "Rollito de pechuga asada",
+    "titulo": "Rollito de Pechuga Asada",
     "imagen": "pechuga-desguesada-ciruelas",
     "ingredientes": "Pechuga asada Sopraval · 2 pimientos · Rúcula · Aceite de oliva",
     "preparacion": "Pica los pimientos en tiras no muy largas y sofríe un poco con aceite de oliva. Lava la rúcula y sepárala en pedazos relativamente pequeños. Una vez que los ingredientes estén listos, toma la pechuga asada y enróllala con los pimientos y la rúcula. Continúa así sucesivamente con todas las láminas. "
   },
   {         
     "id": "tuto-clasico-a-la-parrilla",
-    "titulo": "Tuto clásico a la parrilla",
+    "titulo": "Tuto Clásico a la Parrilla",
     "imagen": "albondigas-pure",
     "ingredientes": "Tuto clásico Sopraval · Cebollín · Jengibre · Salsa de soya · Azúcar",
     "preparacion": "Pica el cebollín muy fino y colócalo en un recipiente junto con el jengibre, la salsa de soya y el azúcar. Revuélvelo hasta que el azúcar se deshaga completamente, agregando los tutos al recipiente tapándolos con papel plástico. Deja refrigerar durante dos horas.-- Luego, sácalas y coloca el tuto en la parrilla bañándolo nuevamente con la marinada hecha. Deja que se cocine y una vez que se dore, estará listo para servir."
   },
   {         
     "id": "tutos-cortos-de-pavo-a-la-naranja",
-    "titulo": "Tutos cortos de pavo a la naranja",
+    "titulo": "Tutos Cortos de Pavo a la Naranja",
     "imagen": "entrada-pechuga-ahumada",
     "ingredientes": "Tutos de pavo · Aceite de oliva · 1 naranja · 1 cebolla · Ajo · Jengibre · Sal · Pimienta",
     "preparacion": "En una olla coloca aceite a fuego alto y calienta los tutos hasta que estén bien dorados, luego sofríe la cebolla junto con el ajo y el jengibre en la misma olla. Agrega nuevamente los tutos junto con el jugo de naranja (previamente exprimido de la naranja).-- Añade sal y pimienta a gusto y deja hervir durante unos 10 ó 15 minutos. Luego, retira y estará listo para disfrutar. Puedes añadir el jugo de cocción al momento de servir para dar más sabor."
