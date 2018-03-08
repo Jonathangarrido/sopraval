@@ -258,7 +258,7 @@
   {
     "id": "pechuga-acaramelada-150g",
     "imagen": "pechuga-acaramelada-150g",
-    "titulo": "Pechuga de Pavo Acaramelada 150 g.”,
+    "titulo": "Pechuga de Pavo Acaramelada 150 g.",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -274,7 +274,7 @@
   {
     "id": "pechuga-ahumada-150g",
     "imagen": "pechuga-ahumada-150g",
-    "titulo": "Pechuga de Pavo Ahumada 150 g.”,
+    "titulo": "Pechuga de Pavo Ahumada 150 g.",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -290,7 +290,7 @@
   {
     "id": "pechuga-ahumada-250g",
     "imagen": "pechuga-ahumada-250g",
-    "titulo": "Pechuga de Pavo Ahumada 250 g.”,
+    "titulo": "Pechuga de Pavo Ahumada 250 g.",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -306,7 +306,7 @@
   {
     "id": "pechuga-ahumada-300g",
     "imagen": "pechuga-ahumada-300g",
-    "titulo": "Pechuga de Pavo Ahumada 300 g.”,
+    "titulo": "Pechuga de Pavo Ahumada 300 g.",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -338,7 +338,7 @@
   {
     "id": "pechuga-asada-150g",
     "imagen": "pechuga-asada-150g",
-    "titulo": "Pechuga de Pavo Asada 150 g.”,
+    "titulo": "Pechuga de Pavo Asada 150 g.",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -354,7 +354,7 @@
   {
     "id": "pechuga-asada-250g",
     "imagen": "pechuga-asada-250g",
-    "titulo": "Pechuga de Pavo Asada 250 g.”,
+    "titulo": "Pechuga de Pavo Asada 250 g.",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -386,7 +386,7 @@
   {
     "id": "pechuga-cocida-150g",
     "imagen": "pechuga-cocida-150g",
-    "titulo": "Pechuga de Pavo Cocida 150 g.”,
+    "titulo": "Pechuga de Pavo Cocida 150 g.",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -402,7 +402,7 @@
   {
     "id": "pechuga-cocida-250g",
     "imagen": "pechuga-cocida-250g",
-    "titulo": "Pechuga de Pavo Cocida 250 g.”,
+    "titulo": "Pechuga de Pavo Cocida 250 g.",
     "categoria": "jamones-pechugas",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -450,7 +450,7 @@
   {
     "id": "bistec-pechuga-700g",
     "imagen": "bistec-pechuga-700g",
-    "titulo": "Bistec de Pechuga de Pollo 700 g.”,
+    "titulo": "Bistec de Pechuga de Pollo 700 g.",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -546,7 +546,7 @@
   {
     "id": "hamburguesa-pavo-400g",
     "imagen": "hamburguesa-pavo-400g",
-    "titulo": "Hamburguesa de Pavo 400 g.”,
+    "titulo": "Hamburguesa de Pavo 400 g.",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -754,7 +754,7 @@
   {
     "id": "salchichas-pavo-5unid",
     "imagen": "salchichas-pavo-5unid",
-    "titulo": "Salchichas de Pavo 5 unid.”,
+    "titulo": "Salchichas de Pavo 5 unid.",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
@@ -770,7 +770,7 @@
   {
     "id": "salchichas-pavo-20unid",
     "imagen": "salchichas-pavo-20unid",
-    "titulo": "Salchichas de Pavo 20 unid.”,
+    "titulo": "Salchichas de Pavo 20 unid.",
     "categoria": "practicos",
     "descripcion": "Lorem ipsum dolor sit amet consectetur",
     "datos": {
