@@ -1,0 +1,41 @@
+//*************************************
+// pages/common/info
+//*************************************
+.masInfo{
+  height: 100vh;
+  position: relative;
+  width: 100vw;
+  z-index: 2;
+  @extend .wrapper;
+
+  &-conte{
+    background: white;
+    color: #666;
+    max-width: 50rem;
+    position: relative;
+    &>a{
+      background-color: $color-base;
+      border-radius: 50%;
+      font-size: 1rem;
+      height: 2.5rem;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      width: 2.5rem;
+      @extend .wrapper;
+    }
+    h1{
+      color: #666;
+      font-family: $altfont-secundary;
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    p{
+      font-size: .8rem;
+      &:last-child{
+        margin: 0;
+      }
+    }
+  }
+}

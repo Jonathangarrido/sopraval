@@ -1,0 +1,63 @@
+//*************************************
+// pages/contacto
+//*************************************
+.contacto{
+  main{
+    padding: 2rem 3rem;
+  }
+  header{
+    text-align: center;
+    p{
+      font-family: $altfont-secundary;
+      font-size: 1.5rem;
+      margin-bottom: 0;
+    }
+    span{
+      font-size: .9rem;
+    }
+  }
+  section{
+    display: flex;
+    margin-top: 3rem;
+  }
+  p{
+    font-size: .9rem;
+    margin-bottom: 1rem;
+  }
+  aside{
+    span{
+      color: $color-base;
+      display: block;
+      font-family: $altfont-secundary;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+    width: 20rem;
+  }
+  input,
+  textarea{
+    border: solid 1px #999;
+    border-radius: 5px;
+    font-size: .8rem;
+    margin-bottom: .5rem;
+    padding: .3em .5em;
+  }
+  textarea{
+    min-height: 5rem;
+    max-height: 10rem;
+    resize: vertical;
+    overflow: auto;
+  }
+  button{
+    border-radius: 5px;
+    background-color: $color-base;
+    color: white;
+    font-size: .8rem;
+    padding: .5rem
+  }
+}

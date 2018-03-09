@@ -26,6 +26,15 @@
       .when('/recetas/:id', {
         template: '<receta></receta>'
       })
+      .when('/nuestra-empresa', {
+        template: '<empresa></empresa>'
+      })
+      .when('/uso-y-manipulacion-segura', {
+        template: '<manipulacion></manipulacion>'
+      })
+      .when('/contacto', {
+        template: '<contacto></contacto>'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -65,6 +74,10 @@
       'producto',
       'recetas',
       'receta',
+      'fondo',
+      'empresa',
+      'manipulacion',
+      'contacto',
       'angular-google-analytics'
     ])
     .config(config)

@@ -8,16 +8,16 @@
   <section class="home-nav">
     <a ng-href="#/productos">Productos</a>
     <a ng-href="#/recetas">Recetas</a>
-    <a ng-href="#/contacto">Contacto</a>
+    <a ng-click="$ctrl.contacto('contacto')">Contacto</a>
   </section>
 
   <section class="home-nav-secondary" ng-class="{'active': $ctrl.active}">
     <p ng-click="$ctrl.collapse()">Más información</p>
     <ul>
-      <li><a ng-href="#/">Empresa</a></li>
-      <li><a ng-href="#/">Uso y manipulación segura</a></li>
-      <li><a ng-href="#/">Registro y Calificación</a></li>
-      <li><a ng-href="#/">Denuncias Anónimas</a></li>
+      <li><a ng-click="$ctrl.masInfo('nuestra-empresa')">Empresa</a></li>
+      <li><a ng-click="$ctrl.masInfo('uso-y-manipulacion-segura')">Uso y manipulación segura</a></li>
+      <li><a ng-click="$ctrl.masInfo()">Registro y Calificación</a></li>
+      <li><a href="http://www.agrosuper.com/denuncias/" target="_black">Denuncias Anónimas</a></li>
     </ul>
     <footer>@ Copyright Sopraval 2018</footer>
   </section>

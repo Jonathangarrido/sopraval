@@ -25,6 +25,7 @@ function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope, Analyti
     getDatos();
     volver();
     analytics();
+    menuActive();
   };
 
   function analytics() {
@@ -66,6 +67,13 @@ function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope, Analyti
       setDatos.setAnimate('fade');
       $scope.$apply();
     }, 800);
+  }
+
+  function menuActive() {
+    $timeout(function () {
+      setDatos.setVisible(true);
+      $scope.$apply();
+    }, 100);
   }
 }
 

@@ -60,6 +60,14 @@ function menuCtrl(setDatos, $location, $scope, $timeout) {
     }, 100);
   }
 
+  vm.contacto = function (url) {
+    $timeout(function () {
+      setDatos.setAnimate('fade');
+      $scope.$apply();
+      $location.path(url);
+    }, 100);
+  };
+
 }
 
 angular.module('menu', [])

@@ -18,6 +18,7 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout, Analytic
     fondo();
     volver();
     analytics();
+    menuActive();
   };
 
   function analytics() {
@@ -63,6 +64,13 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout, Analytic
 
   function imagen() {
     $('.producto-titulo-fondo').css('background-image', 'url(./img/productos/' + vm.producto.categoria + '/' + vm.producto.imagen + '.jpg)');
+  }
+
+  function menuActive() {
+    $timeout(function () {
+      setDatos.setVisible(true);
+      $scope.$apply();
+    }, 100);
   }
 
 }

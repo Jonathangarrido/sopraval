@@ -17,6 +17,7 @@ function recetaCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics)
     getData();
     volver();
     analytics();
+    menuActive();
   };
 
   function analytics() {
@@ -47,6 +48,13 @@ function recetaCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics)
         $scope.$apply();
       }, 100);
     });
+  }
+
+  function menuActive() {
+    $timeout(function () {
+      setDatos.setVisible(true);
+      $scope.$apply();
+    }, 100);
   }
 
 }

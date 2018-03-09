@@ -3,8 +3,8 @@
 // **********************************************************
 'use strict';
 
-homeCtrl.$inject = ['setDatos', '$scope', '$timeout', 'Analytics'];
-function homeCtrl(setDatos, $scope, $timeout, Analytics) {
+homeCtrl.$inject = ['setDatos', '$scope', '$timeout', 'Analytics', '$location'];
+function homeCtrl(setDatos, $scope, $timeout, Analytics, $location) {
   var vm = this;
   vm.active;
 
@@ -36,6 +36,22 @@ function homeCtrl(setDatos, $scope, $timeout, Analytics) {
 
   vm.collapse = function () {
     vm.active = !vm.active;
+  };
+
+  vm.masInfo = function (url) {
+    $timeout(function () {
+      setDatos.setAnimate('fade');
+      $scope.$apply();
+      $location.path(url);
+    }, 100);
+  };
+
+  vm.contacto = function (url) {
+    $timeout(function () {
+      setDatos.setAnimate('fade');
+      $scope.$apply();
+      $location.path(url);
+    }, 100);
   };
 
 }

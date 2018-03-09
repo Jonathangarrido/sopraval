@@ -274,7 +274,7 @@ pre, code {
 /* ------------------------------------
       ·HELPERS
   -------------------------------------*/
-.wrapper, .loading, .menu-logo, .menu-modal, .lista span, .lista > a, .home, .home-nav-secondary p, .home-nav-secondary ul, .sociales a, .categoria-fondo, .producto-conte {
+.wrapper, .loading, .menu-logo, .menu-modal, .lista span, .lista > a, .fondo header a, .fondo footer p, .masInfo, .masInfo-conte > a, .home, .home-nav-secondary p, .home-nav-secondary ul, .sociales a, .categoria-fondo, .producto-conte {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -537,7 +537,7 @@ a {
   content: ""; }
 
 .loading {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   height: 100vh;
@@ -736,8 +736,8 @@ menu {
   .lista.in {
     -webkit-animation: fondo-entrada .8s forwards;
             animation: fondo-entrada .8s forwards;
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out; }
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease; }
     .lista.in > a {
       visibility: visible;
       opacity: 1; }
@@ -784,6 +784,8 @@ menu {
       color: #00A9E4; }
   .lista li {
     margin: 2rem 0 0 0; }
+    .lista li:hover h2 {
+      color: #00A9E4; }
   .lista-recetas img {
     max-width: 100% !important; }
 
@@ -798,6 +800,94 @@ menu {
     right: -15rem; }
   100% {
     right: 0; } }
+
+.fondo {
+  background-image: url("../img/fondos/f-home.jpg");
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  overflow: hidden;
+  position: absolute;
+  height: 100vh;
+  width: 100vw; }
+  .fondo-transparencia {
+    background-color: rgba(0, 169, 228, 0.7);
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 2; }
+  .fondo header {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .fondo header a {
+      background-color: white;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      font-size: 1.2rem;
+      height: 2rem;
+      line-height: 1;
+      width: 2rem;
+      color: #777777; }
+      .fondo header a:not(:last-child) {
+        margin-right: 1rem; }
+  .fondo footer {
+    position: absolute;
+    background-color: #00A9E4;
+    bottom: 0;
+    font-family: "Fjalla One", sans-serif;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100vw; }
+    .fondo footer p {
+      font-size: .8rem;
+      height: 3rem;
+      position: relative;
+      width: 100%; }
+      .fondo footer p:after {
+        bottom: .1rem;
+        content: '\f107';
+        font-family: 'icomoon';
+        left: 50%;
+        position: absolute; }
+
+.masInfo {
+  height: 100vh;
+  position: relative;
+  width: 100vw;
+  z-index: 2; }
+  .masInfo-conte {
+    background: white;
+    color: #666;
+    max-width: 50rem;
+    position: relative; }
+    .masInfo-conte > a {
+      background-color: #00A9E4;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      font-size: 1rem;
+      height: 2.5rem;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      width: 2.5rem; }
+    .masInfo-conte h1 {
+      color: #666;
+      font-family: "Fjalla One", sans-serif;
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      text-align: center; }
+    .masInfo-conte p {
+      font-size: .8rem; }
+      .masInfo-conte p:last-child {
+        margin: 0; }
 
 .home {
   background-image: url("../img/fondos/f-home.jpg");
@@ -1203,3 +1293,107 @@ menu {
 .receta .separacion {
   margin-top: -1rem;
   margin-bottom: -.39rem; }
+
+.empresa section {
+  padding: 0 3rem 2rem; }
+
+.empresa header {
+  background-image: url("../img/nuestra-empresa.jpg");
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  height: 16rem; }
+
+.manipulacion section {
+  padding: 2rem 3rem; }
+
+.manipulacion p {
+  font-size: .8rem; }
+
+.manipulacion ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  margin-top: 2rem;
+  width: 100%; }
+
+.manipulacion li {
+  text-align: center; }
+  .manipulacion li:not(:last-child) {
+    margin-right: 1rem; }
+  .manipulacion li p {
+    max-width: 9rem; }
+
+.manipulacion img {
+  width: 8rem;
+  margin-bottom: 1.5rem; }
+
+.contacto main {
+  padding: 2rem 3rem; }
+
+.contacto header {
+  text-align: center; }
+  .contacto header p {
+    font-family: "Fjalla One", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 0; }
+  .contacto header span {
+    font-size: .9rem; }
+
+.contacto section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 3rem; }
+
+.contacto p {
+  font-size: .9rem;
+  margin-bottom: 1rem; }
+
+.contacto aside span {
+  color: #00A9E4;
+  display: block;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold; }
+
+.contacto form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 5rem;
+  width: 20rem; }
+
+.contacto input,
+.contacto textarea {
+  border: solid 1px #999;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  font-size: .8rem;
+  margin-bottom: .5rem;
+  padding: .3em .5em; }
+
+.contacto textarea {
+  min-height: 5rem;
+  max-height: 10rem;
+  resize: vertical;
+  overflow: auto; }
+
+.contacto button {
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  background-color: #00A9E4;
+  color: white;
+  font-size: .8rem;
+  padding: .5rem; }

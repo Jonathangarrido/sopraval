@@ -1,0 +1,30 @@
+//*************************************
+// pages/manipulacion
+//*************************************
+.manipulacion{
+  section{
+    padding: 2rem 3rem;
+  }
+  p{
+    font-size: .8rem;
+  }
+  ul{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    width: 100%;
+  }
+  li{
+    text-align: center;
+    &:not(:last-child){
+      margin-right: 1rem;
+    }
+    p{
+      max-width: 9rem;
+    }
+  }
+  img{
+    width: 8rem;
+    margin-bottom: 1.5rem;
+  }
+}

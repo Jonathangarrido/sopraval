@@ -1,0 +1,64 @@
+//*************************************
+// pages/common/fondo
+//*************************************
+.fondo{
+  background-image: url('../img/fondos/f-home.jpg');
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  &-transparencia{
+    background-color: rgba($color-base, .7);
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 2;
+  }
+  header{
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    display: flex;
+    a{
+      background-color: white;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      height: 2rem;
+      line-height: 1;
+      width: 2rem;
+      color: rgb(119, 119, 119);
+      @extend .wrapper;
+      &:not(:last-child){
+        margin-right: 1rem;
+      }
+    }
+  }
+  footer{
+    position: absolute;
+    background-color: $color-base;
+    bottom:0;
+    font-family: $altfont-secundary;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100vw;
+    p{
+      font-size: .8rem;
+      height: 3rem;
+      position: relative;
+      width: 100%;
+      @extend .wrapper;
+      &:after{
+        bottom: .1rem;
+        content: '\f107';
+        font-family: 'icomoon';
+        left: 50%;
+        position: absolute;
+      }
+    }
+  }
+}
