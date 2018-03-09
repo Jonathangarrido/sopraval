@@ -25,14 +25,14 @@ menu{
     margin-top: 1rem;
     z-index: $index-1;
     &:before{
-      content: '\f0c9';
+      content: '\f0c9'; /* '\f0c9'; */
       font-family: 'icomoon';
       font-size: 2rem;
       margin-right: 1rem;
     }
     &.activo{
       &:before{
-        content: '\f00d',
+        content: '\f00d'; /* '\f00d'; */
       }
     }
   }

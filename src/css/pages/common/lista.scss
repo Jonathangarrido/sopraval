@@ -45,7 +45,7 @@
     visibility: hidden;
     opacity: 0;
     &:after{
-      content: '\f00d';
+      content: '\f00d'; /* '\f00d'; */
       font-family: 'icomoon'
     }
   }

@@ -120,540 +120,6 @@ angular.module('app', [])
     templateUrl: './js/component/app/app.html',
     controller: appCtrl
   });
-
-// **********************************************************
-// archivo component/pages/categoria
-// **********************************************************
-'use strict';
-
-categoriaCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope', 'Analytics'];
-function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics) {
-  var vm = this;
-  vm.urlAll = $location.path().split('/');
-  vm.url = vm.urlAll[2];
-  vm.categorias = [
-    { tipo: 'tradicional', nombre: 'Tradicional' },
-    { tipo: 'jamones-pechugas', nombre: 'Jamones y Pechugas' },
-    { tipo: 'parrilleros', nombre: 'Parrilleros' },
-    { tipo: 'practicos', nombre: 'Prácticos' }
-  ];
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    titulo();
-    fondo();
-    animate();
-    getDatos();
-    volver();
-    analytics();
-    menuActive();
-  };
-
-  function analytics() {
-    Analytics.trackEvent('page', 'productos', vm.urlAll[2]);
-  }
-
-  function volver() {
-    $timeout(function () {
-      setDatos.setBack(vm.urlAll);
-      $scope.$apply();
-    }, 100);
-  }
-
-  function getDatos() {
-    Consultas.getProductos().then(function (response) {
-      var data = response.data;
-      var datos = data.filter(function (producto) {
-        return producto.categoria === vm.urlAll[2];
-      });
-
-      $timeout(function () {
-        setDatos.setList(datos, 'productos');
-        $scope.$apply();
-      }, 100);
-    });
-  }
-
-  function fondo() {
-    $('.categoria-fondo').css('background-image', 'url(./img/fondos/f-' + vm.url + '.jpg)');
-  }
-
-  function titulo() {
-    vm.categoria = setDatos.setCategoria();
-  }
-
-  function animate() {
-    $('.categoria-fondo').addClass('in');
-    $timeout(function () {
-      setDatos.setAnimate('fade');
-      $scope.$apply();
-    }, 800);
-  }
-
-  function menuActive() {
-    $timeout(function () {
-      setDatos.setVisible(true);
-      $scope.$apply();
-    }, 100);
-  }
-}
-
-angular.module('categoria', [])
-  .component('categoria', {
-    templateUrl: './js/component/pages/categoria/categoria.html',
-    controller: categoriaCtrl
-  });
-// **********************************************************
-// archivo component/pages/contacto
-// **********************************************************
-'use strict';
-
-contactoCtrl.$inject = ['$timeout', '$scope', 'setDatos', 'Analytics'];
-function contactoCtrl($timeout, $scope, setDatos, Analytics) {
-  var vm = this;
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    animate();
-    analytics();
-    list();
-  };
-
-  function analytics() {
-    Analytics.trackEvent('page', 'contacto');
-  }
-
-  function animate() {
-    $timeout(function () {
-      setDatos.setAnimate('fade');
-      $scope.$apply();
-    }, 800);
-  }
-
-  function list(){
-    $timeout(function () {
-      setDatos.setList([], '');
-      $scope.$apply();
-    }, 100);
-  }
-
-}
-
-angular.module('contacto', [])
-  .component('contacto', {
-    templateUrl: './js/component/pages/contacto/contacto.html',
-    controller: contactoCtrl,
-  });
-// **********************************************************
-// archivo component/pages/empresa
-// **********************************************************
-'use strict';
-
-empresaCtrl.$inject = ['$timeout', '$scope', 'setDatos', 'Analytics'];
-function empresaCtrl($timeout, $scope, setDatos, Analytics) {
-  var vm = this;
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    animate();
-    analytics();
-  };
-
-  function analytics() {
-    Analytics.trackEvent('page', 'más información', 'nuestra empresa');
-  }
-
-  function animate() {
-    $timeout(function () {
-      setDatos.setAnimate('fade');
-      $scope.$apply();
-    }, 800);
-  }
-}
-
-angular.module('empresa', [])
-  .component('empresa', {
-    templateUrl: './js/component/pages/empresa/empresa.html',
-    controller: empresaCtrl,
-  });
-// **********************************************************
-// archivo component/pages/home
-// **********************************************************
-'use strict';
-
-homeCtrl.$inject = ['setDatos', '$scope', '$timeout', 'Analytics', '$location'];
-function homeCtrl(setDatos, $scope, $timeout, Analytics, $location) {
-  var vm = this;
-  vm.active;
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    animate();
-    cleanList();
-    analytics();
-  };
-
-  function animate() {
-    $timeout(function () {
-      setDatos.setAnimate('slideIn');
-      $scope.$apply();
-    }, 800);
-  }
-
-  function cleanList() {
-    $timeout(function () {
-      setDatos.setList([], '');
-      $scope.$apply();
-    }, 100);
-  }
-
-  function analytics() {
-    Analytics.trackEvent('page', 'home');
-  }
-
-  vm.collapse = function () {
-    vm.active = !vm.active;
-  };
-
-  vm.masInfo = function (url) {
-    $timeout(function () {
-      setDatos.setAnimate('fade');
-      $scope.$apply();
-      $location.path(url);
-    }, 100);
-  };
-
-  vm.contacto = function (url) {
-    $timeout(function () {
-      setDatos.setAnimate('fade');
-      $scope.$apply();
-      $location.path(url);
-    }, 100);
-  };
-
-}
-
-angular.module('home', [])
-  .component('home', {
-    templateUrl: './js/component/pages/home/home.html',
-    controller: homeCtrl
-  });
-// **********************************************************
-// archivo component/pages/manipulacion
-// **********************************************************
-'use strict';
-
-manipulacionCtrl.$inject = ['$timeout', '$scope', 'setDatos', 'Analytics'];
-function manipulacionCtrl($timeout, $scope, setDatos, Analytics) {
-  var vm = this;
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    animate();
-    analytics();
-  };
-
-  function analytics() {
-    Analytics.trackEvent('page', 'más información', 'uso y manipulación segura');
-  }
-
-  function animate() {
-    $timeout(function () {
-      setDatos.setAnimate('fade');
-      $scope.$apply();
-    }, 800);
-  }
-}
-
-angular.module('manipulacion', [])
-  .component('manipulacion', {
-    templateUrl: './js/component/pages/manipulacion/manipulacion.html',
-    controller: manipulacionCtrl,
-  });
-// **********************************************************
-// archivo component/pages/producto
-// **********************************************************
-'use strict';
-
-productoCtrl.$inject = ['Consultas', '$location', 'setDatos', '$scope', '$timeout', 'Analytics'];
-function productoCtrl(Consultas, $location, setDatos, $scope, $timeout, Analytics) {
-  var vm = this;
-  vm.urlAll = $location.path().split('/');
-  vm.urlCategoria = vm.urlAll[2];
-  vm.urlProducto = vm.urlAll[3];
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    getData();
-    animate();
-    fondo();
-    volver();
-    analytics();
-    menuActive();
-  };
-
-  function analytics() {
-    Analytics.trackEvent('page', 'productos', vm.urlCategoria, vm.urlProducto);
-  }
-
-  function volver() {
-    $timeout(function () {
-      setDatos.setBack(vm.urlAll);
-      $scope.$apply();
-    }, 100);
-  }
-
-  function animate() {
-    $timeout(function () {
-      setDatos.setAnimate();
-      $scope.$apply();
-    }, 800);
-  }
-
-  function getData() {
-    Consultas.getProductos().then(function (response) {
-      var data = response.data;
-      var dato = data.filter(function (producto) {
-        return producto.id === vm.urlProducto;
-      });
-      vm.producto = dato[0];
-      imagen();
-
-      var datos = data.filter(function (producto) {
-        return producto.categoria === vm.urlAll[2];
-      });
-      $timeout(function () {
-        setDatos.setList(datos, 'productos');
-        $scope.$apply();
-      }, 100);
-    });
-  }
-
-  function fondo() {
-    $('.producto-fondo').css('background-image', 'url(./img/fondos/f-' + vm.urlCategoria + '.jpg)');
-  }
-
-  function imagen() {
-    $('.producto-titulo-fondo').css('background-image', 'url(./img/productos/' + vm.producto.categoria + '/' + vm.producto.imagen + '.jpg)');
-  }
-
-  function menuActive() {
-    $timeout(function () {
-      setDatos.setVisible(true);
-      $scope.$apply();
-    }, 100);
-  }
-
-}
-
-angular.module('producto', [])
-  .component('producto', {
-    templateUrl: './js/component/pages/producto/producto.html',
-    controller: productoCtrl,
-
-  });
-// **********************************************************
-// archivo component/pages/productos
-// **********************************************************
-'use strict';
-
-productosCtrl.$inject = ['setDatos', '$scope', '$timeout', 'Analytics'];
-function productosCtrl(setDatos, $scope, $timeout, Analytics) {
-  var vm = this;
-  vm.categorias = [
-    { tipo: 'tradicional', nombre: 'Tradicional' },
-    { tipo: 'jamones-pechugas', nombre: 'Jamones y Pechugas' },
-    { tipo: 'parrilleros', nombre: 'Parrilleros' },
-    { tipo: 'practicos', nombre: 'Prácticos' }
-  ];
-  vm.background = [];
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    animate();
-    cleanList();
-    menuActive();
-    analytics();
-  };
-
-  vm.backgroundOver = function (categoria) {
-    vm.background = [];
-    switch (categoria) {
-      case 'jamones-pechugas': vm.background.jamonesPechugas = true; break;
-      case 'tradicional': vm.background.tradicional = true; break;
-      case 'parrilleros': vm.background.parrilleros = true; break;
-      case 'practicos': vm.background.practicos = true; break;
-    }
-  };
-
-  function analytics() {
-    Analytics.trackEvent('page', 'productos');
-  }
-
-  function animate() {
-    $timeout(function () {
-      setDatos.setAnimate();
-      $scope.$apply();
-    }, 800);
-  }
-
-  function cleanList() {
-    $timeout(function () {
-      setDatos.setList([], '');
-      $scope.$apply();
-    }, 100);
-  }
-
-  function menuActive() {
-    $timeout(function () {
-      setDatos.setVisible(true);
-      $scope.$apply();
-    }, 100);
-  }
-
-}
-
-angular.module('productos', [])
-  .component('productos', {
-    templateUrl: './js/component/pages/productos/productos.html',
-    controller: productosCtrl
-  });
-
-// **********************************************************
-// archivo component/pages/receta
-// **********************************************************
-'use strict';
-
-recetaCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope', 'Analytics'];
-function recetaCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics) {
-  var vm = this;
-  vm.urlAll = $location.path().split('/');
-  vm.url = vm.urlAll[2];
-  vm.producto;
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    getData();
-    volver();
-    analytics();
-    menuActive();
-  };
-
-  function analytics() {
-    Analytics.trackEvent('page', 'recetas', vm.url);
-  }
-
-  function volver() {
-    $timeout(function () {
-      setDatos.setBack(vm.urlAll);
-      $scope.$apply();
-    }, 100);
-  }
-
-  function getData() {
-    Consultas.getRecetas().then(function (response) {
-      var data = response.data;
-      var dato = data.filter(function (producto) {
-        return producto.id === vm.url;
-      });
-      vm.producto = dato[0];
-
-      var str2 = vm.producto.preparacion;
-      var filtroIngredientes = str2.split('--');
-      vm.producto.preparacion = filtroIngredientes;
-
-      $timeout(function () {
-        setDatos.setList(data, 'recetas');
-        $scope.$apply();
-      }, 100);
-    });
-  }
-
-  function menuActive() {
-    $timeout(function () {
-      setDatos.setVisible(true);
-      $scope.$apply();
-    }, 100);
-  }
-
-}
-
-angular.module('receta', [])
-  .component('receta', {
-    templateUrl: './js/component/pages/receta/receta.html',
-    controller: recetaCtrl
-  });
-
-// **********************************************************
-// archivo component/pages/recetas
-// **********************************************************
-'use strict';
-
-recetasCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope', 'Analytics'];
-function recetasCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics) {
-  var vm = this;
-  vm.urlAll = $location.path().split('/');
-  vm.url = vm.urlAll[2];
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    getDatos();
-    volver();
-    menuActive();
-    animate();
-    analytics();
-  };
-
-  function analytics() {
-    Analytics.trackEvent('page', 'recetas');
-  }
-
-  function animate() {
-    $timeout(function () {
-      setDatos.setAnimate('fade');
-      $scope.$apply();
-    }, 800);
-  }
-
-  function volver() {
-    $timeout(function () {
-      setDatos.setBack(vm.urlAll);
-      $scope.$apply();
-    }, 100);
-  }
-
-  function getDatos() {
-    Consultas.getRecetas().then(function (response) {
-      var data = response.data;
-      $timeout(function () {
-        setDatos.setList(data, 'recetas');
-        $scope.$apply();
-      }, 100);
-    });
-  }
-
-  function menuActive() {
-    $timeout(function () {
-      setDatos.setVisible(true);
-      $scope.$apply();
-    }, 100);
-  }
-}
-
-angular.module('recetas', [])
-  .component('recetas', {
-    templateUrl: './js/component/pages/recetas/recetas.html',
-    controller: recetasCtrl
-  });
 // **********************************************************
 // archivo component/common/fondo
 // **********************************************************
@@ -811,6 +277,540 @@ angular.module('menu', [])
   .component('menu', {
     templateUrl: './js/component/common/menu/menu.html',
     controller: menuCtrl
+  });
+
+// **********************************************************
+// archivo component/pages/categoria
+// **********************************************************
+'use strict';
+
+categoriaCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope', 'Analytics'];
+function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics) {
+  var vm = this;
+  vm.urlAll = $location.path().split('/');
+  vm.url = vm.urlAll[2];
+  vm.categorias = [
+    { tipo: 'tradicional', nombre: 'Tradicional' },
+    { tipo: 'jamones-pechugas', nombre: 'Jamones y Pechugas' },
+    { tipo: 'parrilleros', nombre: 'Parrilleros' },
+    { tipo: 'practicos', nombre: 'Prácticos' }
+  ];
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    titulo();
+    fondo();
+    animate();
+    getDatos();
+    volver();
+    analytics();
+    menuActive();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'productos', vm.urlAll[2]);
+  }
+
+  function volver() {
+    $timeout(function () {
+      setDatos.setBack(vm.urlAll);
+      $scope.$apply();
+    }, 100);
+  }
+
+  function getDatos() {
+    Consultas.getProductos().then(function (response) {
+      var data = response.data;
+      var datos = data.filter(function (producto) {
+        return producto.categoria === vm.urlAll[2];
+      });
+
+      $timeout(function () {
+        setDatos.setList(datos, 'productos');
+        $scope.$apply();
+      }, 100);
+    });
+  }
+
+  function fondo() {
+    $('.categoria-fondo').css('background-image', 'url(./img/fondos/f-' + vm.url + '.jpg)');
+  }
+
+  function titulo() {
+    vm.categoria = setDatos.setCategoria();
+  }
+
+  function animate() {
+    $('.categoria-fondo').addClass('in');
+    $timeout(function () {
+      setDatos.setAnimate('fade');
+      $scope.$apply();
+    }, 800);
+  }
+
+  function menuActive() {
+    $timeout(function () {
+      setDatos.setVisible(true);
+      $scope.$apply();
+    }, 100);
+  }
+}
+
+angular.module('categoria', [])
+  .component('categoria', {
+    templateUrl: './js/component/pages/categoria/categoria.html',
+    controller: categoriaCtrl
+  });
+// **********************************************************
+// archivo component/pages/contacto
+// **********************************************************
+'use strict';
+
+contactoCtrl.$inject = ['$timeout', '$scope', 'setDatos', 'Analytics'];
+function contactoCtrl($timeout, $scope, setDatos, Analytics) {
+  var vm = this;
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    animate();
+    analytics();
+    list();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'contacto');
+  }
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate('fade');
+      $scope.$apply();
+    }, 800);
+  }
+
+  function list(){
+    $timeout(function () {
+      setDatos.setList([], '');
+      $scope.$apply();
+    }, 100);
+  }
+
+}
+
+angular.module('contacto', [])
+  .component('contacto', {
+    templateUrl: './js/component/pages/contacto/contacto.html',
+    controller: contactoCtrl,
+  });
+// **********************************************************
+// archivo component/pages/manipulacion
+// **********************************************************
+'use strict';
+
+manipulacionCtrl.$inject = ['$timeout', '$scope', 'setDatos', 'Analytics'];
+function manipulacionCtrl($timeout, $scope, setDatos, Analytics) {
+  var vm = this;
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    animate();
+    analytics();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'más información', 'uso y manipulación segura');
+  }
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate('fade');
+      $scope.$apply();
+    }, 800);
+  }
+}
+
+angular.module('manipulacion', [])
+  .component('manipulacion', {
+    templateUrl: './js/component/pages/manipulacion/manipulacion.html',
+    controller: manipulacionCtrl,
+  });
+// **********************************************************
+// archivo component/pages/empresa
+// **********************************************************
+'use strict';
+
+empresaCtrl.$inject = ['$timeout', '$scope', 'setDatos', 'Analytics'];
+function empresaCtrl($timeout, $scope, setDatos, Analytics) {
+  var vm = this;
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    animate();
+    analytics();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'más información', 'nuestra empresa');
+  }
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate('fade');
+      $scope.$apply();
+    }, 800);
+  }
+}
+
+angular.module('empresa', [])
+  .component('empresa', {
+    templateUrl: './js/component/pages/empresa/empresa.html',
+    controller: empresaCtrl,
+  });
+// **********************************************************
+// archivo component/pages/home
+// **********************************************************
+'use strict';
+
+homeCtrl.$inject = ['setDatos', '$scope', '$timeout', 'Analytics', '$location'];
+function homeCtrl(setDatos, $scope, $timeout, Analytics, $location) {
+  var vm = this;
+  vm.active;
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    animate();
+    cleanList();
+    analytics();
+  };
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate('slideIn');
+      $scope.$apply();
+    }, 800);
+  }
+
+  function cleanList() {
+    $timeout(function () {
+      setDatos.setList([], '');
+      $scope.$apply();
+    }, 100);
+  }
+
+  function analytics() {
+    Analytics.trackEvent('page', 'home');
+  }
+
+  vm.collapse = function () {
+    vm.active = !vm.active;
+  };
+
+  vm.masInfo = function (url) {
+    $timeout(function () {
+      setDatos.setAnimate('fade');
+      $scope.$apply();
+      $location.path(url);
+    }, 100);
+  };
+
+  vm.contacto = function (url) {
+    $timeout(function () {
+      setDatos.setAnimate('fade');
+      $scope.$apply();
+      $location.path(url);
+    }, 100);
+  };
+
+}
+
+angular.module('home', [])
+  .component('home', {
+    templateUrl: './js/component/pages/home/home.html',
+    controller: homeCtrl
+  });
+// **********************************************************
+// archivo component/pages/producto
+// **********************************************************
+'use strict';
+
+productoCtrl.$inject = ['Consultas', '$location', 'setDatos', '$scope', '$timeout', 'Analytics'];
+function productoCtrl(Consultas, $location, setDatos, $scope, $timeout, Analytics) {
+  var vm = this;
+  vm.urlAll = $location.path().split('/');
+  vm.urlCategoria = vm.urlAll[2];
+  vm.urlProducto = vm.urlAll[3];
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    getData();
+    animate();
+    fondo();
+    volver();
+    analytics();
+    menuActive();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'productos', vm.urlCategoria, vm.urlProducto);
+  }
+
+  function volver() {
+    $timeout(function () {
+      setDatos.setBack(vm.urlAll);
+      $scope.$apply();
+    }, 100);
+  }
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate();
+      $scope.$apply();
+    }, 800);
+  }
+
+  function getData() {
+    Consultas.getProductos().then(function (response) {
+      var data = response.data;
+      var dato = data.filter(function (producto) {
+        return producto.id === vm.urlProducto;
+      });
+      vm.producto = dato[0];
+      imagen();
+
+      var datos = data.filter(function (producto) {
+        return producto.categoria === vm.urlAll[2];
+      });
+      $timeout(function () {
+        setDatos.setList(datos, 'productos');
+        $scope.$apply();
+      }, 100);
+    });
+  }
+
+  function fondo() {
+    $('.producto-fondo').css('background-image', 'url(./img/fondos/f-' + vm.urlCategoria + '.jpg)');
+  }
+
+  function imagen() {
+    $('.producto-titulo-fondo').css('background-image', 'url(./img/productos/' + vm.producto.categoria + '/' + vm.producto.imagen + '.jpg)');
+  }
+
+  function menuActive() {
+    $timeout(function () {
+      setDatos.setVisible(true);
+      $scope.$apply();
+    }, 100);
+  }
+
+}
+
+angular.module('producto', [])
+  .component('producto', {
+    templateUrl: './js/component/pages/producto/producto.html',
+    controller: productoCtrl,
+
+  });
+
+// **********************************************************
+// archivo component/pages/receta
+// **********************************************************
+'use strict';
+
+recetaCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope', 'Analytics'];
+function recetaCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics) {
+  var vm = this;
+  vm.urlAll = $location.path().split('/');
+  vm.url = vm.urlAll[2];
+  vm.producto;
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    getData();
+    volver();
+    analytics();
+    menuActive();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'recetas', vm.url);
+  }
+
+  function volver() {
+    $timeout(function () {
+      setDatos.setBack(vm.urlAll);
+      $scope.$apply();
+    }, 100);
+  }
+
+  function getData() {
+    Consultas.getRecetas().then(function (response) {
+      var data = response.data;
+      var dato = data.filter(function (producto) {
+        return producto.id === vm.url;
+      });
+      vm.producto = dato[0];
+
+      var str2 = vm.producto.preparacion;
+      var filtroIngredientes = str2.split('--');
+      vm.producto.preparacion = filtroIngredientes;
+
+      $timeout(function () {
+        setDatos.setList(data, 'recetas');
+        $scope.$apply();
+      }, 100);
+    });
+  }
+
+  function menuActive() {
+    $timeout(function () {
+      setDatos.setVisible(true);
+      $scope.$apply();
+    }, 100);
+  }
+
+}
+
+angular.module('receta', [])
+  .component('receta', {
+    templateUrl: './js/component/pages/receta/receta.html',
+    controller: recetaCtrl
+  });
+// **********************************************************
+// archivo component/pages/productos
+// **********************************************************
+'use strict';
+
+productosCtrl.$inject = ['setDatos', '$scope', '$timeout', 'Analytics'];
+function productosCtrl(setDatos, $scope, $timeout, Analytics) {
+  var vm = this;
+  vm.categorias = [
+    { tipo: 'tradicional', nombre: 'Tradicional' },
+    { tipo: 'jamones-pechugas', nombre: 'Jamones y Pechugas' },
+    { tipo: 'parrilleros', nombre: 'Parrilleros' },
+    { tipo: 'practicos', nombre: 'Prácticos' }
+  ];
+  vm.background = [];
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    animate();
+    cleanList();
+    menuActive();
+    analytics();
+  };
+
+  vm.backgroundOver = function (categoria) {
+    vm.background = [];
+    switch (categoria) {
+      case 'jamones-pechugas': vm.background.jamonesPechugas = true; break;
+      case 'tradicional': vm.background.tradicional = true; break;
+      case 'parrilleros': vm.background.parrilleros = true; break;
+      case 'practicos': vm.background.practicos = true; break;
+    }
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'productos');
+  }
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate();
+      $scope.$apply();
+    }, 800);
+  }
+
+  function cleanList() {
+    $timeout(function () {
+      setDatos.setList([], '');
+      $scope.$apply();
+    }, 100);
+  }
+
+  function menuActive() {
+    $timeout(function () {
+      setDatos.setVisible(true);
+      $scope.$apply();
+    }, 100);
+  }
+
+}
+
+angular.module('productos', [])
+  .component('productos', {
+    templateUrl: './js/component/pages/productos/productos.html',
+    controller: productosCtrl
+  });
+
+// **********************************************************
+// archivo component/pages/recetas
+// **********************************************************
+'use strict';
+
+recetasCtrl.$inject = ['$location', 'Consultas', 'setDatos', '$timeout', '$scope', 'Analytics'];
+function recetasCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics) {
+  var vm = this;
+  vm.urlAll = $location.path().split('/');
+  vm.url = vm.urlAll[2];
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    getDatos();
+    volver();
+    menuActive();
+    animate();
+    analytics();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'recetas');
+  }
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate('fade');
+      $scope.$apply();
+    }, 800);
+  }
+
+  function volver() {
+    $timeout(function () {
+      setDatos.setBack(vm.urlAll);
+      $scope.$apply();
+    }, 100);
+  }
+
+  function getDatos() {
+    Consultas.getRecetas().then(function (response) {
+      var data = response.data;
+      $timeout(function () {
+        setDatos.setList(data, 'recetas');
+        $scope.$apply();
+      }, 100);
+    });
+  }
+
+  function menuActive() {
+    $timeout(function () {
+      setDatos.setVisible(true);
+      $scope.$apply();
+    }, 100);
+  }
+}
+
+angular.module('recetas', [])
+  .component('recetas', {
+    templateUrl: './js/component/pages/recetas/recetas.html',
+    controller: recetasCtrl
   });
 
 // **********************************************************

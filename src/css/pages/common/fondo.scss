@@ -54,7 +54,7 @@
       @extend .wrapper;
       &:after{
         bottom: .1rem;
-        content: '\f107';
+        content: '\f107'; /* '\f107'; */
         font-family: 'icomoon';
         left: 50%;
         position: absolute;

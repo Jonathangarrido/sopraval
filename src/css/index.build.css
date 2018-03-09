@@ -671,11 +671,13 @@ menu {
     z-index: 2; }
     .menu span:before {
       content: '\f0c9';
+      /* '\f0c9'; */
       font-family: 'icomoon';
       font-size: 2rem;
       margin-right: 1rem; }
     .menu span.activo:before {
-      content: ""; }
+      content: '\f00d';
+      /* '\f00d'; */ }
   .menu-modal {
     position: absolute;
     background-image: url("../img/fondos/f-home.jpg");
@@ -766,6 +768,7 @@ menu {
     opacity: 0; }
     .lista > a:after {
       content: '\f00d';
+      /* '\f00d'; */
       font-family: 'icomoon'; }
   .lista > ul {
     height: -webkit-calc(100vh - 5rem);
@@ -854,6 +857,7 @@ menu {
       .fondo footer p:after {
         bottom: .1rem;
         content: '\f107';
+        /* '\f107'; */
         font-family: 'icomoon';
         left: 50%;
         position: absolute; }
@@ -937,6 +941,7 @@ menu {
         .home-nav-secondary p:after {
           bottom: .1rem;
           content: '\f107';
+          /* '\f107'; */
           font-family: 'icomoon';
           left: 50%;
           position: absolute; }
