@@ -447,94 +447,94 @@ a {
   -moz-osx-font-smoothing: grayscale; }
 
 .icon-search:before {
-  content: ""; }
+  content: "\f002"; }
 
 .icon-check:before {
-  content: ""; }
+  content: "\f00c"; }
 
 .icon-close:before {
-  content: ""; }
+  content: "\f00d"; }
 
 .icon-pencil:before {
-  content: ""; }
+  content: "\f040"; }
 
 .icon-plus:before {
-  content: ""; }
+  content: "\f067"; }
 
 .icon-minus:before {
-  content: ""; }
+  content: "\f068"; }
 
 .icon-phone:before {
-  content: ""; }
+  content: "\f095"; }
 
 .icon-link:before {
-  content: ""; }
+  content: "\f0c1"; }
 
 .icon-navicon:before {
-  content: ""; }
+  content: "\f0c9"; }
 
 .icon-mail:before {
-  content: ""; }
+  content: "\f0e0"; }
 
 .icon-download:before {
-  content: ""; }
+  content: "\f0ed"; }
 
 .icon-angle-left:before {
-  content: ""; }
+  content: "\f104"; }
 
 .icon-angle-right:before {
-  content: ""; }
+  content: "\f105"; }
 
 .icon-angle-up:before {
-  content: ""; }
+  content: "\f106"; }
 
 .icon-angle-down:before {
-  content: ""; }
+  content: "\f107"; }
 
 .icon-ellipsis:before {
-  content: ""; }
+  content: "\f142"; }
 
 .icon-send:before {
-  content: ""; }
+  content: "\f1d8"; }
 
 .icon-whatsapp:before {
-  content: ""; }
+  content: "\f232"; }
 
 .icon-snapchat:before {
-  content: ""; }
+  content: "\f2ab"; }
 
 .icon-facebook:before {
-  content: ""; }
+  content: "\f230"; }
 
 .icon-spotify:before {
-  content: ""; }
+  content: "\f1bc"; }
 
 .icon-skype:before {
-  content: ""; }
+  content: "\f17e"; }
 
 .icon-instagram:before {
-  content: ""; }
+  content: "\f16d"; }
 
 .icon-dropbox:before {
-  content: ""; }
+  content: "\f16b"; }
 
 .icon-youtube:before {
-  content: ""; }
+  content: "\f16a"; }
 
 .icon-linkedin:before {
-  content: ""; }
+  content: "\f0e1"; }
 
 .icon-google-plus:before {
-  content: ""; }
+  content: "\f0d5"; }
 
 .icon-pinterest:before {
-  content: ""; }
+  content: "\f0d2"; }
 
 .icon-github:before {
-  content: ""; }
+  content: "\f09b"; }
 
 .icon-twitter:before {
-  content: ""; }
+  content: "\f099"; }
 
 .loading {
   position: absolute;
