@@ -3,9 +3,12 @@
 // **********************************************************
 'use strict';
 
-contactoCtrl.$inject = ['$timeout', '$scope', 'setDatos', 'Analytics'];
-function contactoCtrl($timeout, $scope, setDatos, Analytics) {
+contactoCtrl.$inject = ['$timeout', '$scope', 'setDatos', 'Analytics', '$http'];
+function contactoCtrl($timeout, $scope, setDatos, Analytics, $http) {
   var vm = this;
+  vm.user = {};
+  vm.mensaje = '';
+  vm.estado = '';
 
   ////////////////////////////////////////////
 
@@ -32,6 +35,33 @@ function contactoCtrl($timeout, $scope, setDatos, Analytics) {
       $scope.$apply();
     }, 100);
   }
+
+  vm.submitForm = function () {
+    $http({
+      method  : 'POST',
+      url     : './php/formulario.php',
+      data    : vm.user, //forms user object
+      headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+    })
+      .then(function (success){
+        console.log(success.data)
+        if(success.data==='bien'){
+          vm.mensaje = 'Mensaje enviado correctamente.';
+          vm.estado = 'icon-check';
+          // Analytics.trackEvent('correo','enviado');
+          $timeout(function(){
+            vm.user = {};
+            vm.mensaje = '';
+            vm.estado = '';
+          },3000)
+        }else{
+          vm.mensaje = 'Error al enviar. Intentelo nuevamente.';
+          
+        }
+      },function (error){
+        vm.mensaje = 'Error en la conexión.';
+      });
+  };
 
 }
 

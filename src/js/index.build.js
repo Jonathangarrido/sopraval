@@ -363,81 +363,6 @@ angular.module('categoria', [])
     controller: categoriaCtrl
   });
 // **********************************************************
-// archivo component/pages/contacto
-// **********************************************************
-'use strict';
-
-contactoCtrl.$inject = ['$timeout', '$scope', 'setDatos', 'Analytics'];
-function contactoCtrl($timeout, $scope, setDatos, Analytics) {
-  var vm = this;
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    animate();
-    analytics();
-    list();
-  };
-
-  function analytics() {
-    Analytics.trackEvent('page', 'contacto');
-  }
-
-  function animate() {
-    $timeout(function () {
-      setDatos.setAnimate('fade');
-      $scope.$apply();
-    }, 800);
-  }
-
-  function list(){
-    $timeout(function () {
-      setDatos.setList([], '');
-      $scope.$apply();
-    }, 100);
-  }
-
-}
-
-angular.module('contacto', [])
-  .component('contacto', {
-    templateUrl: './js/component/pages/contacto/contacto.html',
-    controller: contactoCtrl,
-  });
-// **********************************************************
-// archivo component/pages/manipulacion
-// **********************************************************
-'use strict';
-
-manipulacionCtrl.$inject = ['$timeout', '$scope', 'setDatos', 'Analytics'];
-function manipulacionCtrl($timeout, $scope, setDatos, Analytics) {
-  var vm = this;
-
-  ////////////////////////////////////////////
-
-  vm.$onInit = function () {
-    animate();
-    analytics();
-  };
-
-  function analytics() {
-    Analytics.trackEvent('page', 'más información', 'uso y manipulación segura');
-  }
-
-  function animate() {
-    $timeout(function () {
-      setDatos.setAnimate('fade');
-      $scope.$apply();
-    }, 800);
-  }
-}
-
-angular.module('manipulacion', [])
-  .component('manipulacion', {
-    templateUrl: './js/component/pages/manipulacion/manipulacion.html',
-    controller: manipulacionCtrl,
-  });
-// **********************************************************
 // archivo component/pages/empresa
 // **********************************************************
 'use strict';
@@ -469,6 +394,78 @@ angular.module('empresa', [])
   .component('empresa', {
     templateUrl: './js/component/pages/empresa/empresa.html',
     controller: empresaCtrl,
+  });
+// **********************************************************
+// archivo component/pages/contacto
+// **********************************************************
+'use strict';
+
+contactoCtrl.$inject = ['$timeout', '$scope', 'setDatos', 'Analytics', '$http'];
+function contactoCtrl($timeout, $scope, setDatos, Analytics, $http) {
+  var vm = this;
+  vm.user = {};
+  vm.mensaje = '';
+  vm.estado = '';
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    animate();
+    analytics();
+    list();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'contacto');
+  }
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate('fade');
+      $scope.$apply();
+    }, 800);
+  }
+
+  function list(){
+    $timeout(function () {
+      setDatos.setList([], '');
+      $scope.$apply();
+    }, 100);
+  }
+
+  vm.submitForm = function () {
+    $http({
+      method  : 'POST',
+      url     : './php/formulario.php',
+      data    : vm.user, //forms user object
+      headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+    })
+      .then(function (success){
+        console.log(success.data)
+        if(success.data==='bien'){
+          vm.mensaje = 'Mensaje enviado correctamente.';
+          vm.estado = 'icon-check';
+          // Analytics.trackEvent('correo','enviado');
+          $timeout(function(){
+            vm.user = {};
+            vm.mensaje = '';
+            vm.estado = '';
+          },3000)
+        }else{
+          vm.mensaje = 'Error al enviar. Intentelo nuevamente.';
+          
+        }
+      },function (error){
+        vm.mensaje = 'Error en la conexión.';
+      });
+  };
+
+}
+
+angular.module('contacto', [])
+  .component('contacto', {
+    templateUrl: './js/component/pages/contacto/contacto.html',
+    controller: contactoCtrl,
   });
 // **********************************************************
 // archivo component/pages/home
@@ -532,6 +529,39 @@ angular.module('home', [])
   .component('home', {
     templateUrl: './js/component/pages/home/home.html',
     controller: homeCtrl
+  });
+// **********************************************************
+// archivo component/pages/manipulacion
+// **********************************************************
+'use strict';
+
+manipulacionCtrl.$inject = ['$timeout', '$scope', 'setDatos', 'Analytics'];
+function manipulacionCtrl($timeout, $scope, setDatos, Analytics) {
+  var vm = this;
+
+  ////////////////////////////////////////////
+
+  vm.$onInit = function () {
+    animate();
+    analytics();
+  };
+
+  function analytics() {
+    Analytics.trackEvent('page', 'más información', 'uso y manipulación segura');
+  }
+
+  function animate() {
+    $timeout(function () {
+      setDatos.setAnimate('fade');
+      $scope.$apply();
+    }, 800);
+  }
+}
+
+angular.module('manipulacion', [])
+  .component('manipulacion', {
+    templateUrl: './js/component/pages/manipulacion/manipulacion.html',
+    controller: manipulacionCtrl,
   });
 // **********************************************************
 // archivo component/pages/producto

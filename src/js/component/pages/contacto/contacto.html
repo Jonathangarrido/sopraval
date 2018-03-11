@@ -16,13 +16,14 @@
             Sábado 9:00 a 14:00 hrs.
         </p>
       </aside>
-      <form action="">
-        <input type="text" placeholder="Nombre" />
-        <input type="text" placeholder="Apellido" />
-        <input type="text" placeholder="Teléfono" />
-        <input type="text" placeholder="Email" />
-        <textarea name="" placeholder="Comentario"></textarea>
+      <form ng-submit="$ctrl.submitForm()" class="contacto-form">
+        <input type="text" placeholder="Nombre" ng-model="$ctrl.user.nombre" />
+        <input type="text" placeholder="Apellido" ng-model="$ctrl.user.apellido" />
+        <input type="text" placeholder="Teléfono" ng-model="$ctrl.user.telefono" />
+        <input type="text" placeholder="Email" ng-model="$ctrl.user.correo" />
+        <textarea name="" placeholder="Comentario" ng-model="$ctrl.user.comentario"></textarea>
         <button type="submit">ENVIAR</button>
+        <span>{{$ctrl.mensaje}} <i ng-class="$ctrl.estado"></i></span>
       </form>
     </section>
   </main>

@@ -33,31 +33,45 @@
       font-weight: bold;
     }
   }
-  form{
+  &-form{
     display: flex;
     flex-direction: column;
     margin-left: 5rem;
     width: 20rem;
-  }
-  input,
-  textarea{
-    border: solid 1px #999;
-    border-radius: 5px;
-    font-size: .8rem;
-    margin-bottom: .5rem;
-    padding: .3em .5em;
-  }
-  textarea{
-    min-height: 5rem;
-    max-height: 10rem;
-    resize: vertical;
-    overflow: auto;
-  }
-  button{
-    border-radius: 5px;
-    background-color: $color-base;
-    color: white;
-    font-size: .8rem;
-    padding: .5rem
+    input,
+    textarea{
+      border: solid 1px #999;
+      border-radius: 5px;
+      font-size: .8rem;
+      margin-bottom: .5rem;
+      padding: .3em .5em;
+    }
+    textarea{
+      min-height: 5rem;
+      max-height: 10rem;
+      resize: vertical;
+      overflow: auto;
+    }
+    button{
+      border-radius: 5px;
+      background-color: $color-base;
+      color: white;
+      font-size: .8rem;
+      padding: .5rem;
+    }
+    span{
+      margin-top: 1rem;
+      text-align: center;
+      @extend .wrapper;
+    }
+    .icon-check{
+      background: green;
+      border-radius: 50%;
+      color: white;
+      height: 2rem;
+      margin-left: .5rem;
+      width: 2rem;
+      @extend .wrapper;
+    }
   }
 }
