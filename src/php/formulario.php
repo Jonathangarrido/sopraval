@@ -11,7 +11,7 @@
   $correo = $_POST["correo"];
   $comentario = $_POST["comentario"];
 
-  $destino = "jonathan.garrido1988@gmail.com";
+  $destino = "cyndy@agenciapan.cl";
 
   require("phpmailer/class.phpmailer.php");
   $mail = new PHPMailer();
