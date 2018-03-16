@@ -5,11 +5,11 @@ menu{
   margin: 0;
 }
 .menu{
-  left: 2rem;
+  left: 1rem;
   position: absolute;
-  top: 2rem;
+  top: 1rem;
   img{
-    width: 12rem;
+    width: 8rem;
   }
   &-logo{
     position: relative;
@@ -91,6 +91,16 @@ menu{
       a{
         visibility: visible;
       }
+    }
+  }
+}
+
+@include respond-to(l){
+  .menu{
+    left: 2rem;
+    top: 2rem;
+    img{
+      width: 12rem;
     }
   }
 }

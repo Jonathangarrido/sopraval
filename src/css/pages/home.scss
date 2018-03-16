@@ -2,7 +2,7 @@
 // pages/home
 //*************************************
 .home{
-  background-image: url('../img/fondos/f-home.jpg');
+  background-image: url('../img/fondos/home-small.jpg');
   background-position: center;
   background-size: cover;
   overflow: hidden;
@@ -12,14 +12,17 @@
 
 
   &-nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     z-index: 2;
     a{
       font-family: $altfont;
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       text-shadow: -3px 2px #222;
       position: relative;
       &:not(:last-child){
-        margin-right: 7rem;
+        margin-bottom: 2rem;
       }
       &:after{
         content: '';
@@ -37,15 +40,17 @@
     }
 
     &-secondary{
+      height: calc(100vh - 2rem - 74.66px);
       position: absolute;
       background-color: $color-base;
-      bottom: -6.5rem;
+      bottom: calc(-100% + 10rem);
       font-family: $altfont-secundary;
       left: 0;
       position: absolute;
       text-align: center;
       transition: bottom ease-out $animationtime;
       width: 100vw;
+      z-index: 2;
       &.active{
         bottom: 0;
       }
@@ -65,13 +70,16 @@
         }
       }
       ul{
-        padding: 1.5rem;
+        padding: 0 0 1.5rem 0;
         margin: 0;
         @extend .wrapper;
+        flex-direction: column;
+        height: calc(100% - 4rem);
       }
       li{
+        margin: 0;
         &:not(:last-child){
-          margin-right: 2rem;
+          margin-bottom: 3rem;
         }
       }
       footer{
@@ -79,6 +87,8 @@
         font-size: .8rem;
         padding: .5rem;
         width: 100%;
+        position: absolute;
+        bottom: 0;
       }
     }
     
@@ -88,8 +98,8 @@
 }
 .sociales{
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: .75rem;
+  right: .75rem;
   display: flex;
   a{
     background-color: white;
@@ -103,5 +113,52 @@
     &:not(:last-child){
       margin-right: 1rem;
     }
+  }
+}
+
+@include respond-to(m){
+  .home{
+    &-nav{
+      &-secondary{
+        // bottom: -6.5rem;
+      }
+    }
+  }
+}
+
+@include respond-to(l){
+  .home{
+    background-image: url('../img/fondos/f-home.jpg');
+    &-nav{
+      flex-direction: row;
+      a{
+        font-size: 3.5rem;
+        &:not(:last-child){
+          margin: 0 7rem 0 0;
+        }
+      }
+      &-secondary{
+        height: auto;
+        bottom: -6.5rem;
+        ul{
+          padding: 1.5rem;
+          flex-direction: row;
+          height: auto;
+        }
+        li{
+          &:not(:last-child){
+            margin: 0 2rem 0 0;
+          }
+        }
+        footer{
+          position: relative;
+        }
+      }
+    }
+  }
+  .sociales{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
   }
 }

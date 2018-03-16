@@ -1,9 +1,6 @@
 <main class="home">
 
-  <div class="sociales">
-    <a target="_blank" href="http://fb.com" class="icon-facebook"></a>
-    <a target="_blank" href="http://instagram.com" class="icon-instagram"></a>
-  </div>
+  
   
   <section class="home-nav">
     <a ng-href="#/productos">Productos</a>
@@ -13,6 +10,10 @@
 
   <section class="home-nav-secondary" ng-class="{'active': $ctrl.active}">
     <p ng-click="$ctrl.collapse()">Más información</p>
+    <div class="sociales">
+      <a target="_blank" href="http://fb.com" class="icon-facebook"></a>
+      <a target="_blank" href="http://instagram.com" class="icon-instagram"></a>
+    </div>
     <ul>
       <li><a ng-click="$ctrl.masInfo('nuestra-empresa')">Empresa</a></li>
       <li><a ng-click="$ctrl.masInfo('uso-y-manipulacion-segura')">Uso y manipulación segura</a></li>
