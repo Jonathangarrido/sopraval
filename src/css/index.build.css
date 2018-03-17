@@ -447,94 +447,94 @@ a {
   -moz-osx-font-smoothing: grayscale; }
 
 .icon-search:before {
-  content: "\f002"; }
+  content: ""; }
 
 .icon-check:before {
-  content: "\f00c"; }
+  content: ""; }
 
 .icon-close:before {
-  content: "\f00d"; }
+  content: ""; }
 
 .icon-pencil:before {
-  content: "\f040"; }
+  content: ""; }
 
 .icon-plus:before {
-  content: "\f067"; }
+  content: ""; }
 
 .icon-minus:before {
-  content: "\f068"; }
+  content: ""; }
 
 .icon-phone:before {
-  content: "\f095"; }
+  content: ""; }
 
 .icon-link:before {
-  content: "\f0c1"; }
+  content: ""; }
 
 .icon-navicon:before {
-  content: "\f0c9"; }
+  content: ""; }
 
 .icon-mail:before {
-  content: "\f0e0"; }
+  content: ""; }
 
 .icon-download:before {
-  content: "\f0ed"; }
+  content: ""; }
 
 .icon-angle-left:before {
-  content: "\f104"; }
+  content: ""; }
 
 .icon-angle-right:before {
-  content: "\f105"; }
+  content: ""; }
 
 .icon-angle-up:before {
-  content: "\f106"; }
+  content: ""; }
 
 .icon-angle-down:before {
-  content: "\f107"; }
+  content: ""; }
 
 .icon-ellipsis:before {
-  content: "\f142"; }
+  content: ""; }
 
 .icon-send:before {
-  content: "\f1d8"; }
+  content: ""; }
 
 .icon-whatsapp:before {
-  content: "\f232"; }
+  content: ""; }
 
 .icon-snapchat:before {
-  content: "\f2ab"; }
+  content: ""; }
 
 .icon-facebook:before {
-  content: "\f230"; }
+  content: ""; }
 
 .icon-spotify:before {
-  content: "\f1bc"; }
+  content: ""; }
 
 .icon-skype:before {
-  content: "\f17e"; }
+  content: ""; }
 
 .icon-instagram:before {
-  content: "\f16d"; }
+  content: ""; }
 
 .icon-dropbox:before {
-  content: "\f16b"; }
+  content: ""; }
 
 .icon-youtube:before {
-  content: "\f16a"; }
+  content: ""; }
 
 .icon-linkedin:before {
-  content: "\f0e1"; }
+  content: ""; }
 
 .icon-google-plus:before {
-  content: "\f0d5"; }
+  content: ""; }
 
 .icon-pinterest:before {
-  content: "\f0d2"; }
+  content: ""; }
 
 .icon-github:before {
-  content: "\f09b"; }
+  content: ""; }
 
 .icon-twitter:before {
-  content: "\f099"; }
+  content: ""; }
 
 .loading {
   position: absolute;
@@ -650,11 +650,12 @@ menu {
     width: 8rem; }
   .menu-logo {
     position: relative;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    width: -webkit-calc(100vw - 2rem);
+    width: calc(100vw - 2rem);
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     z-index: 99999999; }
   .menu span {
     -webkit-box-align: center;
@@ -667,7 +668,6 @@ menu {
     display: -ms-flexbox;
     display: flex;
     font-family: "Fjalla One", sans-serif;
-    margin-top: 1rem;
     z-index: 2; }
     .menu span:before {
       content: '\f0c9';
@@ -732,7 +732,16 @@ menu {
     left: 2rem;
     top: 2rem; }
     .menu img {
-      width: 12rem; } }
+      width: 12rem; }
+    .menu-logo {
+      width: 100%;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+    .menu span {
+      margin-top: 1rem; } }
 
 .lista {
   background: white;
@@ -1068,12 +1077,12 @@ menu {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 100vh;
-    padding: 12.5rem 2rem 0;
-    width: 16rem;
-    opacity: 0;
-    -webkit-animation: nav-entrada .8s .6s forwards;
-            animation: nav-entrada .8s .6s forwards; }
+    min-height: 100vh;
+    width: 100%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .productos ul {
     font-family: "Shadows Into Light", cursive;
     margin: 3rem 0 0;
@@ -1098,17 +1107,26 @@ menu {
   100% {
     opacity: 1; } }
 
-.background-tradicional {
-  background-image: url("../img/fondos/f-tradicional.jpg"); }
-
-.background-jamones-pechugas {
-  background-image: url("../img/fondos/f-jamones-pechugas.jpg"); }
-
-.background-parrilleros {
-  background-image: url("../img/fondos/f-parrilleros.jpg"); }
-
-.background-practicos {
-  background-image: url("../img/fondos/f-practicos.jpg"); }
+@media only screen and (min-width: 768px) {
+  .productos nav {
+    height: 100vh;
+    padding: 12.5rem 2rem 0;
+    width: 16rem;
+    opacity: 0;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-animation: nav-entrada .8s .6s forwards;
+            animation: nav-entrada .8s .6s forwards; }
+  .background-tradicional {
+    background-image: url("../img/fondos/f-tradicional.jpg"); }
+  .background-jamones-pechugas {
+    background-image: url("../img/fondos/f-jamones-pechugas.jpg"); }
+  .background-parrilleros {
+    background-image: url("../img/fondos/f-parrilleros.jpg"); }
+  .background-practicos {
+    background-image: url("../img/fondos/f-practicos.jpg"); } }
 
 .categoria-fondo {
   text-transform: capitalize;

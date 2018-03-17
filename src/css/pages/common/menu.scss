@@ -14,7 +14,8 @@ menu{
   &-logo{
     position: relative;
     @extend .wrapper;
-    flex-direction: column;
+    width: calc(100vw - 2rem);
+    justify-content: space-between;
     z-index: $index-4;
   }
   span{
@@ -22,7 +23,6 @@ menu{
     cursor: pointer;
     display: flex;
     font-family: $altfont-secundary;
-    margin-top: 1rem;
     z-index: $index-1;
     &:before{
       content: '\f0c9'; /* '\f0c9'; */
@@ -101,6 +101,13 @@ menu{
     top: 2rem;
     img{
       width: 12rem;
+    }
+    &-logo{
+      width: 100%;
+      flex-direction: column;
+    }
+    span{
+      margin-top: 1rem;
     }
   }
 }
