@@ -691,9 +691,15 @@ menu {
     -webkit-transition: all ease-in-out .3s;
     -o-transition: all ease-in-out .3s;
     transition: all ease-in-out .3s;
-    width: 100vw;
+    width: -webkit-calc(100vw + 2rem);
+    width: calc(100vw + 2rem);
     z-index: 999999;
-    visibility: collapse; }
+    visibility: collapse;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
     .menu-modal:after {
       content: '';
       background-color: rgba(0, 169, 228, 0.7);
@@ -702,16 +708,16 @@ menu {
       position: absolute;
       padding: 0 2rem;
       top: 0;
-      width: 100vw; }
+      width: 100%; }
     .menu-modal a {
       font-family: "Shadows Into Light", cursive;
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       position: relative;
       text-shadow: -3px 2px #222;
       visibility: collapse;
       z-index: 2; }
       .menu-modal a:not(:last-child) {
-        margin-right: 7.3rem; }
+        margin-bottom: 2rem; }
       .menu-modal a:after {
         bottom: 0.5rem;
         content: '';
@@ -741,34 +747,46 @@ menu {
           -ms-flex-direction: column;
               flex-direction: column; }
     .menu span {
-      margin-top: 1rem; } }
+      margin-top: 1rem; }
+    .menu-modal {
+      left: -2rem;
+      top: -2rem; }
+      .menu-modal:after {
+        width: 100vw; }
+      .menu-modal a {
+        font-size: 3.5rem; }
+        .menu-modal a:not(:last-child) {
+          margin-bottom: 0;
+          margin-right: 7.3rem; } }
 
 .lista {
   background: white;
-  border-left: solid 1px #00A9E4;
-  height: 100vh;
+  border-top: solid 1px #00A9E4;
   position: absolute;
-  right: -15rem;
-  top: 0;
-  width: 15rem; }
+  right: 0;
+  top: -webkit-calc(100% - 6rem);
+  top: calc(100% - 6rem);
+  width: 100%;
+  display: none; }
   .lista.in {
-    -webkit-animation: fondo-entrada .8s forwards;
-            animation: fondo-entrada .8s forwards;
-    -webkit-animation-timing-function: ease;
-            animation-timing-function: ease; }
-    .lista.in > a {
-      visibility: visible;
-      opacity: 1; }
+    display: inline; }
   .lista > div {
     padding: 0 1rem; }
   .lista span {
-    border-bottom: solid 1px #00A9E4;
     color: #666;
     font-family: "Fjalla One", sans-serif;
     font-size: 1.3rem;
     height: 3rem;
-    margin-top: 2rem;
-    text-transform: capitalize; }
+    margin-top: 1rem;
+    text-transform: capitalize;
+    position: relative; }
+    .lista span:after {
+      bottom: -1rem;
+      content: '\f107';
+      /* '\f107'; */
+      font-family: 'icomoon';
+      left: 49%;
+      position: absolute; }
   .lista > a {
     background-color: #00A9E4;
     -webkit-border-radius: 50%;
@@ -787,12 +805,19 @@ menu {
       /* '\f00d'; */
       font-family: 'icomoon'; }
   .lista > ul {
-    height: -webkit-calc(100vh - 5rem);
-    height: calc(100vh - 5rem);
     margin: 0;
-    overflow-y: scroll;
-    padding: 0 1rem 1rem;
-    text-align: center; }
+    padding: 2rem 0 1rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .lista img {
     max-width: 9.4rem; }
   .lista h2 {
@@ -802,7 +827,10 @@ menu {
     .lista h2.activo {
       color: #00A9E4; }
   .lista li {
-    margin: 2rem 0 0 0; }
+    margin: 0;
+    width: 13rem;
+    text-align: center;
+    padding: 1rem; }
     .lista li:hover h2 {
       color: #00A9E4; }
   .lista-recetas img {
@@ -819,6 +847,40 @@ menu {
     right: -15rem; }
   100% {
     right: 0; } }
+
+@media only screen and (min-width: 768px) {
+  .lista {
+    height: 100vh;
+    top: 0;
+    width: 15rem;
+    right: -15rem;
+    border-top: none;
+    border-left: solid 1px #00A9E4; }
+    .lista.in {
+      -webkit-animation: fondo-entrada .8s forwards;
+              animation: fondo-entrada .8s forwards;
+      -webkit-animation-timing-function: ease;
+              animation-timing-function: ease; }
+      .lista.in > a {
+        visibility: visible;
+        opacity: 1; }
+    .lista > ul {
+      height: -webkit-calc(100vh - 5rem);
+      height: calc(100vh - 5rem);
+      margin: 0;
+      overflow-y: scroll;
+      text-align: center;
+      display: block;
+      padding: 0 1rem 1rem; }
+    .lista li {
+      margin: 2rem 0 0 0;
+      width: 100%;
+      padding: 0; }
+    .lista span {
+      margin-top: 2rem;
+      border-bottom: solid 1px #00A9E4; }
+      .lista span:after {
+        content: ''; } }
 
 .fondo {
   background-image: url("../img/fondos/f-home.jpg");
@@ -1135,16 +1197,7 @@ menu {
           background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  margin-right: 0;
-  -webkit-animation: fondo-entrada .8s forwards;
-          animation: fondo-entrada .8s forwards;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out; }
-  .categoria-fondo.in {
-    -webkit-transition: all 1.5s ease-in-out;
-    -o-transition: all 1.5s ease-in-out;
-    transition: all 1.5s ease-in-out;
-    margin-right: 15rem; }
+  margin-right: 0; }
   .categoria-fondo h1 {
     opacity: 0;
     -webkit-animation: titulo-entrada .8s forwards;
@@ -1152,7 +1205,7 @@ menu {
     -webkit-animation-timing-function: ease-in-out;
             animation-timing-function: ease-in-out;
     font-family: "Shadows Into Light", cursive;
-    font-size: 5.5rem;
+    font-size: 3.5rem;
     text-shadow: -3px 2px #222;
     max-width: 22rem;
     text-align: center;
@@ -1242,6 +1295,20 @@ menu {
 
 .recetas > .categoria-fondo {
   background-image: url("../img/fondos/f-recetas.jpg"); }
+
+@media only screen and (min-width: 768px) {
+  .categoria-fondo {
+    -webkit-animation: fondo-entrada .8s forwards;
+            animation: fondo-entrada .8s forwards;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out; }
+    .categoria-fondo.in {
+      -webkit-transition: all 1.5s ease-in-out;
+      -o-transition: all 1.5s ease-in-out;
+      transition: all 1.5s ease-in-out;
+      margin-right: 15rem; }
+    .categoria-fondo h1 {
+      font-size: 5.5rem; } }
 
 .producto-fondo {
   background-position: center;

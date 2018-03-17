@@ -11,18 +11,12 @@
     height: 100vh;
     margin-right: 0;
     @extend .wrapper;
-    animation: fondo-entrada .8s forwards; 
-    animation-timing-function: ease-in-out;
-    &.in{
-      transition: all 1.5s ease-in-out;
-      margin-right: 15rem
-    }
     h1{
       opacity: 0;
       animation: titulo-entrada .8s forwards; 
       animation-timing-function: ease-in-out;
       font-family: $altfont;
-      font-size: 5.5rem;
+      font-size: 3.5rem;
       text-shadow: -3px 2px #222;
       max-width: 22rem;
       text-align: center;
@@ -83,5 +77,21 @@
 .recetas{
   &>.categoria-fondo{
     background-image: url('../img/fondos/f-recetas.jpg');
+  }
+}
+
+@include respond-to(l){
+  .categoria{
+    &-fondo{
+      animation: fondo-entrada .8s forwards; 
+      animation-timing-function: ease-in-out;
+      &.in{
+        transition: all 1.5s ease-in-out;
+        margin-right: 15rem
+      }
+      h1{
+        font-size: 5.5rem;
+      }
+    }
   }
 }

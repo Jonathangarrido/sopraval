@@ -47,10 +47,11 @@ menu{
     opacity: 0;
     top: -2rem;
     transition: all ease-in-out .3s;
-    width: 100vw;
-    @extend .wrapper;
+    width: calc(100vw + 2rem);
     z-index: $index-3;
     visibility: collapse;
+    @extend .wrapper;
+    flex-direction: column;
     &:after{
       content: '';
       background-color: rgba($color-base, .7);
@@ -59,17 +60,17 @@ menu{
       position: absolute;
       padding: 0 2rem;
       top: 0;
-      width: 100vw;
+      width: 100%;
     }
     a{
       font-family: $altfont;
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       position: relative;
       text-shadow: -3px 2px #222;
       visibility: collapse;
       z-index: 2;
       &:not(:last-child){
-        margin-right: 7.3rem;
+        margin-bottom: 2rem;
       }
       &:after{
         bottom: 0.5rem;
@@ -108,6 +109,20 @@ menu{
     }
     span{
       margin-top: 1rem;
+    }
+    &-modal{
+      left: -2rem;
+      top: -2rem;
+      &:after{
+        width: 100vw;
+      }
+      a{
+        font-size: 3.5rem;
+        &:not(:last-child){
+          margin-bottom: 0;
+          margin-right: 7.3rem;
+        }
+      }
     }
   }
 }
