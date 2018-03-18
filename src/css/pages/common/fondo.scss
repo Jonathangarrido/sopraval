@@ -61,4 +61,16 @@
       }
     }
   }
+  header,
+  footer{
+    opacity: 0;
+  }
+}
+@include respond-to(l){
+  .fondo{
+    header,
+    footer{
+      opacity: 1;
+    }
+  }
 }

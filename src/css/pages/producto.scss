@@ -33,6 +33,8 @@
     align-items: center;
     position: relative;
     div{
+      height: 150px;
+      width: 200px;
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
@@ -97,6 +99,9 @@
       & div{
         width: 100%;
         padding: 0 3rem;
+      }
+      & div.receta-descripcion{
+        height: 100%;
       }
       h1{
         margin-bottom: 2rem;

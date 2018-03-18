@@ -3,7 +3,7 @@
 //*************************************
 .manipulacion{
   section{
-    padding: 2rem 3rem;
+    padding: 2rem 1rem;
   }
   p{
     font-size: .8rem;
@@ -13,18 +13,51 @@
     justify-content: space-around;
     margin-top: 2rem;
     width: 100%;
+    flex-wrap: wrap;
   }
   li{
     text-align: center;
-    &:not(:last-child){
-      margin-right: 1rem;
-    }
+    margin: 1rem;
+    
     p{
       max-width: 9rem;
     }
   }
   img{
-    width: 8rem;
-    margin-bottom: 1.5rem;
+    width: 5rem;
+    margin-bottom: 1rem;
+  }
+}
+@include respond-to(m){
+  .manipulacion{
+    li{
+      p{
+        max-width: 13rem;
+      }
+    }
+  }
+}
+
+@include respond-to(l){
+  .manipulacion{
+    section{
+      padding: 2rem 3rem;
+    }
+    ul{
+      flex-wrap: nowrap;
+    }
+    li{
+      margin: 0;
+      &:not(:last-child){
+        margin-right: 1rem;
+      }
+      p{
+        max-width: 9rem;
+      }
+    }
+    img{
+      width: 8rem;
+      margin-bottom: 1.5rem;
+    }
   }
 }
