@@ -18,6 +18,7 @@ function recetaCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics)
     volver();
     analytics();
     menuActive();
+    $('.lista').addClass('lista-producto-responsive')
   };
 
   function analytics() {

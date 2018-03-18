@@ -19,6 +19,7 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout, Analytic
     volver();
     analytics();
     menuActive();
+    $('.lista').addClass('lista-producto-responsive')
   };
 
   function analytics() {

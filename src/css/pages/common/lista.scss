@@ -32,19 +32,17 @@
       position: absolute;
     }
   }
-  &>a{
+  &-volver{
     background-color: $color-base;
     border-radius: 50%;
     font-size: 1rem;
     height: 2.5rem;
-    left: -3rem;
+    right: 1rem;
     position: absolute;
     top: 1rem;
     width: 2.5rem;
+    z-index: 2;
     @extend .wrapper;
-    line-height: 0;
-    visibility: hidden;
-    opacity: 0;
     &:after{
       content: '\f00d'; /* '\f00d'; */
       font-family: 'icomoon'
@@ -125,6 +123,15 @@
       &:after{
         content: '';
       }
+    }
+    &-volver{
+      font-size: 1rem;
+      height: 2.5rem;
+      right: inherit;
+      left: -3rem;
+      top: 1rem;
+      width: 2.5rem;
+      opacity: 0;
     }
   }
 }

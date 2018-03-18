@@ -306,6 +306,7 @@ function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope, Analyti
     volver();
     analytics();
     menuActive();
+    $('.lista').removeClass('lista-producto-responsive')
   };
 
   function analytics() {
@@ -584,6 +585,7 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout, Analytic
     volver();
     analytics();
     menuActive();
+    $('.lista').addClass('lista-producto-responsive')
   };
 
   function analytics() {
@@ -733,6 +735,7 @@ function recetaCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics)
     volver();
     analytics();
     menuActive();
+    $('.lista').addClass('lista-producto-responsive')
   };
 
   function analytics() {
@@ -799,6 +802,7 @@ function recetasCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics
     menuActive();
     animate();
     analytics();
+    $('.lista').removeClass('lista-producto-responsive')
   };
 
   function analytics() {

@@ -27,7 +27,7 @@
       &:after{
         content: '';
         position: absolute;
-        bottom: .75rem;
+        bottom: .25rem;
         left: 0;
         height: 3px;
         width: 100%;
@@ -116,16 +116,6 @@
   }
 }
 
-@include respond-to(m){
-  .home{
-    &-nav{
-      &-secondary{
-        // bottom: -6.5rem;
-      }
-    }
-  }
-}
-
 @include respond-to(l){
   .home{
     background-image: url('../img/fondos/f-home.jpg');
@@ -135,6 +125,9 @@
         font-size: 3.5rem;
         &:not(:last-child){
           margin: 0 7rem 0 0;
+        }
+        &:after{
+          bottom: .75rem;
         }
       }
       &-secondary{

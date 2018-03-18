@@ -7,43 +7,35 @@
     background-position: center;
     background-size: cover;
     height: 100vh;
-    margin-right: 15rem; 
   }
   &-conte{
     background-color: rgba(black, .6);
     @extend .wrapper;
-    justify-content: flex-end;
-    align-items: stretch;
     height: 100vh;
-    margin-right: 15rem;
-    padding-right: 15rem;
     width: 100vw;
+    align-items: stretch;
     &>div{
-      width: calc(100% - 16rem);
-      height: 100vh;
+      margin-top: 6.5rem;
+      width: 100vw;
+      height: calc(100vh - 6.5rem);
       overflow-y: scroll;
-      display: flex;
-      flex-direction: column;
-      justify-content: stretch;
     }
   }
   section{
-    height: 100%;
     width: 100%;
   }
   &-titulo{
     background: white;
     text-align: center;
-    padding: 0 3rem;
+    padding: 1rem 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     div{
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
-      height: 250px;
-      width: 300px;
     }
     h1{
       font-family: $altfont-secundary;
@@ -56,8 +48,13 @@
       font-size: 1.2rem;
       margin: 0;
     }
+    &>a{
+      @extend .lista-volver;
+      z-index: 0;
+    }
   }
   &-info{
+    padding-top: 1rem;
     background: $color-base;
     text-align: center;
     span{
@@ -86,7 +83,6 @@
       padding: 0 2rem;
     }
   }
-
   .separacion{
     background: white;
     margin-bottom: -.39rem;
@@ -98,7 +94,6 @@
     &-titulo{
       padding: 0;
       padding-bottom: 1.5rem;
-      min-height: 400px;
       & div{
         width: 100%;
         padding: 0 3rem;
@@ -122,7 +117,8 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 20rem;
+      height: 10rem;
+      // height: 20rem;
     }
     &-info{
       padding: 1rem 3rem;
@@ -136,9 +132,56 @@
       background-image: url('../img/fondos/f-recetas.jpg');
     }
   }
-  .separacion{
-    margin-top: -1rem;
-    margin-bottom: -.39rem;
+}
+
+.lista-producto-responsive{
+  display: none!important;
+}
+
+@include respond-to(l){
+  .producto{
+    &-fondo{
+      margin-right: 15rem; 
+    }
+    &-conte{
+      margin-right: 15rem;
+      padding-right: 15rem;
+      justify-content: flex-end;
+      &>div{
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        margin-top: 0;
+        width: calc(100% - 16rem);
+        height: 100vh;
+      }
+    }
+    section{
+      height: 100%;
+    }
+    &-titulo{
+      div{
+        height: 250px;
+        width: 300px;
+      }
+    }
+    &-volver{
+      display: none;
+    }
   }
-  
+
+  .receta{
+    & .producto{
+      &-titulo{
+        min-height: 400px;
+      }
+      &-titulo-fondo{
+        height: 20rem;
+      }
+    }
+  }
+
+  .lista-producto-responsive{
+    display: inline!important;
+  }
 }
