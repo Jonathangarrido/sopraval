@@ -1416,7 +1416,7 @@ menu {
     z-index: 0; }
 
 .producto-info {
-  padding-top: 1rem;
+  padding: 1rem 0;
   background: #00A9E4;
   text-align: center; }
   .producto-info span {

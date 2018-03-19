@@ -19,7 +19,6 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout, Analytic
     volver();
     analytics();
     menuActive();
-    setDatos.viewHeight();
     $('.lista').addClass('lista-producto-responsive')
   };
 
