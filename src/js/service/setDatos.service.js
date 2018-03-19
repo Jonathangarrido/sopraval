@@ -20,7 +20,8 @@
       setBack: setBack,
       url: '',
       visible: true,
-      setVisible: setVisible
+      setVisible: setVisible,
+      viewHeight: viewHeight
     };
 
     return service;
@@ -68,6 +69,11 @@
         default: state = [];
       }
       service.animate = state;
+    }
+
+    function viewHeight(){
+      var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      $('.view-height').css('min-height', h+'px');
     }
 
   }

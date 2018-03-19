@@ -26,6 +26,7 @@ function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope, Analyti
     volver();
     analytics();
     menuActive();
+    setDatos.viewHeight();
     $('.lista').removeClass('lista-producto-responsive')
   };
 

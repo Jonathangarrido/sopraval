@@ -76,7 +76,7 @@
 
 .recetas{
   &>.categoria-fondo{
-    background-image: url('../img/fondos/f-recetas.jpg');
+    background-image: url('../img/fondos/recetas-small.jpg');
   }
 }
 
@@ -92,6 +92,11 @@
       h1{
         font-size: 5.5rem;
       }
+    }
+  }
+  .recetas{
+    &>.categoria-fondo{
+      background-image: url('../img/fondos/f-recetas.jpg');
     }
   }
 }

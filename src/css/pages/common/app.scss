@@ -1,6 +1,7 @@
 //*************************************
 // pages/common/app
 //*************************************
+
 .view{
   left: 0;
   position: absolute;
@@ -9,9 +10,17 @@
   transition: all .8s ease-in-out;
 }
 
+.view-height{
+  
+}
+
 %pages{
   min-height: 100vh;
   overflow: hidden;
   position: relative;
   width: 100vw;
+}
+
+@include respond-to(l){
+  min-height: 100vh;
 }

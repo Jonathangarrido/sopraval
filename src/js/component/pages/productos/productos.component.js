@@ -21,6 +21,7 @@ function productosCtrl(setDatos, $scope, $timeout, Analytics) {
     cleanList();
     menuActive();
     analytics();
+    setDatos.viewHeight();
   };
 
   vm.backgroundOver = function (categoria) {

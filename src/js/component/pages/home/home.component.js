@@ -14,6 +14,7 @@ function homeCtrl(setDatos, $scope, $timeout, Analytics, $location) {
     animate();
     cleanList();
     analytics();
+    setDatos.viewHeight();
   };
 
   function animate() {

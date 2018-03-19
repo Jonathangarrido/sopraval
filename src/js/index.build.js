@@ -306,6 +306,7 @@ function categoriaCtrl($location, Consultas, setDatos, $timeout, $scope, Analyti
     volver();
     analytics();
     menuActive();
+    setDatos.viewHeight();
     $('.lista').removeClass('lista-producto-responsive')
   };
 
@@ -484,6 +485,7 @@ function homeCtrl(setDatos, $scope, $timeout, Analytics, $location) {
     animate();
     cleanList();
     analytics();
+    setDatos.viewHeight();
   };
 
   function animate() {
@@ -585,6 +587,7 @@ function productoCtrl(Consultas, $location, setDatos, $scope, $timeout, Analytic
     volver();
     analytics();
     menuActive();
+    setDatos.viewHeight();
     $('.lista').addClass('lista-producto-responsive')
   };
 
@@ -671,6 +674,7 @@ function productosCtrl(setDatos, $scope, $timeout, Analytics) {
     cleanList();
     menuActive();
     analytics();
+    setDatos.viewHeight();
   };
 
   vm.backgroundOver = function (categoria) {
@@ -735,6 +739,7 @@ function recetaCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics)
     volver();
     analytics();
     menuActive();
+    setDatos.viewHeight();
     $('.lista').addClass('lista-producto-responsive')
   };
 
@@ -802,6 +807,7 @@ function recetasCtrl($location, Consultas, setDatos, $timeout, $scope, Analytics
     menuActive();
     animate();
     analytics();
+    setDatos.viewHeight();
     $('.lista').removeClass('lista-producto-responsive')
   };
 
@@ -903,7 +909,8 @@ angular.module('recetas', [])
       setBack: setBack,
       url: '',
       visible: true,
-      setVisible: setVisible
+      setVisible: setVisible,
+      viewHeight: viewHeight
     };
 
     return service;
@@ -951,6 +958,11 @@ angular.module('recetas', [])
         default: state = [];
       }
       service.animate = state;
+    }
+
+    function viewHeight(){
+      var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      $('.view-height').css('min-height', h+'px');
     }
 
   }
