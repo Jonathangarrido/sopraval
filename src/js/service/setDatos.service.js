@@ -73,7 +73,7 @@
 
     function viewHeight(){
       var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-      $('.view-height').css('min-height', h+'px');
+      // $('.view-height').css('min-height', h+'px');
     }
 
   }
