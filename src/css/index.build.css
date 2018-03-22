@@ -1242,7 +1242,7 @@ menu {
   background-repeat: no-repeat;
   height: 100vh;
   margin-right: 0;
-  padding-bottom: 2rem; }
+  padding-bottom: 14vh; }
   .categoria-fondo h1 {
     opacity: 0;
     -webkit-animation: titulo-entrada .8s forwards;
