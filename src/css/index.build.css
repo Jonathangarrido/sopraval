@@ -446,95 +446,95 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icon-search:before {
-  content: "\f002"; }
-
-.icon-check:before {
-  content: "\f00c"; }
-
-.icon-close:before {
-  content: "\f00d"; }
-
-.icon-pencil:before {
-  content: "\f040"; }
-
-.icon-plus:before {
-  content: "\f067"; }
-
-.icon-minus:before {
-  content: "\f068"; }
-
-.icon-phone:before {
-  content: "\f095"; }
-
-.icon-link:before {
-  content: "\f0c1"; }
-
-.icon-navicon:before {
-  content: "\f0c9"; }
-
-.icon-mail:before {
-  content: "\f0e0"; }
-
-.icon-download:before {
-  content: "\f0ed"; }
-
-.icon-angle-left:before {
-  content: "\f104"; }
-
-.icon-angle-right:before {
-  content: "\f105"; }
-
-.icon-angle-up:before {
-  content: "\f106"; }
-
-.icon-angle-down:before {
-  content: "\f107"; }
-
-.icon-ellipsis:before {
-  content: "\f142"; }
-
-.icon-send:before {
-  content: "\f1d8"; }
-
-.icon-whatsapp:before {
-  content: "\f232"; }
-
-.icon-snapchat:before {
-  content: "\f2ab"; }
-
-.icon-facebook:before {
-  content: "\f230"; }
-
-.icon-spotify:before {
-  content: "\f1bc"; }
-
-.icon-skype:before {
-  content: "\f17e"; }
-
-.icon-instagram:before {
-  content: "\f16d"; }
-
-.icon-dropbox:before {
-  content: "\f16b"; }
-
-.icon-youtube:before {
-  content: "\f16a"; }
-
-.icon-linkedin:before {
-  content: "\f0e1"; }
-
-.icon-google-plus:before {
-  content: "\f0d5"; }
-
-.icon-pinterest:before {
-  content: "\f0d2"; }
-
-.icon-github:before {
-  content: "\f09b"; }
-
-.icon-twitter:before {
-  content: "\f099"; }
+  .icon-search:before {
+    content: "\f002"; }
+  
+  .icon-check:before {
+    content: "\f00c"; }
+  
+  .icon-close:before {
+    content: "\f00d"; }
+  
+  .icon-pencil:before {
+    content: "\f040"; }
+  
+  .icon-plus:before {
+    content: "\f067"; }
+  
+  .icon-minus:before {
+    content: "\f068"; }
+  
+  .icon-phone:before {
+    content: "\f095"; }
+  
+  .icon-link:before {
+    content: "\f0c1"; }
+  
+  .icon-navicon:before {
+    content: "\f0c9"; }
+  
+  .icon-mail:before {
+    content: "\f0e0"; }
+  
+  .icon-download:before {
+    content: "\f0ed"; }
+  
+  .icon-angle-left:before {
+    content: "\f104"; }
+  
+  .icon-angle-right:before {
+    content: "\f105"; }
+  
+  .icon-angle-up:before {
+    content: "\f106"; }
+  
+  .icon-angle-down:before {
+    content: "\f107"; }
+  
+  .icon-ellipsis:before {
+    content: "\f142"; }
+  
+  .icon-send:before {
+    content: "\f1d8"; }
+  
+  .icon-whatsapp:before {
+    content: "\f232"; }
+  
+  .icon-snapchat:before {
+    content: "\f2ab"; }
+  
+  .icon-facebook:before {
+    content: "\f230"; }
+  
+  .icon-spotify:before {
+    content: "\f1bc"; }
+  
+  .icon-skype:before {
+    content: "\f17e"; }
+  
+  .icon-instagram:before {
+    content: "\f16d"; }
+  
+  .icon-dropbox:before {
+    content: "\f16b"; }
+  
+  .icon-youtube:before {
+    content: "\f16a"; }
+  
+  .icon-linkedin:before {
+    content: "\f0e1"; }
+  
+  .icon-google-plus:before {
+    content: "\f0d5"; }
+  
+  .icon-pinterest:before {
+    content: "\f0d2"; }
+  
+  .icon-github:before {
+    content: "\f09b"; }
+  
+  .icon-twitter:before {
+    content: "\f099"; }
 
 .loading {
   position: absolute;
@@ -1194,7 +1194,7 @@ menu {
   .productos li:not(:last-child) {
     margin-bottom: 1.5rem; }
   .productos a {
-    font-size: 1.8rem;
+    font-size: 2.3rem;
     text-shadow: -3px 2px #222; }
     .productos a:hover {
       color: #00A9E4; }
@@ -1223,6 +1223,8 @@ menu {
             justify-content: flex-start;
     -webkit-animation: nav-entrada .8s .6s forwards;
             animation: nav-entrada .8s .6s forwards; }
+  .productos a {
+    font-size: 1.8rem; }
   .background-tradicional {
     background-image: url("../img/fondos/f-tradicional.jpg"); }
   .background-jamones-pechugas {
@@ -1239,7 +1241,8 @@ menu {
           background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  margin-right: 0; }
+  margin-right: 0;
+  padding-bottom: 2rem; }
   .categoria-fondo h1 {
     opacity: 0;
     -webkit-animation: titulo-entrada .8s forwards;
@@ -1343,7 +1346,8 @@ menu {
     -webkit-animation: fondo-entrada .8s forwards;
             animation: fondo-entrada .8s forwards;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out; }
+            animation-timing-function: ease-in-out;
+    padding-bottom: 0; }
     .categoria-fondo.in {
       -webkit-transition: all 1.5s ease-in-out;
       -o-transition: all 1.5s ease-in-out;
